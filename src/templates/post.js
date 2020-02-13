@@ -1,48 +1,90 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import Layout from "../layout";
-import UserInfo from "../components/UserInfo";
-import Disqus from "../components/Disqus";
-import PostTags from "../components/PostTags";
-import SocialLinks from "../components/SocialLinks";
-import SEO from "../components/SEO";
-import Footer from "../components/Footer";
-import config from "../../data/SiteConfig";
-import "./b16-tomorrow-dark.css";
-import "./post.css";
+import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import Layout from '../layout'
+import UserInfo from '../components/UserInfo'
+import PostTags from '../components/PostTags'
+import SEO from '../components/SEO'
+import config from '../../data/SiteConfig'
+import { formatDate, editOnGithub } from '../utils/global'
 
-export default class PostTemplate extends React.Component {
-  render() {
-    const { data, pageContext } = this.props;
-    const { slug } = pageContext;
-    const postNode = data.markdownRemark;
-    const post = postNode.frontmatter;
-    if (!post.id) {
-      post.id = slug;
+export default class PostTemplate extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      error: false,
     }
+  }
+
+  render() {
+    const { comments, error } = this.state
+    const { slug } = this.props.pageContext
+    const postNode = this.props.data.markdownRemark
+    const post = postNode.frontmatter
+    const popular = postNode.frontmatter.categories.find(category => category === 'Popular')
+    let thumbnail
+
+    if (!post.id) {
+      post.id = slug
+    }
+
+    if (!post.category_id) {
+      post.category_id = config.postDefaultCategoryID
+    }
+
+    if (post.thumbnail) {
+      thumbnail = post.thumbnail.childImageSharp.fixed
+    }
+
+    const date = formatDate(post.date)
+    // const githubLink = editOnGithub(post)
+    const githubLink = "#"
+    const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${
+      config.siteUrl
+    }/${post.slug}/&via=ajaykarwal`
 
     return (
       <Layout>
-        <div>
-          <Helmet>
-            <title>{`${post.title} | ${config.siteTitle}`}</title>
-          </Helmet>
-          <SEO postPath={slug} postNode={postNode} postSEO />
-          <div>
-            <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            <div className="post-meta">
+        <Helmet>
+          <title>{`${post.title} – ${config.siteTitle}`}</title>
+        </Helmet>
+        <SEO postPath={slug} postNode={postNode} postSEO />
+        <article className="single container">
+          <header className={`single-header ${!thumbnail ? 'no-thumbnail' : ''}`}>
+            {thumbnail && <Img fixed={post.thumbnail.childImageSharp.fixed} />}
+            <div className="flex">
+              <h1>{post.title}</h1>
+              <div className="post-meta">
+                <time className="date">{date}</time>/
+                <a
+                  className="twitter-link"
+                  href={twitterShare}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Share
+                </a>
+                /
+                <a
+                  className="github-link"
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Edit ✏️
+                </a>
+              </div>
               <PostTags tags={post.tags} />
-              <SocialLinks postPath={slug} postNode={postNode} />
             </div>
-            <UserInfo config={config} />
-            <Disqus postNode={postNode} />
-            <Footer config={config} />
-          </div>
-        </div>
+          </header>
+
+          <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        </article>
+        <UserInfo config={config} />
       </Layout>
-    );
+    )
   }
 }
 
@@ -55,10 +97,11 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        cover
+        slug
         date
-        category
+        categories
         tags
+        template
       }
       fields {
         slug
@@ -66,4 +109,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

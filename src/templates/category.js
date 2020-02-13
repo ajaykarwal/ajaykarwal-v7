@@ -1,34 +1,33 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import Layout from "../layout";
-import PostListing from "../components/PostListing";
-import config from "../../data/SiteConfig";
+import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import Layout from '../layout'
+import PostListing from '../components/PostListing'
+import config from '../../data/SiteConfig'
 
-export default class CategoryTemplate extends React.Component {
+export default class CategoryTemplate extends Component {
   render() {
-    const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const { category } = this.props.pageContext
+    const postEdges = this.props.data.allMarkdownRemark.edges
+
     return (
       <Layout>
-        <div className="category-container">
-          <Helmet
-            title={`Posts in category "${category}" | ${config.siteTitle}`}
-          />
+        <Helmet title={`Posts in category "${category}" – ${config.siteTitle}`} />
+        <div className="container">
+          <h1>{category}</h1>
           <PostListing postEdges={postEdges} />
         </div>
       </Layout>
-    );
+    )
   }
 }
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: { frontmatter: { categories: { in: [$category] } } }
     ) {
       totalCount
       edges {
@@ -42,11 +41,12 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            cover
+            categories
             date
+            template
           }
         }
       }
     }
   }
-`;
+`

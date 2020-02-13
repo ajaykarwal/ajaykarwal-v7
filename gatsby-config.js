@@ -19,6 +19,7 @@ module.exports = {
     }
   },
   plugins: [
+    // 'gatsby-plugin-sass',
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     {
@@ -34,6 +35,13 @@ module.exports = {
         name: "posts",
         path: `${__dirname}/content/posts/`
       }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/content/pages`,
+      },
     },
     {
       resolve: "gatsby-transformer-remark",
@@ -115,7 +123,7 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS Advanced Starter";
+          ret.generator = "Ajay Karwal";
           return ret;
         },
         query: `
@@ -156,10 +164,11 @@ module.exports = {
               allMarkdownRemark(
                 limit: 1000,
                 sort: { order: DESC, fields: [fields___date] },
+                filter: { frontmatter: { template: { eq: "post" } } }
               ) {
                 edges {
                   node {
-                    excerpt
+                    excerpt(pruneLength: 180)
                     html
                     timeToRead
                     fields {
@@ -168,10 +177,10 @@ module.exports = {
                     }
                     frontmatter {
                       title
-                      cover
                       date
-                      category
+                      categories
                       tags
+                      template
                     }
                   }
                 }

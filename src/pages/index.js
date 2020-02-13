@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../layout";
-// import PostListing from "../components/PostListing";
+import PostListing from "../components/PostListing";
+import PageListing from "../components/PageListing";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 
@@ -10,8 +11,9 @@ export default class Index extends Component {
   render() {
     const { data } = this.props;
 
-    // const latestPostEdges = data.latest.edges;
-    // const popularPostEdges = data.popular.edges;
+    const latestPostEdges = data.latest.edges;
+    const popularPostEdges = data.popular.edges;
+    const pageEdges = data.pages.edges;
 
     return (
       <Layout>
@@ -28,7 +30,14 @@ export default class Index extends Component {
               View all
             </Link>
           </h2>
-          {/* <PostListing simple postEdges={latestPostEdges} /> */}
+          <PostListing simple postEdges={latestPostEdges} />
+        </section>
+
+        <section className="section">
+          <h2>
+            Pages
+          </h2>
+          <PageListing pageEdges={pageEdges} />
         </section>
 
         <section className="section">
@@ -38,7 +47,7 @@ export default class Index extends Component {
               View all
             </Link>
           </h2>
-          {/* <PostListing simple postEdges={popularPostEdges} /> */}
+          <PostListing simple postEdges={popularPostEdges} />
         </section>
       </Layout>
     );
@@ -63,8 +72,24 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            category
+            categories
             date
+            template
+          }
+        }
+      }
+    }
+    pages: allMarkdownRemark(
+      limit: 6
+      filter: { frontmatter: { template: { eq: "page" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
             template
           }
         }
@@ -73,7 +98,7 @@ export const pageQuery = graphql`
     popular: allMarkdownRemark(
       limit: 7
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { category: { eq: "Popular" } } }
+      filter: { frontmatter: { categories: { eq: "Popular" } } }
     ) {
       edges {
         node {
@@ -86,7 +111,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            category
+            categories
             date
             template
           }
