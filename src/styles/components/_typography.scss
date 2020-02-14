@@ -1,0 +1,96 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %font-heading;
+  color: inherit;
+  line-height: 1.3em;
+  margin-bottom: 0.5em;
+  font-weight: $font-weight-bold;
+
+  &.light {
+    font-weight: $font-weight-light;
+  }
+  a {
+    color: $brand-primary;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+
+  & > & {
+    margin-top: 0;
+  }
+}
+
+h1 {
+  @include font-size(36px);
+
+  span {
+    display: block;
+    color: $brand-primary-light;
+    font-weight: $font-weight-normal;
+    text-transform: none;
+    @include font-size(20px);
+  }
+}
+
+h2 {
+  @include font-size(28px);
+
+  span {
+    display: block;
+    color: $medium-grey;
+    font-weight: $font-weight-normal;
+    @include font-size(16px);
+  }
+}
+
+h3 {
+  @include font-size(22px);
+}
+
+h4 {
+  @include font-size(16px);
+}
+
+h5 {
+  @include font-size(14px);
+}
+
+h6 {
+  @include font-size(12px);
+}
+
+small,
+.font_small {
+  @include font-size(11px);
+}
+
+a {
+  color: $brand-primary;
+  text-decoration: none;
+  position: relative;
+
+  &:focus,
+  &:active,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: auto;
+  margin-bottom: 1em;
+
+  &.lead {
+    @include font-size(22px);
+  }
+}

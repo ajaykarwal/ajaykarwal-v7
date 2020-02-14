@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 150px;
+  background-color: $white;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+
+    .icon {
+      width: 40px;
+      fill: $black;
+    }
+
+    .text {
+      margin-left: 10px;
+      color: $black;
+      font-weight: bold;
+      @include font-size(20px);
+      @media (max-width: $break-sm) {
+        display: none;
+      }
+    }
+  }
+
+  nav {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      display: block;
+      margin-left: 1.25em;
+      text-decoration: none;
+      color: $black;
+      // @include font-size(20px);
+    }
+  }
+}

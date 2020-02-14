@@ -1,0 +1,71 @@
+// Fonts
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oxygen+Mono&display=swap");
+
+$system-font: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+$font-family-mono: "Oxygen Mono", monospace;
+$font-family-body: "Open Sans", sans-serif;
+$font-family-heading: $font-family-body;
+
+%font-heading {
+  font-family: $font-family-heading;
+}
+%font-body {
+  font-family: $font-family-body;
+}
+%font-mono {
+  font-family: $font-family-mono;
+}
+
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+
+// Breakpoints
+$break-xs: 480px;
+$break-sm: 768px;
+$break-md: 992px;
+$break-lg: 1200px;
+
+// Colors
+$brand-primary: #0068c7;
+$brand-primary-dark: darken($brand-primary, 30%);
+$brand-primary-light: lighten($brand-primary, 40%);
+$brand-primary-very-light: lighten($brand-primary, 48%);
+
+$brand-secondary: #ffb100;
+// $brand-secondary: adjust-hue($brand-primary, -120);
+
+$white: #ffffff;
+$light-grey: #f7f7f8;
+$medium-grey: #e6e6e6;
+$dark-grey: #666666;
+$black: #262626;
+$true-black: #000000;
+
+$text-body: $black;
+$text-link: $brand-primary;
+
+$brand-twitter: #55acee;
+$brand-facebook: #3b5998;
+$brand-instagram: #a7755c;
+$brand-linkedin: #0077b5;
+$brand-dribbble: #ea4c89;
+$brand-behance: #1769ff;
+$brand-youtube: #cd201f;
+$brand-github: #000000;
+
+// Spacing
+
+$space: 20px;
+$space-sm: 10px;
+$space-md: 30px;
+$space-lg: 40px;
+
+$container-width: 960px;
+$content-width: 660px;

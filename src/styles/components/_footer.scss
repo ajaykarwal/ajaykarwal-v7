@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  align-items: center;
+  @include font-size(16px);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $medium-grey;
+    padding-top: 2em;
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+  }
+  &__logo {
+    .icon {
+      width: 60px;
+      fill: $medium-grey;
+    }
+  }
+  &__copyright {
+    margin-top: 1em;
+  }
+}

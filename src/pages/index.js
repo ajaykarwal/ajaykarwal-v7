@@ -19,36 +19,32 @@ export default class Index extends Component {
       <Layout>
         <Helmet title={`Homepage – ${config.siteTitle}`} />
         <SEO />
-        <div className="container">
+        <div className="container content-container">
           <h1>Homepage</h1>
-        </div>
-
-        <section className="section">
-          <h2>
-            Latest Articles
+          <section className="section">
+            <h2>Latest Articles</h2>
+            <PostListing simple postEdges={latestPostEdges} />
             <Link to="/blog" className="view-all">
               View all
             </Link>
-          </h2>
-          <PostListing simple postEdges={latestPostEdges} />
-        </section>
+          </section>
 
-        {/* <section className="section">
-          <h2>
-            Pages
-          </h2>
-          <PageListing pageEdges={pageEdges} />
-        </section> */}
+          {/* <section className="section">
+            <h2>
+              Pages
+            </h2>
+            <PageListing pageEdges={pageEdges} />
+          </section> */}
+          <hr/>
 
-        <section className="section">
-          <h2>
-            Most Popular
+          <section className="section">
+            <h2>Most Popular</h2>
+            <PostListing simple postEdges={popularPostEdges} />
             <Link to="/categories/popular" className="view-all">
               View all
             </Link>
-          </h2>
-          <PostListing simple postEdges={popularPostEdges} />
-        </section>
+          </section>
+        </div>
       </Layout>
     );
   }

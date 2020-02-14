@@ -16,13 +16,15 @@ class PageListing extends React.Component {
   render() {
     const pageList = this.getPageList();
     return (
-      <div className="pages-listing">
+      <section className="page-list">
         {pageList.map(page => (
-          <p key={page.title}>
-            <Link to={page.path}>{page.title}</Link>
-          </p>
+          <div className="page-list_-item" key={page.title}>
+            <p>
+              <Link to={page.path}>{page.title}</Link>
+            </p>
+          </div>
         ))}
-      </div>
+      </section>
     );
   }
 }

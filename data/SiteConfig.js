@@ -12,7 +12,7 @@ const config = {
   googleAnalyticsID: "UA-16609747-8", // GA tracking ID.
   disqusShortname: "ajaykarwal", // Disqus shortname.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
-  dateFormat: "DDDD MMMMM, YYYY", // Date format for display.
+  dateFormat: "DD MMMM, YYYY", // Date format for display.
   postsPerPage: 4, // Amount of posts displayed per listing page.
   userName: "Ajay Karwal", // Username to display in the author segment.
   userEmail: "ajaykarwal@gmail.com", // Email used for RSS feed's author segment
@@ -25,41 +25,58 @@ const config = {
   userLinks: [
     {
       label: "GitHub",
-      url: "https://github.com/ajaykarwal",
-      iconClassName: "fa fa-github"
+      url: "https://github.com/ajaykarwal"
     },
     {
       label: "Twitter",
-      url: "https://twitter.com/ajaykarwal",
-      iconClassName: "fa fa-twitter"
+      url: "https://twitter.com/ajaykarwal"
+    },
+    {
+      label: "Facebook",
+      url: "https://facebook.com/ajaykarwal"
+    },
+    {
+      label: "Dribbble",
+      url: "https://dribbble.com/ajaykarwal"
+    },
+    {
+      label: "LinkedIn",
+      url: "http://www.linkedin.com/in/ajaykarwal"
+    },
+    {
+      label: "Behance",
+      url: "https://behance.net/ajaykarwal"
     },
     {
       label: "Email",
-      url: "mailto:ajaykarwal@gmail.com",
-      iconClassName: "fa fa-envelope"
+      url: "mailto:ajaykarwal@gmail.com"
+    },
+    {
+      label: "RSS",
+      url: "/rss.xml"
     }
   ],
   menuLinks: [
     {
-      name: 'About',
-      link: '/about/',
+      name: "About",
+      link: "/about/"
     },
     {
-      name: 'Portfolio',
-      link: '/portfolio/',
+      name: "Portfolio",
+      link: "/portfolio/"
     },
     {
-      name: 'Articles',
-      link: '/blog/',
+      name: "Articles",
+      link: "/blog/"
     },
     {
-      name: 'CV',
-      link: '/resume/',
+      name: "CV",
+      link: "/resume/"
     },
     {
-      name: 'Contact',
-      link: '/contact/',
-    },
+      name: "Contact",
+      link: "/contact/"
+    }
   ],
   copyright: "Copyright © 2019. Advanced User", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.

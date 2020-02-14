@@ -1,0 +1,35 @@
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin center-content($wide: false) {
+  @if $wide {
+    max-width: 880px;
+  } @else {
+    max-width: 680px;
+  }
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}

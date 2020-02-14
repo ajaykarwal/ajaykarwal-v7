@@ -14,7 +14,7 @@ export default class TagsPage extends Component {
       <Layout>
         <SEO />
         <Helmet title={`Tags – ${config.siteTitle}`} />
-        <div className="container">
+        <div className="container content-container">
           <h1>Tags</h1>
           <div className="tag-container">
             {group.map(tag => (

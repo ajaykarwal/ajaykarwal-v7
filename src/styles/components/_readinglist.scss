@@ -1,0 +1,35 @@
+.book-list,
+.book-page {
+  @include clearfix;
+  @include center-content;
+  
+  .book-item {
+    float:left;
+    width:33.33%;
+    @media (min-width: $break-sm) {
+      width:25%;
+    }
+  }
+  
+  .book-cover {
+    display: block;
+    margin-bottom:1em;
+  }
+  
+  .book-author {
+    display: block;
+  
+    @media (min-width: $break-sm) {
+      display: inline;
+    }
+  }
+}
+
+.book-page {
+  .book-cover {
+    width:50%;
+    float: left;
+    margin-right:$space;
+    margin-bottom: $space-sm;
+  }
+}

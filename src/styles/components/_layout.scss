@@ -1,0 +1,31 @@
+main {
+  padding-bottom: 3em;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: auto;
+
+  &.content-container {
+    max-width: $content-width;
+  }
+}
+
+.user-links {
+  a {
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "/";
+      display: inline-block;
+      margin: 0 10px;
+      color: $medium-grey;
+    }
+
+    &:last-of-type::after {
+      display: none;
+    }
+  }
+}

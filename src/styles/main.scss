@@ -1,33 +1,21 @@
-// @import 'reset';
+@import 'base/reset';
 
-// @import 'variables';
-// @import 'mixins';
-// @import 'global';
-// @import 'layout';
-// @import 'forms';
-// @import 'typography';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/base';
+@import 'base/utility';
 
-// @import 'header';
-// @import 'footer';
-// @import 'article';
-// @import 'modules';
-// @import 'homepage';
-// @import 'readinglist';
+@import 'components/layout';
+@import 'components/header';
+@import 'components/footer';
 
-// @import 'code';
+// @import 'components/forms';
+@import 'components/typography';
 
-// @import 'utility';
+// @import 'components/article';
+// @import 'components/modules';
+// @import 'components/homepage';
+// @import 'components/readinglist';
 
+// @import 'components/code';
 
-body {
-  background-color: #F7F7F8;
-  padding: 0;
-  margin: auto;
-}
-
-header.header {
-  background-color: white;
-  h1 {
-    margin: 0;padding: 0;
-  }
-}
