@@ -20,5 +20,14 @@
 
 
 body {
-  background-color: palegoldenrod;
+  background-color: #F7F7F8;
+  padding: 0;
+  margin: auto;
+}
+
+header.header {
+  background-color: white;
+  h1 {
+    margin: 0;padding: 0;
+  }
 }

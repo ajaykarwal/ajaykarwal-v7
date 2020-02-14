@@ -17,11 +17,10 @@ class PageListing extends React.Component {
     const pageList = this.getPageList();
     return (
       <div className="pages-listing">
-        {/* Your post list here. */
-        pageList.map(page => (
-          <Link to={page.path} key={page.title}>
-            <h2>{page.title}</h2>
-          </Link>
+        {pageList.map(page => (
+          <p key={page.title}>
+            <Link to={page.path}>{page.title}</Link>
+          </p>
         ))}
       </div>
     );

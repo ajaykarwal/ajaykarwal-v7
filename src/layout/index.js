@@ -1,8 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
-import Navigation from '../components/Navigation'
-import Footer from '../components/Footer'
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import "../styles/main.scss";
 
 export default class MainLayout extends React.Component {
   render() {
@@ -13,7 +14,7 @@ export default class MainLayout extends React.Component {
           <meta name="description" content={config.siteDescription} />
           <html lang="en" />
         </Helmet>
-        <Navigation menuLinks={config.menuLinks} />
+        <Header menuLinks={config.menuLinks} />
         <main id="main-content">{children}</main>
         <Footer />
       </>

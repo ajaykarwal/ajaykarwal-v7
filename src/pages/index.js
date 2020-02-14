@@ -17,7 +17,7 @@ export default class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Full Stack Software Developer`} />
+        <Helmet title={`Homepage – ${config.siteTitle}`} />
         <SEO />
         <div className="container">
           <h1>Homepage</h1>
@@ -33,12 +33,12 @@ export default class Index extends Component {
           <PostListing simple postEdges={latestPostEdges} />
         </section>
 
-        <section className="section">
+        {/* <section className="section">
           <h2>
             Pages
           </h2>
           <PageListing pageEdges={pageEdges} />
-        </section>
+        </section> */}
 
         <section className="section">
           <h2>
