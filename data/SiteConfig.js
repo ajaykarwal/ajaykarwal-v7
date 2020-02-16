@@ -22,45 +22,45 @@ const config = {
   userDescription:
     "I’m Ajay Karwal. I write about my experiences as a front-end developer. If you enjoy my content, please consider supporting what I do.", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
-  userLinks: [
-    {
+  userLinks: {
+    github: {
       label: "GitHub",
       url: "https://github.com/ajaykarwal"
     },
-    {
+    twitter: {
       label: "Twitter",
       url: "https://twitter.com/ajaykarwal"
     },
-    {
+    facebook: {
       label: "Facebook",
       url: "https://facebook.com/ajaykarwal"
     },
-    {
+    dribbble: {
       label: "Dribbble",
       url: "https://dribbble.com/ajaykarwal"
     },
-    {
+    linkedin: {
       label: "LinkedIn",
       url: "http://www.linkedin.com/in/ajaykarwal"
     },
-    {
+    behance: {
       label: "Behance",
       url: "https://behance.net/ajaykarwal"
     },
-    {
+    email: {
       label: "Email",
       url: "mailto:ajaykarwal@gmail.com"
     },
-    {
+    rss: {
       label: "RSS",
       url: "/rss.xml"
     }
-  ],
+  },
   menuLinks: [
-    {
-      name: "About",
-      link: "/about/"
-    },
+    // {
+    //   name: "About",
+    //   link: "/about/"
+    // },
     {
       name: "Portfolio",
       link: "/portfolio/"

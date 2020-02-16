@@ -13,9 +13,10 @@ main {
 }
 
 .user-links {
-  a {
+  p {
     display: inline-block;
     position: relative;
+    margin: 0;
 
     &::after {
       content: "/";

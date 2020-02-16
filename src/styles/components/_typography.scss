@@ -8,30 +8,23 @@ h6 {
   color: inherit;
   line-height: 1.3em;
   margin-bottom: 0.5em;
-  font-weight: $font-weight-bold;
-
-  &.light {
-    font-weight: $font-weight-light;
-  }
+  font-weight: $font-weight-semibold;
   a {
-    color: $brand-primary;
+    color: inherit;
   }
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 1.5em;
+// h2, h3, h4, h5, h6 {
+//   margin-top: 1.5em;
 
-  & > & {
-    margin-top: 0;
-  }
-}
+//   & > & {
+//     margin-top: 0;
+//   }
+// }
 
 h1 {
-  @include font-size(36px);
+  @include font-size(30px);
+  font-weight: $font-weight-bold;
 
   span {
     display: block;
@@ -43,7 +36,7 @@ h1 {
 }
 
 h2 {
-  @include font-size(28px);
+  @include font-size(26px);
 
   span {
     display: block;
@@ -54,7 +47,7 @@ h2 {
 }
 
 h3 {
-  @include font-size(22px);
+  @include font-size(18px);
 }
 
 h4 {
@@ -78,10 +71,12 @@ a {
   color: $brand-primary;
   text-decoration: none;
   position: relative;
-
+  
   &:focus,
   &:active,
   &:hover {
+    color: $brand-primary-dark;
+    background-color: rgba($brand-primary, 0.06);
     text-decoration: underline;
   }
 }
@@ -91,6 +86,7 @@ p {
   margin-bottom: 1em;
 
   &.lead {
-    @include font-size(22px);
+    @include font-size(24px);
+    font-weight: $font-weight-semibold;
   }
 }

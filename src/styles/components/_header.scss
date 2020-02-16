@@ -14,6 +14,9 @@
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
 
     .icon {
       width: 40px;
