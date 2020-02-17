@@ -1,11 +1,10 @@
 ---
 template: post
+date: 2018-03-01
 title: "Big Test"
-cover: "5.jpg"
+slug: big-sample-test
 categories:
-  - "moar"
-date: "2018-03-01"
-slug: "Big-Sample_Test"
+  - Moar
 tags:
   - test
   - huge

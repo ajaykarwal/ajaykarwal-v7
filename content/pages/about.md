@@ -1,7 +1,7 @@
 ---
 template: page
 title: "About"
-slug: "about"
+slug: about
 ---
 
 I am a creative **Front-end Developer** and **UI Designer** with over 16+ years experience focusing on pixel-perfect interfaces built with clean, readable code. I am passionate about design, typography and obsess over the small details – and I apply my HTML, CSS and JavaScript skills to build engaging user experiences.

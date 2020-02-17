@@ -1,7 +1,7 @@
 ---
 template: page
 title: "Contact"
-slug: "contact"
+slug: contact
 ---
 
 It's totally fine to get in touch if you have any questions or comments about what I do or just fancy a chat.

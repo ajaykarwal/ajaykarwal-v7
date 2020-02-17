@@ -1,7 +1,7 @@
 ---
 template: page
 title: "The Tools I use"
-slug: "uses"
+slug: uses
 ---
 
 I thought it would be interesting and somewhat useful to share a list of hardware, software, apps and other tools I use on a daily basis both at work and in my personal life.

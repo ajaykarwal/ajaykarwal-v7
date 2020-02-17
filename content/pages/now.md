@@ -1,7 +1,7 @@
 ---
 template: page
 title: "What I'm up to right now"
-slug: "now"
+slug: now
 ---
 
 Here are some of the things I’m currently focused on.

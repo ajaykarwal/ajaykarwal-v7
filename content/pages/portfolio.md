@@ -1,7 +1,7 @@
 ---
 template: page
 title: "Portfolio"
-slug: "portfolio"
+slug: portfolio
 ---
 
 It's a little tricky to create a portfolio of development work I've been involved in. It can't always be portrayed with shiny screenshots or cool UX prototypes and behind-the-scenes photos of spint meetings.

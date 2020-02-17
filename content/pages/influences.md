@@ -1,7 +1,7 @@
 ---
 template: page
 title: "Influences"
-slug: "influences"
+slug: influences
 ---
 
 Like a dwarf standing on the shoulders of giants, I wouldn't be where I am today if it wasn't for the influence of some of the best in the industry.
