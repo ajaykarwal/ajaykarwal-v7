@@ -56,7 +56,7 @@ function addSiblingNodes(createNodeField) {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   let slug;
-  if (node.internal.type === "MarkdownRemark") {
+  if (node.internal.type === "Mdx") {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
     if (
@@ -91,7 +91,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
   const { name } = type;
   const { createNodeField } = actions;
-  if (name === "MarkdownRemark") {
+  if (name === "Mdx") {
     addSiblingNodes(createNodeField);
   }
 };
@@ -109,7 +109,7 @@ exports.createPages = async ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMdx {
               edges {
                 node {
                   frontmatter {
@@ -134,7 +134,7 @@ exports.createPages = async ({ graphql, actions }) => {
         const tagSet = new Set();
         const categorySet = new Set();
 
-        result.data.allMarkdownRemark.edges.forEach(edge => {
+        result.data.allMdx.edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
               tagSet.add(tag);

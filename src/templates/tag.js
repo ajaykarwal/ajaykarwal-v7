@@ -8,7 +8,7 @@ import config from '../../data/SiteConfig'
 export default class TagTemplate extends Component {
   render() {
     const { tag } = this.props.pageContext
-    const postEdges = this.props.data.allMarkdownRemark.edges
+    const postEdges = this.props.data.allMdx.edges
 
     return (
       <Layout>
@@ -26,7 +26,7 @@ export default class TagTemplate extends Component {
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
-    allMarkdownRemark(
+    allMdx(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }

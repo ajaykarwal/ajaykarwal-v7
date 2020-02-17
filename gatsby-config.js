@@ -44,9 +44,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: "gatsby-plugin-mdx",
       options: {
-        plugins: [
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-relative-images`
           },
@@ -118,11 +119,11 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: "gatsby-plugin-feed-mdx",
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
+          ret.allMdx = ref.query.allMdx;
           ret.generator = "Ajay Karwal";
           return ret;
         },
@@ -146,7 +147,7 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              return ctx.query.allMdx.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
                 title: edge.node.frontmatter.title,
@@ -161,7 +162,7 @@ module.exports = {
             },
             query: `
             {
-              allMarkdownRemark(
+              allMdx(
                 limit: 1000,
                 sort: { order: DESC, fields: [fields___date] },
                 filter: { frontmatter: { template: { eq: "post" } } }
@@ -169,7 +170,7 @@ module.exports = {
                 edges {
                   node {
                     excerpt(pruneLength: 180)
-                    html
+                    body
                     timeToRead
                     fields {
                       slug

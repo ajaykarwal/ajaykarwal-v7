@@ -110,7 +110,7 @@ export default class BlogPage extends Component {
 
 export const query = graphql`
   {
-    posts: allMarkdownRemark(
+    posts: allMdx(
       limit: 2000
       sort: { order: DESC, fields: [fields___date] }
       filter: { frontmatter: { template: { eq: "post" } } }
@@ -133,13 +133,13 @@ export const query = graphql`
         }
       }
     }
-    categories: allMarkdownRemark(limit: 2000) {
+    categories: allMdx(limit: 2000) {
       group(field: frontmatter___categories) {
         fieldValue
         totalCount
       }
     }
-    tags: allMarkdownRemark(limit: 2000) {
+    tags: allMdx(limit: 2000) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

@@ -8,7 +8,7 @@ import config from '../../data/SiteConfig'
 
 export default class TagsPage extends Component {
   render() {
-    const { group } = this.props.data.allMarkdownRemark
+    const { group } = this.props.data.allMdx
 
     return (
       <Layout>
@@ -33,7 +33,7 @@ export default class TagsPage extends Component {
 
 export const pageQuery = graphql`
   query TagsQuery {
-    allMarkdownRemark(limit: 2000) {
+    allMdx(limit: 2000) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

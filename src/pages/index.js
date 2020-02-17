@@ -14,9 +14,9 @@ export default class Index extends Component {
 
     const currentYear = new Date();
     const since2004 = currentYear.getFullYear() - 2004;
-    const latestPostEdges = data.latest.edges;
-    const popularPostEdges = data.popular.edges;
-    const pageEdges = data.pages.edges;
+    // const latestPostEdges = data.latest.edges;
+    // const popularPostEdges = data.popular.edges;
+    // const pageEdges = data.pages.edges;
 
     return (
       <Layout>
@@ -81,69 +81,69 @@ export default class Index extends Component {
   }
 }
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    latest: allMarkdownRemark(
-      limit: 6
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { template: { eq: "post" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            tags
-            categories
-            date
-            template
-          }
-        }
-      }
-    }
-    pages: allMarkdownRemark(
-      limit: 6
-      filter: { frontmatter: { template: { eq: "page" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            template
-          }
-        }
-      }
-    }
-    popular: allMarkdownRemark(
-      limit: 7
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { categories: { eq: "Popular" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            tags
-            categories
-            date
-            template
-          }
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     latest: allMdx(
+//       limit: 6
+//       sort: { fields: [fields___date], order: DESC }
+//       filter: { frontmatter: { template: { eq: "post" } } }
+//     ) {
+//       edges {
+//         node {
+//           fields {
+//             slug
+//             date
+//           }
+//           excerpt
+//           timeToRead
+//           frontmatter {
+//             title
+//             tags
+//             categories
+//             date
+//             template
+//           }
+//         }
+//       }
+//     }
+//     pages: allMdx(
+//       limit: 6
+//       filter: { frontmatter: { template: { eq: "page" } } }
+//     ) {
+//       edges {
+//         node {
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             title
+//             template
+//           }
+//         }
+//       }
+//     }
+//     popular: allMdx(
+//       limit: 7
+//       sort: { fields: [fields___date], order: DESC }
+//       filter: { frontmatter: { categories: { eq: "Popular" } } }
+//     ) {
+//       edges {
+//         node {
+//           fields {
+//             slug
+//             date
+//           }
+//           excerpt
+//           timeToRead
+//           frontmatter {
+//             title
+//             tags
+//             categories
+//             date
+//             template
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

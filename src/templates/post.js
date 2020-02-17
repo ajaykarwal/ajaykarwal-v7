@@ -1,49 +1,48 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import Layout from '../layout'
-import UserInfo from '../components/UserInfo'
-import PostTags from '../components/PostTags'
-import SEO from '../components/SEO'
-import config from '../../data/SiteConfig'
-import { formatDate, editOnGithub } from '../utils/global'
+import React, { Component } from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import Layout from "../layout";
+import UserInfo from "../components/UserInfo";
+import PostTags from "../components/PostTags";
+import SEO from "../components/SEO";
+import config from "../../data/SiteConfig";
+import { formatDate, editOnGithub } from "../utils/global";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export default class PostTemplate extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      error: false,
-    }
+      error: false
+    };
   }
 
   render() {
-    const { comments, error } = this.state
-    const { slug } = this.props.pageContext
-    const postNode = this.props.data.markdownRemark
-    const post = postNode.frontmatter
-    const popular = postNode.frontmatter.categories.find(category => category === 'Popular')
-    let thumbnail
+    const { slug } = this.props.pageContext;
+    const postNode = this.props.data.mdx;
+    const post = postNode.frontmatter;
+    let thumbnail;
 
     if (!post.id) {
-      post.id = slug
+      post.id = slug;
     }
 
     if (!post.category_id) {
-      post.category_id = config.postDefaultCategoryID
+      post.category_id = config.postDefaultCategoryID;
     }
 
     if (post.thumbnail) {
-      thumbnail = post.thumbnail.childImageSharp.fixed
+      thumbnail = post.thumbnail.childImageSharp.fixed;
     }
 
-    const date = formatDate(post.date)
+    const date = formatDate(post.date);
     // const githubLink = editOnGithub(post)
-    const githubLink = "#"
-    const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${
-      config.siteUrl
-    }/${post.slug}/&via=ajaykarwal`
+    const githubLink = "#";
+    const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(
+      post.title
+    )}&url=${config.siteUrl}/${post.slug}/&via=ajaykarwal`;
 
     return (
       <Layout>
@@ -52,7 +51,9 @@ export default class PostTemplate extends Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className="single container content-container">
-          <header className={`single-header ${!thumbnail ? 'no-thumbnail' : ''}`}>
+          <header
+            className={`single-header ${!thumbnail ? "no-thumbnail" : ""}`}
+          >
             {thumbnail && <Img fixed={post.thumbnail.childImageSharp.fixed} />}
             <div className="flex">
               <h1>{post.title}</h1>
@@ -79,22 +80,18 @@ export default class PostTemplate extends Component {
               <PostTags tags={post.tags} />
             </div>
           </header>
-
-          <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <MDXRenderer>{postNode.body}</MDXRenderer>
         </article>
         <UserInfo config={config} />
       </Layout>
-    )
+    );
   }
 }
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      excerpt
+    mdx(fields: {slug: { eq: $slug }}) {
       frontmatter {
         title
         slug
@@ -107,6 +104,9 @@ export const pageQuery = graphql`
         slug
         date
       }
+      body
+      timeToRead
+      excerpt
     }
   }
 `
