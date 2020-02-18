@@ -4,6 +4,7 @@ const config = {
   siteTitleAlt: "Personal Portfolio of Ajay Karwal", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://ajaykarwal.com", // Domain of your website without pathPrefix.
+  repository: 'https://github.com/ajaykarwal/ajaykarwal.com',
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Front-end Developer and UI Designer from Buckingham, UK.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
@@ -80,7 +81,14 @@ const config = {
   ],
   copyright: "Copyright © 2019. Advanced User", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
+  lastfm: {
+    apikey: "965b2342a5837db0942394bbc9a31157",
+    limit: 1,
+    username: "ajaykarwal",
+    selector: "#lastfmStatus",
+    period: "7day" // overall | 7day | 1month | 3month | 6month | 12month
+  }
 };
 
 // Validate
