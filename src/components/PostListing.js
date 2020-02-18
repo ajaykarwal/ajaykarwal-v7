@@ -24,25 +24,29 @@ export default class PostListing extends Component {
     const postList = this.getPostList();
 
     return (
-      <section className={`post-list ${simple ? "simple" : ""}`}>
+      <div className="post-list">
         {postList.map(post => {
-          const popular = post.categories.includes("Popular");
           const date = formatDate(post.date);
 
           return (
             <div className="post-list__item" key={post.title}>
-              <h2>
-                <Link to={post.path}>
-                  {post.title}
-                </Link>
-              </h2>
-              <p>{date}</p>
-              <p>{post.excerpt}</p>
-              {popular && <div className="popular">Popular</div>}
+              {simple ? (
+                <p>
+                  <Link to={post.path}>{post.title}</Link>
+                </p>
+              ) : (
+                <>
+                  <h2>
+                    <Link to={post.path}>{post.title}</Link>
+                  </h2>
+                  <p>{date}</p>
+                  <p>{post.excerpt}</p>
+                </>
+              )}
             </div>
           );
         })}
-      </section>
+      </div>
     );
   }
 }

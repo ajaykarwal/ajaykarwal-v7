@@ -30,3 +30,37 @@ main {
     }
   }
 }
+
+.tag-container {
+  a {
+    display: inline-block;
+    margin: 0 $space $space 0;
+    @include font-size(13px);
+
+    &:hover {
+      border: 0;
+      background: none;
+    }
+  }
+
+  span {
+    display: block;
+    padding: $space-sm $space-sm;
+    background: $medium-grey;
+    border-radius: 4px;
+    color: $black;
+
+    .count {
+      color: $brand-primary;
+      font-weight: 700;
+      margin-left: 0.25rem;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: $brand-primary-very-light;
+      color: $true-black;
+    }
+  }
+}

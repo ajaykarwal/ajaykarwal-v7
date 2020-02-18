@@ -69,39 +69,44 @@ export default class BlogPage extends Component {
         <Helmet title={`Blog – ${config.siteTitle}`} />
         <SEO />
         <div className="container content-container">
-          <h1>Blog</h1>
-          <div className="category-container">
-            {categories.map(category => {
-              const active = currentCategories.includes(category.fieldValue);
+          <section>
+            <header>
+              <h1>Blog</h1>
+              <div className="category-container">
+                {categories.map(category => {
+                  const active = currentCategories.includes(
+                    category.fieldValue
+                  );
 
-              return (
-                <button
-                  className={`category-filter ${active ? "active" : ""}`}
-                  key={category.fieldValue}
-                  onClick={async () => {
-                    await this.updateCategories(category.fieldValue);
-                    await this.filterPosts();
-                  }}
-                >
-                  {category.fieldValue}
-                </button>
-              );
-            })}
-          </div>
+                  return (
+                    <button
+                      className={`category-filter ${active ? "active" : ""}`}
+                      key={category.fieldValue}
+                      onClick={async () => {
+                        await this.updateCategories(category.fieldValue);
+                        await this.filterPosts();
+                      }}
+                    >
+                      {category.fieldValue}
+                    </button>
+                  );
+                })}
+              </div>
 
-          <div className="search-container">
-            <input
-              className="search"
-              type="text"
-              name="searchTerm"
-              value={searchTerm}
-              placeholder="Type here to filter posts..."
-              onChange={this.handleChange}
-            />
-            <div className="filter-count">{filterCount}</div>
-          </div>
-
-          <PostListing postEdges={filteredPosts} />
+              <div className="search-container">
+                <input
+                  className="search"
+                  type="text"
+                  name="searchTerm"
+                  value={searchTerm}
+                  placeholder="Type here to filter posts..."
+                  onChange={this.handleChange}
+                />
+                <div className="filter-count">{filterCount}</div>
+              </div>
+            </header>
+            <PostListing postEdges={filteredPosts} />
+          </section>
         </div>
       </Layout>
     );

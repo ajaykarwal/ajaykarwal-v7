@@ -38,14 +38,14 @@ $break-lg: 1200px;
 $brand-primary: #0068C7;
 $brand-primary-dark: darken($brand-primary, 10%);
 $brand-primary-light: lighten($brand-primary, 40%);
-$brand-primary-very-light: lighten($brand-primary, 48%);
+$brand-primary-very-light: rgba($brand-primary, .2);
 
 $brand-secondary: #ee1c25;
 $brand-tertiary: #ffb100;
 
 $white: #ffffff;
 $light-grey: #f7f7f8;
-$medium-grey: #cccccc;
+$medium-grey: #ebebeb;
 $dark-grey: #4d4d4d;
 $black: #262626;
 $true-black: #000000;
@@ -65,10 +65,11 @@ $brand-github: #000000;
 
 // Spacing
 
-$space: 20px;
-$space-sm: 10px;
-$space-md: 30px;
-$space-lg: 40px;
+$space: 16px;
+$space-sm: $space / 2;
+$space-md: $space * 2;
+$space-lg: $space * 4;
+$space-xl: $space * 8;
 
 $container-width: 960px;
 $content-width: 660px;

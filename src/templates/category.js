@@ -1,24 +1,30 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../layout'
-import PostListing from '../components/PostListing'
-import config from '../../data/SiteConfig'
+import React, { Component } from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../layout";
+import PostListing from "../components/PostListing";
+import config from "../../data/SiteConfig";
 
 export default class CategoryTemplate extends Component {
   render() {
-    const { category } = this.props.pageContext
-    const postEdges = this.props.data.allMdx.edges
+    const { category } = this.props.pageContext;
+    const postEdges = this.props.data.allMdx.edges;
 
     return (
       <Layout>
-        <Helmet title={`Posts in category "${category}" – ${config.siteTitle}`} />
+        <Helmet
+          title={`Posts in category "${category}" – ${config.siteTitle}`}
+        />
         <div className="container content-container">
-          <h1>{category}</h1>
-          <PostListing postEdges={postEdges} />
+          <section>
+            <header>
+              <h1>{category}</h1>
+            </header>
+            <PostListing postEdges={postEdges} />
+          </section>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
@@ -49,4 +55,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

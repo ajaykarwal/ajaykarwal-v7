@@ -24,7 +24,7 @@ export default class PageTemplate extends Component {
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div className="container content-container">
           <article>
-            <header className="page-header">
+            <header>
               <h1>{page.title}</h1>
             </header>
             <MDXRenderer>{postNode.body}</MDXRenderer>

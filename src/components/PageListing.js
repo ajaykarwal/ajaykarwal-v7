@@ -16,7 +16,7 @@ class PageListing extends React.Component {
   render() {
     const pageList = this.getPageList();
     return (
-      <section className="page-list">
+      <div className="page-list">
         {pageList.map(page => (
           <div className="page-list_-item" key={page.title}>
             <p>
@@ -24,7 +24,7 @@ class PageListing extends React.Component {
             </p>
           </div>
         ))}
-      </section>
+      </div>
     );
   }
 }
