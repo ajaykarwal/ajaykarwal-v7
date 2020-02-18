@@ -2,7 +2,8 @@
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oxygen+Mono&display=swap");
 
-$system-font: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+$system-font: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+  Arial, sans-serif;
 
 $font-family-mono: "Oxygen Mono", monospace;
 $font-family-body: "Open Sans", sans-serif;
@@ -34,18 +35,18 @@ $break-md: 992px;
 $break-lg: 1200px;
 
 // Colors
-$brand-primary: #0068c7;
+$brand-primary: #0068C7;
 $brand-primary-dark: darken($brand-primary, 10%);
 $brand-primary-light: lighten($brand-primary, 40%);
 $brand-primary-very-light: lighten($brand-primary, 48%);
 
-$brand-secondary: #ffb100;
-// $brand-secondary: adjust-hue($brand-primary, -120);
+$brand-secondary: #ee1c25;
+$brand-tertiary: #ffb100;
 
 $white: #ffffff;
 $light-grey: #f7f7f8;
-$medium-grey: #e6e6e6;
-$dark-grey: #4D4D4D;
+$medium-grey: #cccccc;
+$dark-grey: #4d4d4d;
 $black: #262626;
 $true-black: #000000;
 

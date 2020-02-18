@@ -14,8 +14,12 @@
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
+    border:0;
+    background:none;
     &:hover {
       text-decoration: none;
+      border:0;
+      background:none;
     }
 
     .icon {
@@ -45,7 +49,8 @@
       margin-left: 1.25em;
       text-decoration: none;
       color: $black;
-      // @include font-size(20px);
+      border:0;
+      background:none;
     }
   }
 }

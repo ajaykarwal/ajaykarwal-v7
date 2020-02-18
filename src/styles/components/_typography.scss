@@ -12,6 +12,16 @@ h6 {
   a {
     color: inherit;
   }
+  .anchor {
+    display: none;
+    left: 5px;
+    padding: 0 5px;
+  }
+
+  &:hover .anchor {
+    display: inline-block;
+    background: none;
+  }
 }
 
 // h2, h3, h4, h5, h6 {
@@ -75,9 +85,9 @@ a {
   &:focus,
   &:active,
   &:hover {
-    color: $brand-primary-dark;
-    background-color: rgba($brand-primary, 0.06);
-    text-decoration: underline;
+    color: $brand-secondary;
+    background-color: rgba($brand-secondary, 0.03);
+    border-bottom: 2px solid $brand-secondary;
   }
 }
 
