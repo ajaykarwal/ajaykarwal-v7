@@ -1,8 +1,13 @@
 ﻿.homepage {
+  h1 {
+    padding-top: $space-xl;
+    @include font-size(64px);
+  }
   .avatar {
+    float: right;
     border-radius: 100%;
     width: 200px;
     display: block;
-    margin: 3em auto;
+    margin: $space-xl auto $space $space;
   }
 }
