@@ -35,6 +35,7 @@ export default class Header extends Component {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50"
                 className="icon"
+                width="50"
               >
                 <path
                   fillRule="evenodd"
@@ -44,11 +45,15 @@ export default class Header extends Component {
               <span className="text">Ajay Karwal</span>
             </Link>
             <nav>
-              {menuLinks.map(link => (
-                <Link key={link.name} to={link.link} activeClassName="active">
-                  {link.name}
-                </Link>
-              ))}
+              <ul>
+                {menuLinks.map(link => (
+                  <li key={link.name}>
+                    <Link to={link.link} activeClassName="active">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </nav>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default class PostListing extends Component {
     const postList = this.getPostList();
 
     return (
-      <div className="post-list">
+      <div className={`post-list ${simple ? "simple" : ""}`}>
         {postList.map(post => {
           const date = formatDate(post.date);
 
@@ -36,11 +36,11 @@ export default class PostListing extends Component {
                 </p>
               ) : (
                 <>
-                  <h2>
+                  <h2 className="post-list__item-heading">
                     <Link to={post.path}>{post.title}</Link>
                   </h2>
-                  <p>{date}</p>
-                  <p>{post.excerpt}</p>
+                  <p className="post-list__item-date">{date}</p>
+                  <p className="post-list__item-excerpt">{post.excerpt}</p>
                 </>
               )}
             </div>

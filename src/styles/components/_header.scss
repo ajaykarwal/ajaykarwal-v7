@@ -9,29 +9,32 @@
     align-items: center;
     justify-content: space-between;
   }
+
   &__logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
-    border:0;
-    background:none;
+    border: 0;
+    background: none;
+
     &:hover {
       text-decoration: none;
-      border:0;
-      background:none;
+      border: 0;
+      background: none;
     }
 
     .icon {
       width: 40px;
-      fill: $black;
+      fill: $text-body-dark;
     }
 
     .text {
-      margin-left: 10px;
-      color: $black;
-      font-weight: bold;
+      margin-left: $space;
+      color: $text-body-dark;
+      font-weight: $font-weight-bold;
       @include font-size(20px);
+
       @media (max-width: $break-sm) {
         display: none;
       }
@@ -39,18 +42,25 @@
   }
 
   nav {
-    text-align: right;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-    a {
-      display: block;
-      margin-left: 1.25em;
-      text-decoration: none;
-      color: $black;
-      border:0;
-      background:none;
+      li {
+        margin-left: $space-md;
+
+        a {
+          display: block;
+          text-decoration: none;
+          color: $text-body-dark;
+          border: 0;
+          background: none;
+        }
+      }
     }
   }
 }

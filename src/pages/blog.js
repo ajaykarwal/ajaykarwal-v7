@@ -64,6 +64,7 @@ export default class BlogPage extends Component {
     const { filteredPosts, searchTerm, currentCategories } = this.state;
     const filterCount = filteredPosts.length;
     const categories = this.props.data.categories.group;
+
     return (
       <Layout>
         <Helmet title={`Blog – ${config.siteTitle}`} />
@@ -71,7 +72,10 @@ export default class BlogPage extends Component {
         <div className="container content-container">
           <section>
             <header>
-              <h1>Blog</h1>
+              <h1>
+                Blog <span>({filterCount})</span>
+              </h1>
+            </header>
               <div className="category-container">
                 {categories.map(category => {
                   const active = currentCategories.includes(
@@ -80,14 +84,15 @@ export default class BlogPage extends Component {
 
                   return (
                     <button
-                      className={`category-filter ${active ? "active" : ""}`}
+                      className={`button button__neu ${active ? "on" : ""}`}
                       key={category.fieldValue}
                       onClick={async () => {
                         await this.updateCategories(category.fieldValue);
                         await this.filterPosts();
                       }}
                     >
-                      {category.fieldValue}
+                      {category.fieldValue}{" "}
+                      <strong className="count">{category.totalCount}</strong>
                     </button>
                   );
                 })}
@@ -102,9 +107,7 @@ export default class BlogPage extends Component {
                   placeholder="Type here to filter posts..."
                   onChange={this.handleChange}
                 />
-                <div className="filter-count">{filterCount}</div>
               </div>
-            </header>
             <PostListing postEdges={filteredPosts} />
           </section>
         </div>

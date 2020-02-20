@@ -1,7 +1,8 @@
 ﻿.homepage {
   h1 {
     padding-top: $space-xl;
-    @include font-size(64px);
+    color: $text-body-dark;
+    @include font-size(48px);
   }
   .avatar {
     float: right;
@@ -9,5 +10,17 @@
     width: 200px;
     display: block;
     margin: $space-xl auto $space $space;
+  }
+
+  .recent {
+    display: flex;
+    justify-content: space-between;
+    
+    > div {
+      width: 45%;
+    }
+    h2 {
+      margin-top: 0;
+    }
   }
 }

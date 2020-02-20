@@ -11,7 +11,7 @@ class Footer extends Component {
         <div className="container">
           <div className="footer__content">
             <div className="footer__links">
-              Connect with me:
+              <strong>Connect with me:</strong>
               <br />
               <UserLinks config={config} labeled />
             </div>
@@ -20,6 +20,7 @@ class Footer extends Component {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50"
                 className="icon"
+                width="50"
               >
                 <path
                   fillRule="evenodd"

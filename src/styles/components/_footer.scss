@@ -5,10 +5,9 @@
 
   &__content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    border-top: 1px solid $medium-grey;
-    padding-top: 2em;
+    border-top: 2px solid $grey-medium;
+    padding-top: $space-md;
   }
   &__links {
     display: flex;
@@ -17,10 +16,10 @@
   &__logo {
     .icon {
       width: 60px;
-      fill: $medium-grey;
+      fill: $grey-medium;
     }
   }
   &__copyright {
-    margin-top: 1em;
+    margin-top: $space;
   }
 }

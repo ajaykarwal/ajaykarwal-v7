@@ -1,5 +1,5 @@
 main {
-  padding-bottom: 3em;
+  padding-bottom: $space-lg;
 }
 
 .container {
@@ -21,8 +21,8 @@ main {
     &::after {
       content: "/";
       display: inline-block;
-      margin: 0 10px;
-      color: $medium-grey;
+      margin: 0 $space-sm;
+      color: $grey-semi;
     }
 
     &:last-of-type::after {
@@ -31,6 +31,7 @@ main {
   }
 }
 
+.category-container,
 .tag-container {
   a {
     display: inline-block;
@@ -46,15 +47,9 @@ main {
   span {
     display: block;
     padding: $space-sm $space-sm;
-    background: $medium-grey;
-    border-radius: 4px;
-    color: $black;
-
-    .count {
-      color: $brand-primary;
-      font-weight: 700;
-      margin-left: 0.25rem;
-    }
+    background: $grey-medium;
+    border-radius: $border-radius-sm;
+    color: $text-body-dark;
 
     &:active,
     &:focus,
@@ -62,5 +57,23 @@ main {
       background: $brand-primary-very-light;
       color: $true-black;
     }
+  }
+  .count {
+    color: $brand-primary;
+    font-weight: 700;
+    margin-left: 0.25rem;
+  }
+  .button {
+    margin-right: 20px;
+  }
+}
+
+.search-container {
+  margin-top: $space-md;
+  input {
+    width: 100%;
+    border-bottom: 2px solid $grey-medium;
+    padding: $space-sm;
+    @include font-size(24px);
   }
 }

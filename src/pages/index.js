@@ -14,16 +14,15 @@ export default class Index extends Component {
 
     const currentYear = new Date();
     const since2004 = currentYear.getFullYear() - 2004;
-    // const latestPostEdges = data.latest.edges;
-    // const popularPostEdges = data.popular.edges;
-    // const pageEdges = data.pages.edges;
+    const latestPostEdges = data.latest.edges;
+    const popularPostEdges = data.popular.edges;
 
     return (
       <Layout>
         <Helmet title={`Homepage – ${config.siteTitle}`} />
         <SEO />
         <div className="container content-container homepage">
-          <img className="avatar" src={Avatar} alt="That's me!" />
+          <img className="avatar" src={Avatar} alt="That's me!" width="200" />
           <h1 title="It's pronounced 'Uh-Jay'">Hi, I'm Ajay</h1>
           <p className="lead">
             I'm a creative front-end developer and user interface designer from
@@ -43,7 +42,7 @@ export default class Index extends Component {
           </p>
 
           <p>
-            For more details about my experience check out my <a href={config.userLinks.linkedin.url} target="_blank" rel="nofollow noopener">LinkedIn</a> profile.
+            For more details about my experience <a href="/about/">check out my bio</a> or find out <a href="/now/">what I'm up to right now</a>.
           </p>
 
           <p>
@@ -53,98 +52,77 @@ export default class Index extends Component {
             </a>.
           </p>
 
-          {/* <section className="section">
-            <h2>Latest Articles</h2>
-            <PostListing simple postEdges={latestPostEdges} />
-            <Link to="/blog" className="view-all">
-              View all
-            </Link>
-          </section> */}
-
-          {/* <section className="section">
-            <h2>
-              Pages
-            </h2>
-            <PageListing pageEdges={pageEdges} />
-          </section> */}
-          {/* <hr /> */}
-
-          {/* <section className="section">
-            <h2>Most Popular</h2>
-            <PostListing simple postEdges={popularPostEdges} />
-            <Link to="/categories/popular" className="view-all">
-              View all
-            </Link>
-          </section> */}
+          <hr />
+          
+          <div className="recent">
+            <div>
+              <h2>Recent Posts</h2>
+              <PostListing simple postEdges={latestPostEdges} />
+              <Link to="/blog/" className="button button__neu">
+                View all blog posts
+              </Link>
+            </div> 
+            <div>
+              <h2>Popular Posts</h2>
+              <PostListing simple postEdges={popularPostEdges} />
+              <Link to="/categories/popular/" className="button button__neu">
+                View all popular posts
+              </Link>
+            </div>
+          </div>
         </div>
       </Layout>
     );
   }
 }
 
-// export const pageQuery = graphql`
-//   query IndexQuery {
-//     latest: allMdx(
-//       limit: 6
-//       sort: { fields: [fields___date], order: DESC }
-//       filter: { frontmatter: { template: { eq: "post" } } }
-//     ) {
-//       edges {
-//         node {
-//           fields {
-//             slug
-//             date
-//           }
-//           excerpt
-//           timeToRead
-//           frontmatter {
-//             title
-//             tags
-//             categories
-//             date
-//             template
-//           }
-//         }
-//       }
-//     }
-//     pages: allMdx(
-//       limit: 6
-//       filter: { frontmatter: { template: { eq: "page" } } }
-//     ) {
-//       edges {
-//         node {
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//             template
-//           }
-//         }
-//       }
-//     }
-//     popular: allMdx(
-//       limit: 7
-//       sort: { fields: [fields___date], order: DESC }
-//       filter: { frontmatter: { categories: { eq: "Popular" } } }
-//     ) {
-//       edges {
-//         node {
-//           fields {
-//             slug
-//             date
-//           }
-//           excerpt
-//           timeToRead
-//           frontmatter {
-//             title
-//             tags
-//             categories
-//             date
-//             template
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const pageQuery = graphql`
+  query IndexQuery {
+    latest: allMdx(
+      limit: 5
+      sort: { fields: [fields___date], order: DESC }
+      filter: { frontmatter: { template: { eq: "post" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            categories
+            date
+            template
+          }
+        }
+      }
+    }
+    popular: allMdx(
+      limit: 5
+      sort: { fields: [fields___date], order: DESC }
+      filter: { frontmatter: { categories: { eq: "Popular" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            categories
+            date
+            template
+          }
+        }
+      }
+    }
+  }
+`;

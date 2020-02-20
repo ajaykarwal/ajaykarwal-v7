@@ -4,7 +4,7 @@ const config = {
   siteTitleAlt: "Personal Portfolio of Ajay Karwal", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://ajaykarwal.com", // Domain of your website without pathPrefix.
-  repository: 'https://github.com/ajaykarwal/ajaykarwal.com',
+  repository: "https://github.com/ajaykarwal/ajaykarwal.com",
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Front-end Developer and UI Designer from Buckingham, UK.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
@@ -58,17 +58,17 @@ const config = {
     }
   },
   menuLinks: [
-    // {
-    //   name: "About",
-    //   link: "/about/"
-    // },
+    {
+      name: "Blog",
+      link: "/blog/"
+    },
     {
       name: "Portfolio",
       link: "/portfolio/"
     },
     {
-      name: "Articles",
-      link: "/blog/"
+      name: "About Me",
+      link: "/about/"
     },
     {
       name: "CV",

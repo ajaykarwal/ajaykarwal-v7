@@ -1,9 +1,8 @@
-div.highlight {
-  @include center-content($wide: true);
-  border-radius: 5px;
-  color: $black;
-  background: #f3f3f3;
-  box-shadow: inset 0px 3px 3px -3px rgba(0, 0, 0, 0.3);
+.gatsby-highlight {
+  border-radius: $border-radius;
+  color: $text-body-dark;
+  background: $grey-medium;
+  box-shadow: inset 0px 3px 3px -3px rgba($black, 0.3);
 
   pre { background: transparent; color: $black }
 

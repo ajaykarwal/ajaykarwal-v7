@@ -1,4 +1,5 @@
-article,section {
+article,
+section {
   header {
     margin: $space-xl 0 $space-lg 0;
 
@@ -10,18 +11,18 @@ article,section {
       @include font-size(13px);
 
       &__tag {
-        background-color: $medium-grey;
-        border-radius: 4px;
+        background-color: $grey-medium;
+        border-radius: $space-xs;
         padding: $space-sm $space;
         margin-right: $space;
-        color: $black;
-        border:0;
-        
+        color: $text-body-dark;
+        border: 0;
+
         &:active,
         &:focus,
         &:hover {
-          background: $brand-primary-very-light;
-          color: $true-black;
+          background: $grey-dark;
+          color: $white;
         }
       }
     }

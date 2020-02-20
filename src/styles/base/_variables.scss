@@ -44,13 +44,14 @@ $brand-secondary: #ee1c25;
 $brand-tertiary: #ffb100;
 
 $white: #ffffff;
-$light-grey: #f7f7f8;
-$medium-grey: #ebebeb;
-$dark-grey: #4d4d4d;
+$grey-light: #f7f7f8;
+$grey-medium: #ebebeb;
+$grey-semi: #b2b2b2;
+$grey-dark: #4d4d4d;
 $black: #262626;
 $true-black: #000000;
 
-$text-body: $dark-grey;
+$text-body: $grey-dark;
 $text-body-dark: $black;
 $text-link: $brand-primary;
 
@@ -66,6 +67,7 @@ $brand-github: #000000;
 // Spacing
 
 $space: 16px;
+$space-xs: $space / 4;
 $space-sm: $space / 2;
 $space-md: $space * 2;
 $space-lg: $space * 4;
@@ -73,3 +75,6 @@ $space-xl: $space * 8;
 
 $container-width: 900px;
 $content-width: 900px;
+
+$border-radius: 8px;
+$border-radius-sm: 4px;

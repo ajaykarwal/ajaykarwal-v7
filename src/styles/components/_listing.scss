@@ -1,0 +1,30 @@
+.post-list {
+  margin-top: $space-lg;
+
+  &.simple {
+    margin-top: $space-md;
+    margin-bottom: $space-md;
+  }
+
+  &__item {
+    margin-bottom: $space-lg;
+
+    .simple & {
+      margin-bottom: $space-sm;
+    }
+
+    &-heading {
+      margin-bottom: $space-sm;
+      a {
+        color: $text-body-dark;
+      }
+    }
+    &-date {
+      @include font-size(13px);
+      color: $text-body;
+    }
+    &-excerpt {
+      margin-top: $space;
+    }
+  }
+}

@@ -6,15 +6,15 @@ h5,
 h6 {
   @extend %font-heading;
   color: inherit;
-  line-height: 1.3em;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  line-height: 1.2;
+  margin-top: $space-lg;
+  margin-bottom: $space-md;
   font-weight: $font-weight-semibold;
 
   .anchor {
     display: none;
-    left: 5px;
-    padding: 0 5px;
+    left: $space-sm;
+    padding: 0 $space-sm;
   }
 
   &:hover .anchor {
@@ -60,21 +60,26 @@ a {
   text-decoration: none;
   position: relative;
 
-  &:focus,
   &:active,
   &:hover {
-    color: $brand-secondary;
-    background-color: rgba($brand-secondary, 0.03);
-    border-bottom: 2px solid $brand-secondary;
+    color: $brand-primary;
+    background-color: rgba($brand-primary, 0.03);
+    border-bottom: 2px solid $brand-primary;
   }
+}
+
+b,
+strong {
+  font-weight: $font-weight-semibold;
 }
 
 p {
   margin: auto;
-  margin-bottom: 1em;
+  margin-bottom: $space;
 
   &.lead {
     @include font-size(24px);
     font-weight: $font-weight-semibold;
+    color: $text-body-dark;
   }
 }

@@ -1,0 +1,77 @@
+$shadow-up: 4px 4px 8px 0 rgba($brand-primary-dark, 0.1), -4px -4px 8px 0 rgba($white, 0.9);
+$shadow-pressed: inset 8px 8px 4px 0 rgba($brand-primary-dark, 0.1), inset -8px -8px 4px 0 rgba($white, 0.9);
+$shadow-down: inset 4px 4px 8px 0 rgba($brand-primary-dark, 0.1), inset -4px -4px 8px 0 rgba($white, 0.9);
+$shadow-focus: 2px 2px 8px 0 rgba($brand-primary-dark, 0.4), -2px -2px 8px 0 rgba($white, 0.9);
+$shadow-down-focus: inset 2px 2px 8px 0 rgba($brand-primary-dark, 0.4), inset -2px -2px 8px 0 rgba($white, 0.9);
+
+%button-reset {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+
+  line-height: normal;
+
+  -moz-osx-font-smoothing: inherit;
+  -webkit-font-smoothing: inherit;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+
+  /* Remove excess padding and border in Firefox 4+ */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  @extend %button-reset;
+}
+
+.button {
+  @include font-size(15px);
+  background: $grey-light;
+  border-radius: $space-sm;
+  color: $text-body;
+  transition: box-shadow 0.3s ease;
+  padding: $space-sm $space;
+  box-shadow: $shadow-up;
+
+  &:hover,
+  &:focus {
+    color: $text-body-dark;
+    border: none;
+    background: transparent;
+    box-shadow: $shadow-focus;
+    outline: 0;
+  }
+
+  &:active,
+  &:active:focus {
+    border: none;
+    background: inherit;
+    box-shadow: $shadow-pressed;
+  }
+
+  &.on {
+    color: $text-body-dark;
+    box-shadow: $shadow-down;
+    
+    &:hover,
+    &:focus {
+      box-shadow: $shadow-down-focus;
+    }
+  }
+}
