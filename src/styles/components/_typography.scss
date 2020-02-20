@@ -9,11 +9,11 @@ h6 {
   line-height: 1.2;
   margin-top: $space-lg;
   margin-bottom: $space-md;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
 
   .anchor {
     display: none;
-    left: $space-sm;
+    left: $space-xs;
     padding: 0 $space-sm;
   }
 
@@ -76,10 +76,11 @@ strong {
 p {
   margin: auto;
   margin-bottom: $space;
-
+  
   &.lead {
     @include font-size(24px);
     font-weight: $font-weight-semibold;
     color: $text-body-dark;
+    margin-bottom: $space-md;
   }
 }

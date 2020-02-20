@@ -89,21 +89,22 @@ blockquote {
   }
 }
 
-code,
-kbd,
-samp {
-  @extend %font-mono;
-  @include font-size(14px);
-  padding: 2px 5px;
-  color: inherit;
-  border-radius: 3px;
-  background-color: #f7f7f7;
-  border: 1px solid #ccc;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-  display: inline-block;
-  text-shadow: 0 1px 0 #fff;
-  @media (min-width: $break-sm) {
-    white-space: pre-wrap;
+:not(pre) {
+  > code[class*="language-"],
+  > code,
+  > kbd,
+  > samp {
+    @extend %font-mono;
+    @include font-size(14px);
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: $text-body-dark;
+    background-color: $inline-code;
+    text-shadow: 0 1px 0 $white;
+
+    @media (min-width: $break-sm) {
+      white-space: pre-wrap;
+    }
   }
 }
 

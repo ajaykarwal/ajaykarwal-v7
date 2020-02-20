@@ -5,7 +5,7 @@
 $system-font: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
   Arial, sans-serif;
 
-$font-family-mono: "Oxygen Mono", monospace;
+$font-family-mono: "Oxygen Mono", monospace !important;
 $font-family-body: "Open Sans", sans-serif;
 $font-family-heading: $font-family-body;
 
@@ -42,6 +42,7 @@ $brand-primary-very-light: rgba($brand-primary, .2);
 
 $brand-secondary: #ee1c25;
 $brand-tertiary: #ffb100;
+$inline-code: #ece6da;
 
 $white: #ffffff;
 $grey-light: #f7f7f8;

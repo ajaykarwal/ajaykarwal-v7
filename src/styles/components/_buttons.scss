@@ -12,12 +12,10 @@ $shadow-down-focus: inset 2px 2px 8px 0 rgba($brand-primary-dark, 0.4), inset -2
   width: auto;
   overflow: visible;
 
-  background: transparent;
-
-  color: inherit;
   font: inherit;
+  color: inherit;
+  background: transparent;
   text-align: inherit;
-
   line-height: normal;
 
   -moz-osx-font-smoothing: inherit;
@@ -49,7 +47,11 @@ input[type="reset"] {
   padding: $space-sm $space;
   box-shadow: $shadow-up;
 
-  &:hover,
+  &:hover {
+    color: $text-body-dark;
+    background: darken($grey-light, 2%);
+    border: 0;
+  }
   &:focus {
     color: $text-body-dark;
     border: none;
@@ -69,7 +71,12 @@ input[type="reset"] {
     color: $text-body-dark;
     box-shadow: $shadow-down;
     
-    &:hover,
+    &:hover {
+      color: $text-body-dark;
+      background: darken($grey-light, 2%);
+      border: 0;
+    }
+    
     &:focus {
       box-shadow: $shadow-down-focus;
     }
