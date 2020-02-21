@@ -12,6 +12,25 @@
   &__links {
     display: flex;
     flex-direction: column;
+
+    .user-links {
+      p {
+        display: inline-block;
+        position: relative;
+        margin: 0;
+
+        &::after {
+          content: "/";
+          display: inline-block;
+          margin: 0 $space-sm;
+          color: $grey-semi;
+        }
+
+        &:last-of-type::after {
+          display: none;
+        }
+      }
+    }
   }
   &__logo {
     .icon {

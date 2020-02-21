@@ -1,0 +1,26 @@
+.author {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-gap: $space-md;
+
+  background-color: $brand-primary;
+  border-radius: $border-radius;
+  padding: $space-md $space-lg;
+  margin-top: $space-lg;
+  color: $white;
+
+  .avatar {
+    border-radius: 100em;
+    margin-right: $space;
+  }
+
+  &__info {
+    p {
+      @include font-size(18px);
+    }
+  }
+
+  &__support {
+    margin-top: $space;
+  }
+}

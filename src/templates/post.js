@@ -5,6 +5,7 @@ import Layout from "../layout";
 import UserInfo from "../components/UserInfo";
 import PostMeta from "../components/PostMeta";
 import PostTags from "../components/PostTags";
+import PostCategories from "../components/PostCategories";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import { MDXRenderer } from "gatsby-plugin-mdx";
@@ -41,8 +42,11 @@ export default class PostTemplate extends Component {
           <article>
             <header>
               <h1>{post.title}</h1>
-              <PostMeta post={post} />
-              <PostTags tags={post.tags} />
+              <div className="post-meta-container">
+                <PostMeta post={post} />
+                <PostCategories categories={post.categories} />
+                <PostTags tags={post.tags} />
+              </div>
             </header>
             <MDXRenderer>{postNode.body}</MDXRenderer>
           </article>

@@ -71,10 +71,6 @@ const config = {
       link: "/about/"
     },
     {
-      name: "CV",
-      link: "/resume/"
-    },
-    {
       name: "Contact",
       link: "/contact/"
     }

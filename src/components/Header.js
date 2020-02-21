@@ -45,7 +45,7 @@ export default class Header extends Component {
               <span className="text">Ajay Karwal</span>
             </Link>
             <nav>
-              <ul>
+              <ul className="unstyled">
                 {menuLinks.map(link => (
                   <li key={link.name}>
                     <Link to={link.link} activeClassName="active">

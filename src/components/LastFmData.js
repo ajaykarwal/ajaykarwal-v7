@@ -10,12 +10,12 @@ export class LastFM extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lastfmStatus: null,
-      trackTitle: null,
-      trackArtist: null,
-      trackUrl: null,
-      trackArtistUrl: null,
-      trackArtwork: null
+      lastfmStatus: "",
+      trackTitle: "",
+      trackArtist: "",
+      trackUrl: "",
+      trackArtistUrl: "",
+      trackArtwork: ""
     };
 
     this.setStatusMessage = this.setStatusMessage.bind(this);
@@ -118,8 +118,8 @@ export class LastFM extends Component {
 
   render() {
     return (
-      <>
-        {this.state.lastfmStatus && (
+      this.state.lastfmStatus && (
+        <>
           <p>
             <span className="lastfm">
               {this.state.lastfmStatus}{" "}
@@ -142,14 +142,16 @@ export class LastFM extends Component {
                 </span>
               )}
             </span>
+            .
           </p>
-        )}
-        <p>
-          You can see what else I've been listening to on my{" "}
-          <a href="https://www.last.fm/user/ajaykarwal">Last.fm</a> or{" "}
-          <a href="https://open.spotify.com/user/keynote">Spotify</a> profiles.
-        </p>
-      </>
+          <p>
+            👆🏽 That data is being pulled directly from Last.fm which is linked
+            to my Spotify account to show what I'm listening to in real-time or
+            what I've been listening to most if I'm not currenly playing
+            anything.
+          </p>
+        </>
+      )
     );
   }
 }

@@ -3,27 +3,36 @@ section {
   header {
     margin: $space-xl 0 $space-lg 0;
 
-    .post-meta {
-      @include font-size(13px);
-    }
-    .post-tags {
+    .post-meta-container {
+      border-top: 2px solid $grey-medium;
+      border-bottom: 2px solid $grey-medium;
+      padding: $space 0;
       margin-top: $space-md;
       @include font-size(13px);
+    }
 
-      &__tag {
-        background-color: $grey-medium;
-        border-radius: $space-xs;
-        padding: $space-sm $space;
+    .post-meta {
+      display: flex;
+      margin-bottom: $space-sm;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &__label {
         margin-right: $space;
         color: $text-body-dark;
-        border: 0;
+      }
+      &__date {
+        color: $text-body-dark;
+      }
 
-        &:active,
-        &:focus,
-        &:hover {
-          background: $grey-dark;
-          color: $white;
-        }
+      &__tag {
+        margin: 0;
+        @include linkSeparator;
+      }
+      &__meta-data {
+        @include linkSeparator;
       }
     }
   }

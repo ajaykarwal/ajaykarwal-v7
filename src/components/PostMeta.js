@@ -1,6 +1,7 @@
 import React from "react";
 import { formatDate } from "../utils/global";
 import config from "../../data/SiteConfig";
+import { Link } from "gatsby";
 
 const PostMeta = props => {
   const { post } = props;
@@ -12,11 +13,14 @@ const PostMeta = props => {
 
   return (
     <div className="post-meta">
-      <time className="post-meta__date">{date}</time>
-      <span> / </span>
-      <a className="post-meta__share" href={twitterShare} target="_blank" rel="noopener noreferrer">
-        Share
-      </a>
+      <span className="post-meta__meta-data">
+        <time className="post-meta__date">{date}</time>
+      </span>
+      <span className="post-meta__meta-data">
+        <Link to={twitterShare} target="_blank" rel="noopener noreferrer">
+          Share
+        </Link>
+      </span>
     </div>
   );
 };

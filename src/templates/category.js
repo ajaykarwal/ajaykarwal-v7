@@ -18,7 +18,7 @@ export default class CategoryTemplate extends Component {
         <div className="container content-container">
           <section>
             <header>
-              <h1>{category}</h1>
+              <h1>Posts in <u>{category}</u></h1>
             </header>
             <PostListing postEdges={postEdges} />
           </section>

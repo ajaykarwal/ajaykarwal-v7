@@ -6,8 +6,6 @@
   }
 }
 
-
-
 @function calculateRem($size) {
   $remSize: $size / 16px;
   @return $remSize * 1rem;
@@ -32,4 +30,17 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@mixin linkSeparator($separator: "/") {
+  &::after {
+    content: $separator;
+    display: inline-block;
+    margin: 0 $space-sm;
+    color: $grey-semi;
+  }
+
+  &:last-of-type::after {
+    display: none;
+  }
 }

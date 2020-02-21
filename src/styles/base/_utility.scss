@@ -18,3 +18,10 @@
     max-width: 100%;
     height: auto;
 }
+
+a.gatsby-resp-image-link {
+  &:hover {
+    border: 0;
+    background: none;
+  }
+}
