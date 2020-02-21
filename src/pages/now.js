@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import Layout from "../layout";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
-import LastFM from "../components/LastFm.js";
+import LastFM from "../components/LastFmData.js";
 
 export default class NowPage extends Component {
   render() {
