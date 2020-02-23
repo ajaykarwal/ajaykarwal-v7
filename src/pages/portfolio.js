@@ -4,18 +4,17 @@ import { graphql, Link } from "gatsby";
 import Layout from "../layout";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
-import projects from "../../data/projects";
+import projectList from "../../data/projects";
 
 class InfoPanel extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const { project } = this.props;
+    const project = this.props;
 
     return (
       <div className="project__info">
-        <img src={project.image} alt={project.title} />
         <h2>{project.title}</h2>
         <p>{project.description}</p>
 
@@ -28,9 +27,9 @@ class InfoPanel extends Component {
         {project.tech && (
           <>
             <h3>Tech</h3>
-            <ul>
+            <ul className="tech-stack">
               {project.tech.map(tech => (
-                <li>{tech}</li>
+                <li className="tech-stack__item">{tech}</li>
               ))}
             </ul>
           </>
@@ -53,19 +52,28 @@ class InfoPanel extends Component {
 export default class PortfolioPage extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      projectList,
+      selectedProject: ""
+    };
+
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick = (e, project) => {
-    console.log("hello");
-    e.preventDefault();
-    console.log(e.currentTarget, project);
+  init = () => {
+    this.setState({ projectList });
   };
-  
-  // TODO https://stackoverflow.com/a/35906206
-  // insertInfoPanel = () => {
 
-  // }
+  handleClick = (e, project) => {
+    e.preventDefault();
+
+    this.setState({
+      selectedProject:
+        this.state.selectedProject === project.id ? "" : project.id
+    });
+  };
+
   render() {
     let showInfoPanel = false;
 
@@ -91,16 +99,21 @@ export default class PortfolioPage extends Component {
               the larger projects I've been involved in.
             </p>
             <div className="projects">
-              {projects.map(project => (
-                <div className="project" key={project.id}>
+              {this.state.projectList.map(project => (
+                <>
                   <button
-                    className="button project__button"
+                    key={project.id}
+                    className={`button project__button ${
+                      this.state.selectedProject === project.id ? "on" : ""
+                    }`}
                     onClick={e => this.handleClick(e, project)}
                   >
                     <img src={project.image} alt={project.title} />
                   </button>
-                  {showInfoPanel && <InfoPanel project />}
-                </div>
+                  {this.state.selectedProject === project.id ? (
+                    <InfoPanel {...project} />
+                  ) : null}
+                </>
               ))}
             </div>
           </section>

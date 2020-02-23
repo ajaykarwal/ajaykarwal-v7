@@ -11,47 +11,39 @@ export default [
     tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
   },
   {
-    id: "airbp",
-    image: "/clients/airbp.svg",
-    title: "Air BP - Airfield Automation",
+    id: "audi",
+    image: "/clients/audi.svg",
+    title: "Audi",
     path: null,
-    description:
-      "Air BP tracks the movement of airline fuel throughout its journey from the ground, to refineries and storage tanks, and finally to airlines. The Airfield Automation project was to convert an antiquated Windows desktop application into a versitile web application for use on any platform including mobile devices.",
-    role:
-      "Using the exiting desktop application as a starting point and utilising Air BP's brand guidelines, I designed the UI for the updated forms. I translated these designs into React components which the team could then use to build the necessary steps of the form.",
+    description: "AUDI",
+    role: "",
     tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
   },
   {
-    id: "airbp",
-    image: "/clients/airbp.svg",
-    title: "Air BP - Airfield Automation",
+    id: "bt",
+    image: "/clients/bt.svg",
+    title: "BT",
     path: null,
-    description:
-      "Air BP tracks the movement of airline fuel throughout its journey from the ground, to refineries and storage tanks, and finally to airlines. The Airfield Automation project was to convert an antiquated Windows desktop application into a versitile web application for use on any platform including mobile devices.",
-    role:
-      "Using the exiting desktop application as a starting point and utilising Air BP's brand guidelines, I designed the UI for the updated forms. I translated these designs into React components which the team could then use to build the necessary steps of the form.",
+    description: "BT BT BT",
+    role: "TBA",
     tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
   },
   {
-    id: "airbp",
-    image: "/clients/airbp.svg",
-    title: "Air BP - Airfield Automation",
+    id: "caterpillar",
+    image: "/clients/caterpillar.svg",
+    title: "Catphones",
     path: null,
-    description:
-      "Air BP tracks the movement of airline fuel throughout its journey from the ground, to refineries and storage tanks, and finally to airlines. The Airfield Automation project was to convert an antiquated Windows desktop application into a versitile web application for use on any platform including mobile devices.",
-    role:
-      "Using the exiting desktop application as a starting point and utilising Air BP's brand guidelines, I designed the UI for the updated forms. I translated these designs into React components which the team could then use to build the necessary steps of the form.",
+    description: "Catphones website",
+    role: "",
     tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
   },
   {
-    id: "airbp",
-    image: "/clients/airbp.svg",
-    title: "Air BP - Airfield Automation",
+    id: "hsbc",
+    image: "/clients/hsbc.svg",
+    title: "HSBC",
     path: null,
-    description:
-      "Air BP tracks the movement of airline fuel throughout its journey from the ground, to refineries and storage tanks, and finally to airlines. The Airfield Automation project was to convert an antiquated Windows desktop application into a versitile web application for use on any platform including mobile devices.",
-    role:
-      "Using the exiting desktop application as a starting point and utilising Air BP's brand guidelines, I designed the UI for the updated forms. I translated these designs into React components which the team could then use to build the necessary steps of the form.",
+    description: "HSBC Project",
+    role: "",
     tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
   },
   {

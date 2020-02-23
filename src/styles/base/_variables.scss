@@ -35,14 +35,16 @@ $break-md: 992px;
 $break-lg: 1200px;
 
 // Colors
-$brand-primary: #0068C7;
+$brand-primary: #0068c7;
 $brand-primary-dark: darken($brand-primary, 10%);
 $brand-primary-light: lighten($brand-primary, 40%);
-$brand-primary-very-light: rgba($brand-primary, .2);
+$brand-primary-very-light: rgba($brand-primary, 0.2);
 
 $brand-secondary: #ee1c25;
 $brand-tertiary: #ffb100;
 $inline-code: #ece6da;
+
+$panel-background: #eaedf0;
 
 $white: #ffffff;
 $grey-light: #f7f7f8;
@@ -75,7 +77,8 @@ $space-lg: $space * 4;
 $space-xl: $space * 8;
 
 $container-width: 900px;
-$content-width: 700px;
+$content-width: 900px;
 
 $border-radius: 8px;
 $border-radius-sm: 4px;
+$border-radius-lg: 16px;

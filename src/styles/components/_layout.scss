@@ -59,17 +59,3 @@ main {
   }
 }
 
-.projects {
-  display: grid;
-  grid-gap: 32px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: dense;
-  
-  .project__info {
-    width: 100%;
-    background: white;
-    padding: 32px;
-    grid-column: 1 / 4;
-  }
-}
-
