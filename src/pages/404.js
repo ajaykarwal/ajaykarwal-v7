@@ -10,7 +10,7 @@ export default class FourOhFour extends Component {
       <Layout>
         <Helmet title={`Page not found – ${config.siteTitle}`} />
         <SEO />
-        <div className="container content-container">
+        <div className="container">
           <section>
             <header>
               <h1>404</h1>

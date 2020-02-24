@@ -15,7 +15,7 @@ export default class CategoriesPage extends Component {
       <Layout>
         <SEO />
         <Helmet title={`Categories – ${config.siteTitle}`} />
-        <div className="container content-container">
+        <div className="container">
           <section>
             <header>
               <h1>Categories</h1>

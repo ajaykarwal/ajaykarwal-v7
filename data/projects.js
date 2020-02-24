@@ -1,9 +1,7 @@
 export default [
   {
     id: "airbp",
-    image: "/clients/airbp.svg",
     title: "Air BP - Airfield Automation",
-    path: null,
     description:
       "Air BP tracks the movement of airline fuel throughout its journey from the ground, to refineries and storage tanks, and finally to airlines. The Airfield Automation project was to convert an antiquated Windows desktop application into a versitile web application for use on any platform including mobile devices.",
     role:
@@ -11,46 +9,10 @@ export default [
     tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
   },
   {
-    id: "audi",
-    image: "/clients/audi.svg",
-    title: "Audi",
-    path: null,
-    description: "AUDI",
-    role: "",
-    tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
-  },
-  {
-    id: "bt",
-    image: "/clients/bt.svg",
-    title: "BT",
-    path: null,
-    description: "BT BT BT",
-    role: "TBA",
-    tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
-  },
-  {
-    id: "caterpillar",
-    image: "/clients/caterpillar.svg",
-    title: "Catphones",
-    path: null,
-    description: "Catphones website",
-    role: "",
-    tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
-  },
-  {
-    id: "hsbc",
-    image: "/clients/hsbc.svg",
-    title: "HSBC",
-    path: null,
-    description: "HSBC Project",
-    role: "",
-    tech: ["React.js", "Bootstrap", "Sass", "Gulp", "Sketch"]
-  },
-  {
     id: "thameswater",
-    image: "/clients/thameswater.svg",
     title: "Thames Water - Developer Services",
-    path: null,
+    path:
+      "https://developers.thameswater.co.uk/Domestic-and-small-commercial/Water-Supply/new-or-replacement-water-connection/How-to-get-a-quote",
     description:
       "The project was to build a multi-step form for property developers to book in new water connections — a process which was formerly paper-based and involved a large amount of human input. The form contains a large amount of logic and validations which are checked against and API provided by a Sitecore and SAP backend.",
     role:
@@ -66,5 +28,51 @@ export default [
       "Babel",
       "Sketch"
     ]
+  },
+  {
+    id: "audi",
+    title: "Audi"
+  },
+  {
+    id: "bt",
+    title: "BT"
+  },
+  {
+    id: "caterpillar",
+    title: "Catphones",
+    description:
+      "The primary goal of this project was to upgrade from Umbraco version 4 to version 6. As this was a major upgrade and largely a manual process, the project also included a full UI redesign at the same time.",
+    role:
+      "My role was to redesign the website and refactor the front-end code to suit.",
+    tech: ["Umbraco", "Bootstrap", "Sass"]
+  },
+  {
+    id: "hsbc",
+    title: "HSBC"
+  },
+  {
+    id: "kodak",
+    title: "Kodak"
+  },
+  {
+    id: "landrover",
+    title: "Land Rover"
+  },
+  {
+    id: "mos",
+    title: "Ministry of Sound"
+  },
+  {
+    id: "nsk",
+    title: "NSK Europe"
+  },
+  {
+    id: "wienerberger",
+    title: "Wienerberger - Pipelife",
+    description:
+      "The client undertook a series of upgrades for their global website and themed sub-brands.",
+    role:
+      "My role was to configure themes for the Pipelife sub-brand and customise core components to meet the bespoke requirements of the brand.",
+    tech: ["Adobe Experience Manager", "Webpack", "Sass"]
   }
 ];

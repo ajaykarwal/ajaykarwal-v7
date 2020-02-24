@@ -2,11 +2,12 @@
   display: grid;
   grid-template-columns: 120px 1fr;
   grid-gap: $space-md;
-
+  
+  @include center-content;
   background-color: $brand-primary;
   border-radius: $border-radius;
   padding: $space-md $space-lg;
-  margin-top: $space-lg;
+  margin-top: $space-xl;
   color: $white;
 
   .avatar {

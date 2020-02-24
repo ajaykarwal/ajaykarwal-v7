@@ -1,4 +1,6 @@
 ﻿.homepage {
+  @include center-content;
+
   h1 {
     padding-top: $space-xl;
     color: $text-body-dark;
@@ -9,7 +11,7 @@
     border-radius: 100%;
     width: 200px;
     display: block;
-    margin: $space-xl auto $space $space;
+    margin: $space-xl auto $space-md $space-md;
   }
 
   .recent {

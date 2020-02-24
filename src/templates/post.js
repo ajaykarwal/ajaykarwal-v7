@@ -38,7 +38,7 @@ export default class PostTemplate extends Component {
           <title>{`${post.title} – ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <div className="container content-container">
+        <div className="container">
           <article>
             <header>
               <h1>{post.title}</h1>

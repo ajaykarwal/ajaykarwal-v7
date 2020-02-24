@@ -21,7 +21,7 @@ export default class Index extends Component {
       <Layout>
         <Helmet title={`Homepage – ${config.siteTitle}`} />
         <SEO />
-        <div className="container content-container homepage">
+        <div className="container homepage">
           <img className="avatar" src={Avatar} alt="That's me!" width="200" />
           <h1 title="It's pronounced 'Uh-Jay'">Hi, I'm Ajay</h1>
           <p className="lead">

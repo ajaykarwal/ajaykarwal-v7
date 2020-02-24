@@ -1,7 +1,10 @@
 article,
 section {
+  > * {
+    @include center-content;
+  }
   header {
-    margin: $space-xl 0 $space-lg 0;
+    margin: $space-xl auto $space-lg auto;
 
     .post-meta-container {
       border-top: 2px solid $grey-medium;

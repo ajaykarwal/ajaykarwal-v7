@@ -5,6 +5,7 @@ import Layout from "../layout";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import projectList from "../../data/projects";
+import DetailsIcon from "../images/details.svg";
 
 class InfoPanel extends Component {
   constructor(props) {
@@ -15,35 +16,37 @@ class InfoPanel extends Component {
 
     return (
       <div className="project__info">
-        <h2>{project.title}</h2>
-        <p>{project.description}</p>
+        <div className="details">
+          <h2>{project.title}</h2>
+          <p>{project.description}</p>
 
-        {project.role && (
-          <>
-            <h3>My Role</h3>
-            <p>{project.role}</p>
-          </>
+          {project.role && (
+            <>
+              <h3>My Role</h3>
+              <p>{project.role}</p>
+            </>
+          )}
+        </div>
+        <div className="meta">
+          {project.tech && (
+            <>
+              <h3>Tech</h3>
+              <ul className="tech-stack">
+                {project.tech.map(tech => (
+                  <li className="tech-stack__item">{tech}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          {project.path && (
+          <div className="actions">
+            <a href={project.path} target="_blank" rel="noopener noreferrer">
+              View Project →
+            </a>
+          </div>
         )}
-        {project.tech && (
-          <>
-            <h3>Tech</h3>
-            <ul className="tech-stack">
-              {project.tech.map(tech => (
-                <li className="tech-stack__item">{tech}</li>
-              ))}
-            </ul>
-          </>
-        )}
-        {project.path && (
-          <a
-            className="button"
-            href={project.path}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Project
-          </a>
-        )}
+        </div>
+        
       </div>
     );
   }
@@ -81,7 +84,7 @@ export default class PortfolioPage extends Component {
       <Layout>
         <Helmet title={`Portfolio – ${config.siteTitle}`} />
         <SEO />
-        <div className="container content-container">
+        <div className="container">
           <section>
             <header>
               <h1>Portfolio</h1>
@@ -102,13 +105,20 @@ export default class PortfolioPage extends Component {
               {this.state.projectList.map(project => (
                 <>
                   <button
+                    disabled={!project.description}
                     key={project.id}
                     className={`button project__button ${
                       this.state.selectedProject === project.id ? "on" : ""
                     }`}
                     onClick={e => this.handleClick(e, project)}
                   >
-                    <img src={project.image} alt={project.title} />
+                    {project.description && (
+                      <img className="has-details" src={DetailsIcon} />
+                    )}
+                    <img
+                      src={`/clients/${project.id}.svg`}
+                      alt={project.title}
+                    />
                   </button>
                   {this.state.selectedProject === project.id ? (
                     <InfoPanel {...project} />

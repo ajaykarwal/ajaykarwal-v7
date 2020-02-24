@@ -14,7 +14,7 @@ export default class TagsPage extends Component {
       <Layout>
         <SEO />
         <Helmet title={`Tags – ${config.siteTitle}`} />
-        <div className="container content-container">
+        <div className="container">
           <section>
             <header>
               <h1>Tags</h1>

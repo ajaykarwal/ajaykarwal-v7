@@ -23,9 +23,9 @@
 
 @mixin center-content($wide: false) {
   @if $wide {
-    max-width: 880px;
+    max-width: $container-width;
   } @else {
-    max-width: 680px;
+    max-width: $content-width;
   }
   width: 100%;
   margin-left: auto;
