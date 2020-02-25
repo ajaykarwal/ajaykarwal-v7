@@ -23,6 +23,7 @@ section {
 
     .post-meta {
       display: flex;
+      flex-wrap: wrap;
       margin-bottom: $space-sm;
 
       &:last-of-type {

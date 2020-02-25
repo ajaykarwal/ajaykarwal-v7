@@ -2,13 +2,14 @@
   border-radius: $border-radius;
   background: $black;
   margin-bottom: $space;
-  overflow: unset;
-  @include font-size(14px);
-
+  overflow: auto;
+  @extend %font-mono;
+  font-size: 14px !important;
+  
   pre,
   code {
     @extend %font-mono;
-    display: inline-block;
+    display: block;
     background: transparent;
     padding: $space-sm $space;
   }
