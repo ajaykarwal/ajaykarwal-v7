@@ -2,24 +2,47 @@
   @include center-content;
 
   h1 {
-    padding-top: $space-xl;
-    color: $text-body-dark;
-    @include font-size(48px);
+    padding-top: $space-md;
+
+    @media (min-width: $break-sm) {
+      padding-top: $space-xl;
+      @include font-size(48px);
+    }
+    span {
+      display: block;
+      @media (min-width: $break-sm) {
+        display: inline;
+      }
+    }
   }
   .avatar {
-    float: right;
     border-radius: 100%;
-    width: 200px;
+    width: 100px;
     display: block;
-    margin: $space-xl auto $space-md $space-md;
+    // margin: $space-md auto;
+    float: right;
+    margin: $space-md auto $space $space;
+    @media (min-width: $break-sm) {
+      width: 200px;
+      margin: $space-xl auto $space-md $space-md;
+    }
   }
 
   .recent {
     display: flex;
     justify-content: space-between;
-    
+    flex-direction: column;
+
+    @media (min-width: $break-sm) {
+      flex-direction: row;
+    }
+
     > div {
-      width: 45%;
+      width: 100%;
+      margin-bottom: $space-lg;
+      @media (min-width: $break-sm) {
+        width: 45%;
+      }
     }
     h2 {
       margin-top: 0;

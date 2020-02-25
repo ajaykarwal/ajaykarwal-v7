@@ -11,8 +11,7 @@ class Footer extends Component {
         <div className="container">
           <div className="footer__content">
             <div className="footer__links">
-              <strong>Connect with me:</strong>
-              <br />
+              <strong>Connect with me</strong>
               <UserLinks config={config} labeled />
             </div>
             <div className="footer__logo">

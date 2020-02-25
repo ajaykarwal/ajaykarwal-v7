@@ -1,13 +1,22 @@
 .header {
   display: flex;
   align-items: center;
-  height: 150px;
   background-color: $white;
+  padding: $space-md 0;
+
+  @media (min-width: $break-sm) {
+    height: 150px;
+  }
 
   &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+    
+    @media (min-width: $break-sm) {
+      flex-direction: row;
+    }
   }
 
   &__logo {
@@ -30,28 +39,42 @@
     }
 
     .text {
+      display: none;
       margin-left: $space;
       color: $text-body-dark;
       font-weight: $font-weight-bold;
       @include font-size(20px);
 
-      @media (max-width: $break-sm) {
-        display: none;
+      @media (min-width: $break-sm) {
+        display: block;
       }
     }
   }
 
   nav {
     ul {
-      margin: 0;
+      margin: $space 0 0 0;
       padding: 0;
-      text-align: right;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+      
+      @media (min-width: $break-sm) {
+        text-align: right;
+        justify-content: space-between;
+        margin: 0;
+      }
 
       li {
-        margin-left: $space-md;
+        margin-left: $space;
+        margin-right: $space;
+
+        @media (min-width: $break-sm) {
+          margin-left: $space-md;
+          margin-right: auto;
+        }
 
         a {
           display: block;

@@ -4,7 +4,11 @@ section {
     @include center-content;
   }
   header {
-    margin: $space-xl auto $space-lg auto;
+    margin: $space-md auto $space-md auto;
+
+    @media (min-width: $break-sm) {
+      margin: $space-xl auto $space-lg auto;
+    }
 
     .post-meta-container {
       border-top: 2px solid $grey-medium;
@@ -40,14 +44,61 @@ section {
     }
   }
 
-  picture {
-    text-align: center;
+  .category-container,
+  .tag-container {
+    a {
+      display: inline-block;
+      margin: 0 $space $space 0;
+      @include font-size(13px);
+
+      &:hover {
+        border: 0;
+        background: none;
+      }
+    }
+
+    span {
+      display: block;
+      padding: $space-sm $space-sm;
+      background: $grey-medium;
+      border-radius: $border-radius-sm;
+      color: $text-body-dark;
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: $brand-primary-very-light;
+        color: $true-black;
+      }
+    }
+    .count {
+      color: $brand-primary;
+      font-weight: 700;
+      margin-left: 0.25rem;
+    }
+    .button {
+      margin: 0 $space $space 0;
+
+      @media (min-width: $break-sm) {
+        margin: 0 $space 0 0;
+      }
+    }
   }
-  aside {
-    @include center-content;
-  }
-  figure {
-    margin-top: $space-md;
-    @include center-content(wide);
+  
+  .search-container {
+    margin-top: $space;
+    @media (min-width: $break-sm) {
+      margin-top: $space-md;
+    }
+    input {
+      width: 100%;
+      border-bottom: 2px solid $grey-medium;
+      padding: $space-sm;
+      @include font-size(18px);
+
+      @media (min-width: $break-sm) {
+        @include font-size(24px);
+      }
+    }
   }
 }

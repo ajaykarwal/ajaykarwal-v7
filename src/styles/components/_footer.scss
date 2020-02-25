@@ -3,17 +3,28 @@
   align-items: center;
   @include font-size(16px);
 
+  text-align: center;
+
+  @media (min-width: $break-sm) {
+    text-align: left;
+  }
   &__content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     border-top: 2px solid $grey-medium;
     padding-top: $space-md;
+
+    @media (min-width: $break-sm) {
+      flex-direction: row;
+    }
   }
   &__links {
     display: flex;
     flex-direction: column;
 
     .user-links {
+      margin-bottom: $space;
       p {
         display: inline-block;
         position: relative;
@@ -33,6 +44,7 @@
     }
   }
   &__logo {
+    text-align: center;
     .icon {
       width: 60px;
       fill: $grey-medium;

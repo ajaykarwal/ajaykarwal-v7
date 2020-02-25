@@ -23,7 +23,7 @@ export default class Index extends Component {
         <SEO />
         <div className="container homepage">
           <img className="avatar" src={Avatar} alt="That's me!" width="200" />
-          <h1 title="It's pronounced 'Uh-Jay'">Hi, I'm Ajay</h1>
+          <h1 title="It's pronounced 'Uh-Jay'"><span>Hi, </span>I'm Ajay</h1>
           <p className="lead">
             I'm a creative front-end developer and user interface designer from
             Buckingham, UK, with a passion for user experience, clean code and
