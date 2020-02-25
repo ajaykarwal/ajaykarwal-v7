@@ -144,12 +144,12 @@ export class LastFM extends Component {
             </span>
             .
           </p>
-          <p>
-            👆🏽 That data is being pulled directly from Last.fm which is linked
+          <blockquote>
+            👆🏼 That data is being pulled directly from Last.fm which is linked
             to my Spotify account to show what I'm listening to in real-time or
             what I've been listening to most if I'm not currenly playing
             anything.
-          </p>
+          </blockquote>
         </>
       )
     );

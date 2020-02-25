@@ -83,12 +83,17 @@ figure {
 }
 
 blockquote {
-  @include center-content($wide: true);
   margin-top: $space;
   margin-bottom: $space;
   padding: $space;
   border-left: 5px solid $brand-primary-light;
   background-color: $brand-primary-very-light;
+  
+  &.muted {
+    
+    border-left: 5px solid $grey-medium;
+    background-color: transparent;
+  }
 
   cite {
     @include font-size(13px);

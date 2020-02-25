@@ -20,9 +20,6 @@ The list is up to date as of Feb 2020.
 - **Storage:** [Synology DS212](http://amzn.to/2cYdXyb) with 2 &times; [3TB WD Red](http://amzn.to/2cKr2aX) hard drives
 - **Reading:** [Kindle Fire HDX](http://amzn.to/2chJzcz)
 
-
-
-
 ## Software
 - **Editor:** Visual Studio Code
 - **Theme:** Material Theme
@@ -35,7 +32,6 @@ The list is up to date as of Feb 2020.
 - **Video:** [DaVinci Resolve](https://www.blackmagicdesign.com/uk/products/davinciresolve/)
 - **Notes:** [Evernote](http://www.evernote.com/) / [Typora](https://typora.io/)
 - **Cloud Storage:** Dropbox
-
 
 ## Offline Tools
 - **Sketchbook:** [Behance Dotgrid Notebook](https://amzn.to/2T0BqjJ)

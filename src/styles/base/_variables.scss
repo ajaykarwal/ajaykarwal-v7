@@ -35,10 +35,10 @@ $break-md: 992px;
 $break-lg: 1200px;
 
 // Colors
-$brand-primary: #0068c7;
+$brand-primary: #1d37c1;
 $brand-primary-dark: darken($brand-primary, 10%);
 $brand-primary-light: lighten($brand-primary, 40%);
-$brand-primary-very-light: rgba($brand-primary, 0.2);
+$brand-primary-very-light: rgba($brand-primary, 0.1);
 
 $brand-secondary: #ee1c25;
 $brand-tertiary: #ffb100;
@@ -50,7 +50,7 @@ $white: #ffffff;
 $grey-light: #f7f7f8;
 $grey-medium: #ebebeb;
 $grey-semi: #b2b2b2;
-$grey-dark: #4d4d4d;
+$grey-dark: #404040;
 $black: #262626;
 $true-black: #000000;
 

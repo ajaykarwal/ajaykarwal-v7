@@ -10,9 +10,22 @@ Here is an archive of previous designs with some notes on how that specific vers
 
 ---
 
+## v7.0
+
+2020-Present
+
+![](../images/versions/v7.jpg)
+
+Version 7 of the site is now built with [Gatsby](https://www.gatsbyjs.org/) and remains hosted on [Netlify](https://www.netlify.com/).
+
+I've stripped back the design even further than before but focused more on typography, vertical rhythm and colour contrast. In particular, I've introduced elements of the [8-point Grid system](https://spec.fm/specifics/8-pt-grid) which makes the relationship between various elements of the site feel more consistent.
+
+I've also re-introduced a [portfolio](/portfolio/) section which shows some of the clients I've worked with and some details about my role on some of the key projects.
+
+
 ## v6.0
 
-2018-Present
+2018-2020
 
 ![](../images/versions/v6.jpg)
 
@@ -20,7 +33,7 @@ For version 6, the site has stayed on Jekyll but is now hosted on [Netlify](http
 
 ## v5.1
 
-Version 5.1 had no significant changes to the design or the content. I just rebuilt the site in [Jekyll](https://jekyllrb.com/) as having a pretty simple website as mine didn't warrant the overhead of running a CMS &mdash; especially one as heavy as Umbraco. I wrote an article about <a href="switching-from-cms-to-jekyll/">switching from a CMS to Jekyll</a>.
+Version 5.1 had no significant changes to the design or the content. I just rebuilt the site in [Jekyll](https://jekyllrb.com/) as having a pretty simple website as mine didn't warrant the overhead of running a CMS &mdash; especially one as heavy as Umbraco. I wrote an article about <a href="/switching-from-cms-to-jekyll/">switching from a CMS to Jekyll</a>.
 
 The site was still hosted on Azure but I introduced a <a href="/deploying-jekyll-using-travis-ci/">continuous integration workflow using Travis CI</a>.
 
