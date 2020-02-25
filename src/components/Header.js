@@ -3,17 +3,42 @@ import { Link } from "gatsby";
 
 export default class Header extends Component {
   state = {
-    scrolled: false
+    scrolled: false,
+    showNav: false,
+    viewportWidth: window.innerWidth,
+    viewportSize: ""
   };
 
   componentDidMount() {
     window.addEventListener("scroll", this.headerOnScroll);
+    window.addEventListener("resize", this.reportWindowSize);
+    this.reportWindowSize();
+    this.getViewportSize();
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.headerOnScroll);
   }
 
+  getViewportSize = () => {
+    return this.state.viewportWidth <= 479
+      ? "mobile"
+      : this.state.viewportWidth >= 480 && this.state.viewportWidth <= 768
+      ? "tablet"
+      : "desktop";
+  };
+  reportWindowSize = () => {
+    this.setState({
+      viewportWidth: window.innerWidth,
+      viewportSize: this.getViewportSize()
+    });
+
+    if (this.getViewportSize() === "desktop") {
+      this.setState({
+        showNav: false
+      });
+    }
+  };
   headerOnScroll = () => {
     if (window.scrollY > 100) {
       this.setState({ scrolled: true });
@@ -22,8 +47,15 @@ export default class Header extends Component {
     }
   };
 
+  handleClick = e => {
+    e.preventDefault;
+    this.setState({
+      showNav: !this.state.showNav
+    });
+  };
+
   render() {
-    const { scrolled } = this.state;
+    const { scrolled, viewportSize, showNav } = this.state;
     const { menuLinks } = this.props;
 
     return (
@@ -44,7 +76,29 @@ export default class Header extends Component {
               </svg>
               <span className="text">Ajay Karwal</span>
             </Link>
-            <nav>
+
+            <button
+              class={`nav-toggle ${viewportSize !== "desktop" ? "show" : ""} ${showNav ? "open" : ""}`}
+              onClick={this.handleClick}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <nav role="navigation" class={`nav-container desktop ${ viewportSize === "desktop" ? "show" : "" }`} >
+              <ul className="unstyled">
+                {menuLinks.map(link => (
+                  <li key={link.name}>
+                    <Link to={link.link} activeClassName="active">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <nav role="navigation" class={`nav-container mobile ${ viewportSize !== "desktop" && showNav ? "show" : "" }`} >
               <ul className="unstyled">
                 {menuLinks.map(link => (
                   <li key={link.name}>
