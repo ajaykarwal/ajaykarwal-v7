@@ -2,7 +2,7 @@
   border-radius: $border-radius;
   background: $black;
   margin-bottom: $space;
-  overflow: auto;
+  overflow: unset;
   @include font-size(14px);
 
   pre,
