@@ -1,11 +1,17 @@
 .projects {
   display: grid;
   grid-gap: $space-md;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-flow: dense;
   margin-top: $space-lg;
   @include center-content($wide: true);
 
+  @media (min-width: $break-sm) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: $break-md) {
+    grid-template-columns: repeat(5, 1fr);
+  }
   .project__button {
     position: relative;
     border-radius: $border-radius-lg;
@@ -55,15 +61,30 @@
     width: 100%;
     background: $panel-background;
     padding: $space-md;
-    grid-column: 1 / 6;
 
     display: grid;
-    grid-gap: $space-lg;
-    grid-template-columns: 1fr 300px;
+    grid-gap: $space;
+    grid-column: 1 / 3;
 
-    h2,
+    @media (min-width: $break-sm) {
+      grid-gap: $space-lg;
+      grid-column: 1 / 5;
+      grid-template-columns: 1fr 200px;
+    }
+
+    @media (min-width: $break-md) {
+      grid-column: 1 / 6;
+      grid-template-columns: 1fr 300px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
     h3 {
       margin-top: $space-md;
+    }
+    .meta h3 {
+      margin-top: 0;
     }
 
     .tech-stack {
@@ -82,7 +103,6 @@
 
     .actions {
       display: flex;
-      // justify-content: flex-end;
       text-align: right;
       margin-top: $space-md;
       font-weight: $font-weight-semibold;
