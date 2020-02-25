@@ -1,13 +1,21 @@
 ﻿.homepage {
-  @include center-content;
+  > * {
+    @include center-content;
+  }
 
   h1 {
     padding-top: $space-md;
 
     @media (min-width: $break-sm) {
+      padding-top: $space-lg;
+      @include font-size(48px);
+    }
+
+    @media (min-width: $break-md) {
       padding-top: $space-xl;
       @include font-size(48px);
     }
+
     span {
       display: block;
       @media (min-width: $break-sm) {
@@ -15,6 +23,7 @@
       }
     }
   }
+
   .avatar {
     border-radius: 100%;
     width: 100px;
@@ -22,9 +31,14 @@
     // margin: $space-md auto;
     float: right;
     margin: $space-md auto $space $space;
+
     @media (min-width: $break-sm) {
       width: 200px;
-      margin: $space-xl auto $space-md $space-md;
+      margin: $space-lg auto $space-md $space-md;
+    }
+
+    @media (min-width: $break-md) {
+      margin-top: $space-xl;
     }
   }
 

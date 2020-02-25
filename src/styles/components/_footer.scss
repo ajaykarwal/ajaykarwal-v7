@@ -1,16 +1,17 @@
 .footer {
   display: flex;
   align-items: center;
-  @include font-size(16px);
-
+  @include font-size(14px);
+  
   text-align: center;
-
+  
   @media (min-width: $break-sm) {
     text-align: left;
   }
+
   &__content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
     border-top: 2px solid $grey-medium;
     padding-top: $space-md;
@@ -19,10 +20,15 @@
       flex-direction: row;
     }
   }
+
   &__links {
     display: flex;
     flex-direction: column;
+    margin-top: $space;
 
+    @media (min-width: $break-sm) {
+      margin-top: 0;
+    }
     .user-links {
       margin-bottom: $space;
       p {
@@ -43,8 +49,10 @@
       }
     }
   }
+
   &__logo {
     text-align: center;
+
     .icon {
       width: 60px;
       fill: $grey-medium;
