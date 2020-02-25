@@ -9,6 +9,7 @@ import PostCategories from "../components/PostCategories";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import Disqus from "../components/Disqus";
 
 export default class PostTemplate extends Component {
   constructor(props) {
@@ -51,6 +52,8 @@ export default class PostTemplate extends Component {
             <MDXRenderer>{postNode.body}</MDXRenderer>
           </article>
           <UserInfo config={config} />
+          <hr/>
+          <Disqus postNode={postNode} />
         </div>
       </Layout>
     );
