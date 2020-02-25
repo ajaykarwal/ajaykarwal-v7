@@ -40,6 +40,7 @@ export default [
   {
     id: "caterpillar",
     title: "Catphones",
+    path: "https://www.behance.net/gallery/51959447/Catphonescom-website-design-and-build",
     description:
       "The primary goal of this project was to upgrade from Umbraco version 4 to version 6. As this was a major upgrade and largely a manual process, the project also included a full UI redesign at the same time.",
     role:
@@ -60,7 +61,13 @@ export default [
   },
   {
     id: "mos",
-    title: "Ministry of Sound"
+    title: "Ministry of Sound",
+    path: "https://www.behance.net/gallery/48129351/Ministry-of-Sound",
+    description:
+    "In 2015, Ministry of Sound, the iconic music brand launched their new Audio range of wireless speakers and headphones. As part of this launch they required a new microsite to be added to their existing website.",
+  role:
+    "My role was to work closely with the in-house development team to drive the online marketing of the Ministry Audio range within the brand's existing guidelines.",
+  tech: ["Adobe Photoshop"]
   },
   {
     id: "nsk",

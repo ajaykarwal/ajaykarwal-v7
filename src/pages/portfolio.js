@@ -64,10 +64,6 @@ export default class PortfolioPage extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  init = () => {
-    this.setState({ projectList });
-  };
-
   handleClick = (e, project) => {
     e.preventDefault();
 
@@ -78,8 +74,6 @@ export default class PortfolioPage extends Component {
   };
 
   render() {
-    let showInfoPanel = false;
-
     return (
       <Layout>
         <Helmet title={`Portfolio – ${config.siteTitle}`} />
