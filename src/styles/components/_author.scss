@@ -1,27 +1,52 @@
 .author {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  grid-gap: $space-md;
-  
   @include center-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $space;
   background-color: $brand-primary;
   border-radius: $border-radius;
-  padding: $space-md $space-lg;
-  margin-top: $space-xl;
+  padding: $space-md;
+  margin-top: $space-md;
   color: $white;
+
+  @media (min-width: $break-sm) {
+    grid-gap: $space-md;
+    padding: $space-md $space-lg;
+    grid-template-columns: 120px 1fr;
+    margin-top: $space-xl;
+  }
 
   .avatar {
     border-radius: 100em;
     margin-right: $space;
+    width: 100px;
+    @media (min-width: $break-sm) {
+      width: 100%;
+    }
   }
 
   &__info {
     p {
-      @include font-size(18px);
+      @include font-size(16px);
+
+      @media (min-width: $break-sm) {
+        @include font-size(18px);
+      }
     }
   }
 
   &__support {
+    display: grid;
+    grid-gap: $space;
     margin-top: $space;
+
+    @media (min-width: $break-sm) {
+      grid-template-columns: 200px auto;
+    }
+    .supporter-button {
+      display: block;
+      max-width: 200px;
+    }
+
   }
 }
