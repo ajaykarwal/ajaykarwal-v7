@@ -19,7 +19,7 @@ export default class FourOhFour extends Component {
               <p className="lead">
                 The page you're looking for cannot be found.
               </p>
-              <p>It has either been deleated or moved to a new location.</p>
+              <p>It has either been deleted or moved to a new location.</p>
             </div>
           </section>
         </div>
