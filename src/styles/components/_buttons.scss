@@ -43,6 +43,7 @@ input[type="reset"] {
   background: $grey-light;
   border-radius: $space-sm;
   color: $text-body;
+  font-weight: $font-weight-normal;
   transition: box-shadow 0.3s ease;
   padding: $space-sm $space;
   box-shadow: $shadow-up;

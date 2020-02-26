@@ -3,7 +3,6 @@ import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../layout";
 import PostListing from "../components/PostListing";
-import PageListing from "../components/PageListing";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import Avatar from "../images/avatar.jpg";
@@ -24,50 +23,60 @@ export default class Index extends Component {
         <div className="container homepage">
           <section>
             <img className="avatar" src={Avatar} alt="That's me!" width="200" />
-            <h1 title="It's pronounced 'Uh-Jay'"><span>Hi, </span>I'm Ajay</h1>
+            <h1 title="It's pronounced 'Uh-Jay'">
+              <span>Hi, </span>I'm Ajay
+            </h1>
             <p className="lead">
-              I'm a creative front-end developer and user interface designer from
-              Buckingham, UK, with a passion for user experience, clean code and
-              pixel-perfection.
+              I'm a creative front-end developer and user interface designer
+              from Buckingham, UK, with a passion for user experience, clean
+              code and pixel-perfection.
             </p>
             <p>
               I have over {since2004} years experience designing and building
-              engaging projects for clients including BP, HSBC, Thames Water, BT,
-              Caterpillar, Ministry of Sound, and <a href="/portfolio/">many more</a>.
+              engaging projects for clients including BP, HSBC, Thames Water,
+              BT, Caterpillar, Ministry of Sound, and{" "}
+              <a href="/portfolio/">many more</a>.
             </p>
-  
+
             <p>
               I pride myself on writing clear, well-structured, and modern HTML,
               CSS and JavaScript, and focus closely on UX, accessibility, and
               performance.
             </p>
-  
+
             <p>
-              For more details about my experience <a href="/about/">check out my bio</a> or find out <a href="/now/">what I'm up to right now</a>.
+              For more details about my experience{" "}
+              <a href="/about/">check out my bio</a> or find out{" "}
+              <a href="/now/">what I'm up to right now</a>.
             </p>
-  
+
             <p>
-              I'm currently working as a senior front-end developer at <a href="https://www.ecx.io/en/" target="_blank" rel="nofollow noopener">
-                ecx.io — an
-                IBM company
-              </a>.
+              I'm currently working as a senior front-end developer at{" "}
+              <a
+                href="https://www.ecx.io/en/"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                ecx.io — an IBM company
+              </a>
+              .
             </p>
           </section>
 
           <hr />
-          
+
           <section className="recent">
             <div>
               <h2>Recent Posts</h2>
               <PostListing simple postEdges={latestPostEdges} />
-              <Link to="/blog/" className="button button__neu">
+              <Link to="/blog/" className="button">
                 View all blog posts
               </Link>
-            </div> 
+            </div>
             <div>
               <h2>Popular Posts</h2>
               <PostListing simple postEdges={popularPostEdges} />
-              <Link to="/categories/popular/" className="button button__neu">
+              <Link to="/categories/popular/" className="button">
                 View all popular posts
               </Link>
             </div>

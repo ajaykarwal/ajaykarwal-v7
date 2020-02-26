@@ -1,0 +1,32 @@
+.skills-list {
+  display: grid;
+  margin-bottom: $space-md;
+
+  @media (min-width: $break-sm) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: $space-lg;
+    row-gap: $space;
+  }
+
+  dl {
+    display: grid;
+
+    @media (min-width: $break-md) {
+      grid-template-columns: 200px 1fr;
+    }
+
+    dt {
+      font-weight: $font-weight-bold;
+    }
+
+    dd {
+      margin-left: $space-md;
+      @media (min-width: $break-md) {
+        margin-left: 0;
+      }
+      p {
+        margin-bottom: $space-xs;
+      }
+    }
+  }
+}

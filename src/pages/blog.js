@@ -76,38 +76,36 @@ export default class BlogPage extends Component {
                 Blog <span>({filterCount})</span>
               </h1>
             </header>
-              <div className="category-container">
-                {categories.map(category => {
-                  const active = currentCategories.includes(
-                    category.fieldValue
-                  );
+            <div className="category-container">
+              {categories.map(category => {
+                const active = currentCategories.includes(category.fieldValue);
 
-                  return (
-                    <button
-                      className={`button button__neu ${active ? "on" : ""}`}
-                      key={category.fieldValue}
-                      onClick={async () => {
-                        await this.updateCategories(category.fieldValue);
-                        await this.filterPosts();
-                      }}
-                    >
-                      {category.fieldValue}{" "}
-                      <strong className="count">{category.totalCount}</strong>
-                    </button>
-                  );
-                })}
-              </div>
+                return (
+                  <button
+                    className={`button ${active ? "on" : ""}`}
+                    key={category.fieldValue}
+                    onClick={async () => {
+                      await this.updateCategories(category.fieldValue);
+                      await this.filterPosts();
+                    }}
+                  >
+                    {category.fieldValue}{" "}
+                    <strong className="count">{category.totalCount}</strong>
+                  </button>
+                );
+              })}
+            </div>
 
-              <div className="search-container">
-                <input
-                  className="search"
-                  type="text"
-                  name="searchTerm"
-                  value={searchTerm}
-                  placeholder="Type here to filter posts..."
-                  onChange={this.handleChange}
-                />
-              </div>
+            <div className="search-container">
+              <input
+                className="search"
+                type="text"
+                name="searchTerm"
+                value={searchTerm}
+                placeholder="Type here to filter posts..."
+                onChange={this.handleChange}
+              />
+            </div>
             <PostListing postEdges={filteredPosts} />
           </section>
         </div>
