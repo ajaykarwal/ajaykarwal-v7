@@ -5,19 +5,23 @@ export default class Header extends Component {
   state = {
     scrolled: false,
     showNav: false,
-    viewportWidth: window.innerWidth,
+    viewportWidth: typeof window !== "undefined" ? window.innerWidth : 0,
     viewportSize: ""
   };
 
   componentDidMount() {
-    window.addEventListener("scroll", this.headerOnScroll);
-    window.addEventListener("resize", this.reportWindowSize);
-    this.reportWindowSize();
-    this.getViewportSize();
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", this.headerOnScroll);
+      window.addEventListener("resize", this.reportWindowSize);
+      this.reportWindowSize();
+      this.getViewportSize();
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.headerOnScroll);
+    if (typeof window !== "undefined") {
+      window.removeEventListener("scroll", this.headerOnScroll);
+    }
   }
 
   getViewportSize = () => {
@@ -29,7 +33,7 @@ export default class Header extends Component {
   };
   reportWindowSize = () => {
     this.setState({
-      viewportWidth: window.innerWidth,
+      viewportWidth: typeof window !== "undefined" ? window.innerWidth : 0,
       viewportSize: this.getViewportSize()
     });
 
@@ -78,7 +82,9 @@ export default class Header extends Component {
             </Link>
 
             <button
-              class={`nav-toggle ${viewportSize !== "desktop" ? "show" : ""} ${showNav ? "open" : ""}`}
+              class={`nav-toggle ${viewportSize !== "desktop" ? "show" : ""} ${
+                showNav ? "open" : ""
+              }`}
               onClick={this.handleClick}
             >
               <span></span>
@@ -87,7 +93,12 @@ export default class Header extends Component {
               <span></span>
             </button>
 
-            <nav role="navigation" class={`nav-container desktop ${ viewportSize === "desktop" ? "show" : "" }`} >
+            <nav
+              role="navigation"
+              class={`nav-container desktop ${
+                viewportSize === "desktop" ? "show" : ""
+              }`}
+            >
               <ul className="unstyled">
                 {menuLinks.map(link => (
                   <li key={link.name}>
@@ -98,7 +109,12 @@ export default class Header extends Component {
                 ))}
               </ul>
             </nav>
-            <nav role="navigation" class={`nav-container mobile ${ viewportSize !== "desktop" && showNav ? "show" : "" }`} >
+            <nav
+              role="navigation"
+              class={`nav-container mobile ${
+                viewportSize !== "desktop" && showNav ? "show" : ""
+              }`}
+            >
               <ul className="unstyled">
                 {menuLinks.map(link => (
                   <li key={link.name}>
