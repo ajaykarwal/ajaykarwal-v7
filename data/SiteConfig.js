@@ -6,10 +6,9 @@ const config = {
   siteUrl: "https://ajaykarwal.com", // Domain of your website without pathPrefix.
   repository: "https://github.com/ajaykarwal/ajaykarwal.com",
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "Front-end Developer and UI Designer from Buckingham, UK.", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Ajay Karwal is a Front-end Developer and UI Designer from Buckingham, UK.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteRssTitle: "Personal Portfolio of Ajay Karwal - RSS feed", // Title of the RSS feed
-  // siteFBAppID: "1825356251115265", // FB Application ID for using app insights
   googleAnalyticsID: "UA-16609747-8", // GA tracking ID.
   disqusShortname: "ajaykarwal", // Disqus shortname.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
@@ -18,8 +17,6 @@ const config = {
   userName: "Ajay Karwal", // Username to display in the author segment.
   userEmail: "ajaykarwal@gmail.com", // Email used for RSS feed's author segment
   userTwitter: "ajaykarwal", // Optionally renders "Follow Me" in the UserInfo segment.
-  userLocation: "Buckingham, UK", // User location to display in the author segment.
-  userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.
   userDescription:
     "I’m Ajay Karwal. I write about my experiences as a front-end developer. If you enjoy my content, please consider supporting what I do.", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
@@ -75,9 +72,8 @@ const config = {
       link: "/contact/"
     }
   ],
-  copyright: "Copyright © 2019. Advanced User", // Copyright string for the footer of the website and RSS feed.
-  themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
+  themeColor: "#1d37c1", // Used for setting manifest and progress theme colors.
+  backgroundColor: "#ffffff", // Used for setting manifest background color.
   lastfm: {
     apikey: "965b2342a5837db0942394bbc9a31157",
     limit: 1,

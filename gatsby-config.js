@@ -14,8 +14,7 @@ module.exports = {
       image_url: `${urljoin(
         config.siteUrl,
         config.pathPrefix
-      )}/logos/logo-512.png`,
-      copyright: config.copyright
+      )}/logos/logo-512.png`
     }
   },
   plugins: [
@@ -223,9 +222,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 890,
-            },
-          },
+              maxWidth: 890
+            }
+          }
         ]
       }
     }

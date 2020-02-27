@@ -5,7 +5,6 @@ import config from "../../data/SiteConfig";
 
 class Footer extends Component {
   render() {
-    const { copyright } = config;
     return (
       <footer className="footer">
         <div className="container">

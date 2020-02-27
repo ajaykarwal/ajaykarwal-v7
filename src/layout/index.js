@@ -11,8 +11,13 @@ export default class MainLayout extends React.Component {
     return (
       <>
         <Helmet>
+          <html lang="en"/>
           <meta name="description" content={config.siteDescription} />
-          <html lang="en" />
+          <meta name="author" content={config.userName}/>
+          <meta name="robots" content="index, follow" />
+
+          <link rel="shortcut icon" type="image/png" href={config.siteLogo} />          
+          <link rel="alternate" type="application/rss+xml" title={config.siteRssTitle} href={config.siteRss} />
         </Helmet>
         <Header menuLinks={config.menuLinks} />
         <main id="main-content">{children}</main>
