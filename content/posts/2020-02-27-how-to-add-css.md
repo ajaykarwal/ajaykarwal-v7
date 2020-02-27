@@ -1,16 +1,17 @@
 ---
 template: post
 date: 2020-02-27
-title: "Three methods for adding css to your website"
+title: "Three methods for adding CSS to your website"
 featuredImage: "../images/how-to-add-css-to-website.jpg"
 slug: how-to-add-css
 categories:
   - Code
 tags:
   - css
+  - basics
 ---
 
-There are multiple ways to write CSS for your website and the method you choose may vary depending on your chosen CMS or framework, but essentially it boils down to one of the following methods.
+There are multiple ways to write <abbr title="Cascading Style Sheet">CSS</abbr> for your website and the method you choose may vary depending on your chosen CMS or framework, but essentially it boils down to one of the following methods.
 
 - [Inline Styles](#Inline-Styles)
 - [Style Tag](#Style-Tag)
@@ -32,12 +33,12 @@ which would render as
   Some paragraph text
 </p>
 
-Becuase the styles are applied directly to an element, they do not impact any other elements on the page, so this particular styling will not apply to any other `<p>` elements on the page.
+Because the styles are applied directly to an element, they do not impact any other elements on the page, so this particular styling will not apply to any other `<p>` elements on the page.
 
 ```html
 <div>
   <p style="background-color: indianred; color: palegoldenrod; padding: 10px;">
-    A styles paragraph
+    A styled paragraph
   </p>
   <p>
     An unstyled paragraph
@@ -59,7 +60,7 @@ Becuase the styles are applied directly to an element, they do not impact any ot
 
 The `<style>` tag is used to define styling information for a HTML document.
 
-It's usually placed in `<head>` section of the HTML though it can be placed anywhere in the `<body>` too.
+It's recommended to place the `<style>` tag in the `<head>` section of your HTML.
 
 The above inline style translated into a `<style>` tag would look like this.
 
@@ -92,7 +93,9 @@ The key difference here is that the styling now applies to all `<p>` tags on the
 A linked stylesheet would contain your css declarations in a separate file and be linked in the `<head>` section of your HTML like this.
 
 ```html
-<link src="/path/to-your/stylesheet.css" type="text/css" rel="stylesheet" />
+<head>
+  <link src="/path/to-your/stylesheet.css" type="text/css" rel="stylesheet" />
+</head>
 ```
 
 We can now move all the css declarations from the `<style>` tag to an external stylesheet which would look like this.
@@ -107,7 +110,7 @@ p {
 }
 ```
 
-As with the `<style>` tag, cascading rules also apply when using linked style sheets.
+As with the `<style>` tag, cascading rules also apply when using linked stylesheets.
 
 ### Pros
 
