@@ -72,6 +72,7 @@ const config = {
       link: "/contact/"
     }
   ],
+  copyright: "Copyright © Ajay Karwal", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#1d37c1", // Used for setting manifest and progress theme colors.
   backgroundColor: "#ffffff", // Used for setting manifest background color.
   lastfm: {
