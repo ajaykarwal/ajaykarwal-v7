@@ -24,6 +24,10 @@ h6 {
   }
 }
 
+h3,h4,h5,h6 {
+  margin-top: $space-md;
+}
+
 h1 {
   @include font-size(36px);
   margin-top: 0;

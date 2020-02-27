@@ -5,7 +5,7 @@
   overflow: auto;
   @extend %font-mono;
   font-size: 14px !important;
-  
+
   pre,
   code {
     @extend %font-mono;
@@ -13,4 +13,16 @@
     background: transparent;
     padding: $space-sm $space;
   }
+}
+
+.file {
+  background: $true-black;
+  position: relative;
+  bottom: -$space-sm;
+  border-radius: $border-radius $border-radius 0 0;
+  padding: $space-sm $space;
+  border-bottom: 1px solid $grey-dark;
+  color: $grey-semi;
+  @extend %font-mono;
+  @include font-size(12px);
 }
