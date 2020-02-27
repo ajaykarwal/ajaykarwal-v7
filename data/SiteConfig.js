@@ -3,7 +3,7 @@ const config = {
   siteTitleShort: "Ajay Karwal", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Personal Portfolio of Ajay Karwal", // Alternative site title for SEO.
   siteFavicon: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-  siteLogo: "open-graph-image.png", // Logo used for SEO and manifest.
+  siteLogo: "/open-graph-image.png", // Logo used for SEO and manifest.
   siteUrl: "https://ajaykarwal.com", // Domain of your website without pathPrefix.
   repository: "https://github.com/ajaykarwal/ajaykarwal.com",
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
