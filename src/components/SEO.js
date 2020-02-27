@@ -74,7 +74,8 @@ export default class SEO extends Component {
       <Helmet>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
-
+        <meta name="author" content={config.userName}/>
+        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
 
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
@@ -88,6 +89,9 @@ export default class SEO extends Component {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+
+        <link rel="shortcut icon" type="image/png" href={config.siteFavicon} />          
+        <link rel="alternate" type="application/rss+xml" title={config.siteRssTitle} href={config.siteRss} />
       </Helmet>
     )
   }
