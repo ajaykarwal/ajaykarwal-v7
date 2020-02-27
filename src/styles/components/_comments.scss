@@ -1,0 +1,5 @@
+.comments {
+  > * {
+    @include center-content;
+  }
+}

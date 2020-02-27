@@ -52,8 +52,10 @@ export default class PostTemplate extends Component {
             <MDXRenderer>{postNode.body}</MDXRenderer>
           </article>
           <UserInfo config={config} />
-          <hr/>
-          <Disqus postNode={postNode} />
+          <hr />
+          <div className="comments">
+            <Disqus postNode={postNode} />
+          </div>
         </div>
       </Layout>
     );
