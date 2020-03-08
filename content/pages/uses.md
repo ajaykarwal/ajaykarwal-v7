@@ -40,6 +40,6 @@ The list is up to date as of Feb 2020.
 
 ---
 
-Pretty exhaustive list eh? I hope you found some useful resources on there. Feel free to [get in touch](/contact/) if you have any questions.
+I hope you found some useful resources on there. Feel free to [get in touch](/contact/) if you have any questions.
 
 The concept for this list came from [Wes Bos](http://wesbos.com/uses/).

@@ -2,7 +2,7 @@
 template: post
 date: 2018-12-18
 title: "Speed up your Terminal workflow with aliases on macOS"
-featuredImage: "../images/terminal-aliases.jpg"
+cover: "../images/terminal-aliases.jpg"
 slug: speed-up-your-command-line-workflow-with-aliases
 categories:
   - Code

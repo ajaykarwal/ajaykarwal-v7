@@ -2,7 +2,7 @@
 template: post
 date: 2020-02-27
 title: "Three methods for adding CSS to your website"
-featuredImage: "../images/how-to-add-css-to-website.jpg"
+cover: "../images/how-to-add-css.jpg"
 slug: how-to-add-css
 categories:
   - Code
@@ -15,7 +15,7 @@ There are multiple ways to write <abbr title="Cascading Style Sheet">CSS</abbr> 
 
 - [Inline Styles](#Inline-Styles)
 - [Style Tag](#Style-Tag)
-- [Linked Stylesheet](#Linked-Styleheet)
+- [Linked Stylesheet](#Linked-Stylesheet)
 
 ## Inline Styles
 
@@ -136,4 +136,5 @@ What is your method for adding CSS to your website?
 ---
 
 ## Further reading
+
 [How to add CSS - W3 Schools](https://www.w3schools.com/css/css_howto.asp)

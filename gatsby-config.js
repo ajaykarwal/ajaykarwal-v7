@@ -196,6 +196,17 @@ module.exports = {
                       title
                       date
                       categories
+                      cover {
+                        childImageSharp {
+                          fluid(maxWidth: 1000, maxHeight: 375, quality: 100) {
+                            base64
+                            aspectRatio
+                            src
+                            srcSet
+                            sizes
+                          }
+                        }
+                      }
                       tags
                       template
                     }
@@ -223,7 +234,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 890
+              maxWidth: 900
             }
           }
         ]

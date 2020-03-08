@@ -3,20 +3,22 @@
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/base';
-@import 'base/utility';
+@import 'base/typography';
 
 @import 'components/layout';
 @import 'components/header';
 @import 'components/footer';
-@import 'components/typography';
 
-@import 'components/article';
 @import 'components/author';
+@import 'components/blog';
 @import 'components/buttons';
 @import 'components/code';
 @import 'components/comments';
 @import 'components/forms';
 @import 'components/homepage';
 @import 'components/listing';
+@import 'components/meta';
 @import 'components/projects';
 @import 'components/skills-list';
+
+@import 'base/utility';

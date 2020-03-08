@@ -2,7 +2,7 @@
 template: post
 date: 2017-02-16
 title: "Edit the Terminal Prompt name on macOS"
-featuredImage: "../images/terminal-prompt.jpg"
+cover: "../images/terminal-prompt.jpg"
 slug: edit-terminal-prompt-on-mac
 categories:
   - Tips

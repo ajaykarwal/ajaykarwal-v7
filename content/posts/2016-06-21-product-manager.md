@@ -2,7 +2,7 @@
 template: post
 date: 2016-06-21
 title: "Good Product Manager; Bad Product Manager"
-featuredImage: "../images/hard-thing.jpg"
+cover: "../images/hard-thing.jpg"
 slug: product-manager
 categories:
   - Blog

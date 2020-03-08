@@ -2,7 +2,7 @@
 template: post
 date: 2016-01-28
 title: "Using Umbraco Dictionary Items as image alt text"
-featuredImage: "../images/umbraco.jpg"
+cover: "../images/umbraco.jpg"
 slug: using-umbraco-dictionary-items-as-image-alt-text
 categories:
   - Tips

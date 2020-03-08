@@ -15,7 +15,7 @@ const PostMeta = props => {
       </span>
       <span className="post-meta__meta-data">
         <a href={twitterShare} target="_blank" rel="noopener noreferrer">
-          Share
+          Tweet
         </a>
       </span>
     </div>

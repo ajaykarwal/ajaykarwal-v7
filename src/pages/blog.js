@@ -133,6 +133,17 @@ export const query = graphql`
             title
             tags
             categories
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 1000, maxHeight: 375, quality: 100) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
             date
             template
           }

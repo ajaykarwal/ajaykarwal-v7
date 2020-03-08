@@ -35,15 +35,15 @@ h1 {
 }
 
 h2 {
-  @include font-size(24px);
+  @include font-size(28px);
 }
 
 h3 {
-  @include font-size(18px);
+  @include font-size(22px);
 }
 
 h4 {
-  @include font-size(16px);
+  @include font-size(18px);
 }
 
 h5 {
@@ -71,6 +71,13 @@ a {
     background-color: rgba($brand-primary, 0.03);
     border-bottom: 2px solid $brand-primary;
   }
+  &.no-hover {
+    &:hover {
+      text-decoration: none;
+      border: 0;
+      background: none;
+    }
+  }
 }
 
 b,
@@ -79,7 +86,7 @@ strong {
 }
 
 p {
-  margin: 0;
+  margin-top: 0;
   margin-bottom: $space;
   
   &.lead {

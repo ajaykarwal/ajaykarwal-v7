@@ -2,7 +2,7 @@
 template: post
 date: 2015-03-17
 title: "What is Branding?"
-featuredImage: "../images/what-is-branding.jpg"
+cover: "../images/what-is-branding.jpg"
 slug: what-is-branding
 categories:
   - Misc

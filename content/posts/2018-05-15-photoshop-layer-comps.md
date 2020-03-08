@@ -2,7 +2,7 @@
 template: post
 date: 2018-05-15
 title: "Working with Layer Comps in Photoshop"
-featuredImage: "../images/photoshop-layer-comps.jpg"
+cover: "../images/photoshop-layer-comps.jpg"
 slug: photoshop-layer-comps
 categories:
   - Design

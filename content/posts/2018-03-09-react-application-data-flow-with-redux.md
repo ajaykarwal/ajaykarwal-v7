@@ -2,7 +2,7 @@
 template: post
 date: 2018-03-09
 title: "React Application Data Flow with Redux"
-featuredImage: "../images/react-and-redux.jpg"
+cover: "../images/react-and-redux.jpg"
 slug: react-application-data-flow-with-redux
 categories:
   - Code
@@ -12,13 +12,11 @@ tags:
   - javascript
 ---
 
-This is a brief overview of the main elements of a React application's data flow with Redux.
-This article assumes you are familiar with at least the basics of React.
+This is a brief overview of the main elements of a React application's data flow with Redux. This article assumes you are familiar with at least the basics of React.
 
 ## Store
 
-The Store is a combination of all the State objects from each Component in the application.
-The Store is a single JavaScript object so all the State objects in the application must be combined into one large one using `combineReducers()`
+The Store is a combination of all the State objects from each Component in the application. The Store is a single JavaScript object so all the State objects in the application must be combined into one large one using `combineReducers()`
 
 File: `~/reducers/index.js`
 

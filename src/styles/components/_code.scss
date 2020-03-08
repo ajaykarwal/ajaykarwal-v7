@@ -1,7 +1,7 @@
 .gatsby-highlight {
   border-radius: $border-radius;
   background: $black;
-  margin-bottom: $space;
+  margin-bottom: $space-md;
   overflow: auto;
   @extend %font-mono;
   font-size: 14px !important;
@@ -21,8 +21,9 @@
   bottom: -$space-sm;
   border-radius: $border-radius $border-radius 0 0;
   padding: $space-sm $space;
-  border-bottom: 1px solid $grey-dark;
-  color: $grey-semi;
+  border-bottom: 2px solid $grey-dark;
+  color: $white;
+  font-weight: $font-weight-bold;
   @extend %font-mono;
-  @include font-size(12px);
+  @include font-size(15px);
 }

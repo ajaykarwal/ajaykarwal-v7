@@ -2,7 +2,7 @@
 template: post
 date: 2019-04-29
 title: "Add spaces to the Dock in macOS"
-featuredImage: "../images/dock-spaces.jpg"
+cover: "../images/dock-spaces.jpg"
 slug: add-spaces-to-macos-dock
 categories:
   - Tips

@@ -2,7 +2,7 @@
 template: post
 date: 2019-04-01
 title: "Uninstall Node.js and install Node Version Manager (NVM)"
-featuredImage: "../images/node-to-nvm.jpg"
+cover: "../images/node-to-nvm.jpg"
 slug: uninstall-node-and-install-nvm
 categories:
   - Code

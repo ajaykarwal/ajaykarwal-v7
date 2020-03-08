@@ -10,6 +10,7 @@ import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Disqus from "../components/Disqus";
+import Img from "gatsby-image";
 
 export default class PostTemplate extends Component {
   constructor(props) {
@@ -24,6 +25,10 @@ export default class PostTemplate extends Component {
     const { slug } = this.props.pageContext;
     const postNode = this.props.data.mdx;
     const post = postNode.frontmatter;
+    let cover;
+    if (post.cover) {
+      cover = post.cover.childImageSharp.fluid;
+    }
 
     if (!post.id) {
       post.id = slug;
@@ -32,6 +37,7 @@ export default class PostTemplate extends Component {
     if (!post.category_id) {
       post.category_id = config.postDefaultCategoryID;
     }
+
 
     return (
       <Layout>
@@ -49,7 +55,10 @@ export default class PostTemplate extends Component {
                 <PostTags tags={post.tags} />
               </div>
             </header>
-            <MDXRenderer>{postNode.body}</MDXRenderer>
+            {cover && <Img fluid={cover} className="post-cover-image" />}
+            <MDXRenderer cover={cover} frontmatter={postNode.frontmatter}>
+              {postNode.body}
+            </MDXRenderer>
           </article>
           <UserInfo config={config} />
           <hr />
@@ -71,6 +80,17 @@ export const pageQuery = graphql`
         slug
         date
         categories
+        cover {
+          childImageSharp {
+            fluid(maxWidth: 1000, maxHeight: 375, quality: 100) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
+        }
         tags
         template
       }

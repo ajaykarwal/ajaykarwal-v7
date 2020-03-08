@@ -66,7 +66,7 @@ export default class Header extends Component {
       <header role="banner" className={scrolled ? "header scroll" : "header"}>
         <div className="container">
           <div className="header__content">
-            <Link to="/" className="header__logo">
+            <Link to="/" className="header__logo no-hover">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50"

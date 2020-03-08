@@ -2,7 +2,7 @@
 template: post
 date: 2017-03-18
 title: "Switching from a CMS to Jekyll"
-featuredImage: "../images/switching-to-jekyll.jpg"
+cover: "../images/switching-to-jekyll.jpg"
 slug: switching-from-cms-to-jekyll
 categories:
   - Code
@@ -14,7 +14,20 @@ tags:
 
 Back in February, I shipped a new version of my website. Only a very slight update to the design but a complete overhaul on how it was built.
 
-<blockquote class="twitter-tweet" data-lang="en-gb"><p lang="en" dir="ltr">&quot;New&quot; version of my website is now live. <a href="https://t.co/3lnJDCSY9S">https://t.co/3lnJDCSY9S</a><br />Content is the same(ish) but its been rebuilt using <a href="https://twitter.com/jekyllrb">@jekyllrb</a> &amp; <a href="https://twitter.com/travisci">@travisci</a></p>&mdash; Ajay Karwal (@ajaykarwal) <a href="https://twitter.com/ajaykarwal/status/829825398385082368">9 February 2017</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en-gb">
+  <p lang="en" dir="ltr">
+    &quot;New&quot; version of my website is now live.{" "}
+    <a href="https://t.co/3lnJDCSY9S">https://t.co/3lnJDCSY9S</a>
+    <br />
+    Content is the same(ish) but its been rebuilt using{" "}
+    <a href="https://twitter.com/jekyllrb">@jekyllrb</a> &amp;{" "}
+    <a href="https://twitter.com/travisci">@travisci</a>
+  </p>
+  &mdash; Ajay Karwal (@ajaykarwal){" "}
+  <a href="https://twitter.com/ajaykarwal/status/829825398385082368">
+    9 February 2017
+  </a>
+</blockquote>
 
 Everything was originally built using [Umbraco](https://umbraco.com/) – a <abbr title="Content Management System">CMS</abbr> powered by .NET – and hosted on Microsoft Azure. This setup of course was reliant on Windows for developement.
 

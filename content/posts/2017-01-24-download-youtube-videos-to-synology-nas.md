@@ -2,7 +2,7 @@
 template: post
 date: 2017-01-24
 title: "Download YouTube videos to a Synology NAS"
-featuredImage: "../images/synology-youtube.jpg"
+cover: "../images/synology-youtube.jpg"
 slug: download-youtube-videos-to-synology-nas
 categories:
   - Tips

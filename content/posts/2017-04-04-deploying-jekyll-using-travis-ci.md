@@ -2,7 +2,7 @@
 template: post
 date: 2017-04-04
 title: "Deploying a Jekyll website using Travis CI"
-featuredImage: "../images/deploying-with-travis.jpg"
+cover: "../images/deploying-with-travis.jpg"
 slug: deploying-jekyll-using-travis-ci
 categories:
   - Code
