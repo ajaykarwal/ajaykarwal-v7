@@ -135,11 +135,11 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-feed-mdx",
+      resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMdx = ref.query.allMdx;
+          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
           ret.generator = "Ajay Karwal";
           return ret;
         },
@@ -159,39 +159,68 @@ module.exports = {
           }
         }
       `,
+        setup: ({
+          query: {
+            site: { siteMetadata },
+          },
+          ...rest
+        }) => {
+          return {
+            ...siteMetadata,
+            ...rest,
+            custom_namespaces: {
+              webfeeds: "http://webfeeds.org/rss/1.0"
+            }
+          };
+        },
         feeds: [
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMdx.edges.map(edge => ({
+              return ctx.query.allMarkdownRemark.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
-                date: edge.node.fields.date,
+                date: edge.node.frontmatter.date,
                 title: edge.node.frontmatter.title,
                 description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
+                url: rssMetadata.site_url + "/" + edge.node.frontmatter.slug,
+                guid: rssMetadata.site_url + "/" + edge.node.frontmatter.slug,
                 custom_elements: [
                   { "content:encoded": edge.node.html },
-                  { author: config.userEmail }
+                  { author: config.userEmail },
+                  {
+                    "webfeeds:logo":
+                      rssMetadata.site_url + "/logos/logo-512.png"
+                  },
+                  {
+                    "webfeeds:icon":
+                      rssMetadata.site_url + "/logos/logo-512.png"
+                  },
+                  { "webfeeds:accentColor": "1d37c1" },
+                  { "webfeeds:analytics": config.googleAnalyticsID },
+                  {
+                    "webfeeds:cover": {
+                      _attr: {
+                        image:
+                          rssMetadata.site_url +
+                          edge.node.frontmatter.cover.childImageSharp.fluid
+                            .originalImg
+                      }
+                    }
+                  }
                 ]
               }));
             },
             query: `
             {
-              allMdx(
-                limit: 1000,
-                sort: { order: DESC, fields: [fields___date] },
-                filter: { frontmatter: { template: { eq: "post" } } }
-              ) {
+              allMarkdownRemark(
+                limit: 1000, 
+                sort: {order: DESC, fields: frontmatter___date}, 
+                filter: {frontmatter: {template: {eq: "post"}}}) {
                 edges {
                   node {
                     excerpt(pruneLength: 180)
-                    body
+                    html
                     timeToRead
-                    fields {
-                      slug
-                      date
-                    }
                     frontmatter {
                       title
                       date
@@ -199,14 +228,11 @@ module.exports = {
                       cover {
                         childImageSharp {
                           fluid(maxWidth: 1000, maxHeight: 375, quality: 100) {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            sizes
+                            originalImg
                           }
                         }
                       }
+                      slug
                       tags
                       template
                     }

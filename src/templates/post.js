@@ -55,7 +55,7 @@ export default class PostTemplate extends Component {
                 <PostTags tags={post.tags} />
               </div>
             </header>
-            {cover && <Img fluid={cover} className="post-cover-image" />}
+            {cover && <Img fluid={cover} className="post-cover-image webfeedsFeaturedVisual" />}
             <MDXRenderer cover={cover} frontmatter={postNode.frontmatter}>
               {postNode.body}
             </MDXRenderer>
