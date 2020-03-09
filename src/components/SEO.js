@@ -16,8 +16,8 @@ export default class SEO extends Component {
       const postMeta = postNode.frontmatter
       title = postMeta.title
       description = postMeta.description ? postMeta.description : postNode.excerpt
-      if (postMeta.thumbnail) {
-        image = postMeta.thumbnail.childImageSharp.fixed.src
+      if (postMeta.cover) {
+        image = postMeta.cover.childImageSharp.fluid.src
       }
       postURL = urljoin(config.siteUrl, replacePath(postPath))
     } else {
