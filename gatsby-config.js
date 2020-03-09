@@ -137,12 +137,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-feed",
       options: {
-        setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "Ajay Karwal";
-          return ret;
-        },
         query: `
         {
           site {
@@ -159,15 +153,12 @@ module.exports = {
           }
         }
       `,
-        setup: ({
-          query: {
-            site: { siteMetadata },
-          },
-          ...rest
-        }) => {
+        setup: ref => {
+          const ret = ref.query.site.siteMetadata.rssMetadata;
+          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
+          ret.generator = config.userName;
           return {
-            ...siteMetadata,
-            ...rest,
+            ...ret,
             custom_namespaces: {
               webfeeds: "http://webfeeds.org/rss/1.0"
             }
