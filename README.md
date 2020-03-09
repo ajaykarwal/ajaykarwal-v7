@@ -32,4 +32,4 @@ If you see any typos errors anywhere, please do not hesitate to open a pull requ
 
 ## Acknowledgements
 - [Ruben Harutyunyan](https://github.com/vagr9k/gatsby-advanced-starter/) - Gatsby Advanced Starter
-- [Tania Rascia/](https://github.com/taniarascia/) - Inspiring the post filtering
+- [Tania Rascia](https://github.com/taniarascia/) - Inspiring the post filtering
