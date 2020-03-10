@@ -8,8 +8,10 @@ import PostTags from "../components/PostTags";
 import PostCategories from "../components/PostCategories";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
+import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Disqus from "../components/Disqus";
+import Img from "gatsby-image";
 
 export default class PostTemplate extends Component {
   constructor(props) {
@@ -53,9 +55,11 @@ export default class PostTemplate extends Component {
                 <PostTags tags={post.tags} />
               </div>
             </header>
-            <MDXRenderer cover={cover} frontmatter={postNode.frontmatter}>
+            <MDXProvider components={{Img}}>
+            <MDXRenderer cover={cover} frontmatter={post}>
               {postNode.body}
             </MDXRenderer>
+            </MDXProvider>
           </article>
           <AuthorInfo config={config} />
           <hr />
