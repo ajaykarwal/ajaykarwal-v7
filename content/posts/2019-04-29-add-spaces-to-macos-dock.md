@@ -29,4 +29,4 @@ To create more spaces, just run the command again.
 
 Here is what my Dock looks like. I like to group my apps by function.
 
-![](content/images/macos-dock.png)
+![](macos-dock.png)

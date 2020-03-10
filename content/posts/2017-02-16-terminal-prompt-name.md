@@ -22,7 +22,7 @@ The Terminal prompt name is the text that appears before the `$` sign. By defaul
 HOST_NAME:USER_NAME CURRENT_DIRECTORY $
 ```
 
-![](../images/posts/terminal-1.png)
+![](terminal-1.png)
 
 Depending on what you've named your computer, this can take up a lot of valuable real-estate on each line of the Terminal. In order to change this default prompt you will need to make a change to your `.bash_profile` file.
 
@@ -60,7 +60,7 @@ The `\u` flag sets the prompt to your User name (in my case, Ajay). Remember to 
 
 Quit Terminal and relaunch to see your new prompt in action.
 
-![](../images/posts/terminal-2.png)
+![](terminal-2.png)
 
 ## Options for customising the prompt
 
