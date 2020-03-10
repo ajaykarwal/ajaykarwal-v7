@@ -176,7 +176,7 @@ module.exports = {
                 url: rssMetadata.site_url + "/" + edge.node.frontmatter.slug,
                 guid: rssMetadata.site_url + "/" + edge.node.frontmatter.slug,
                 custom_elements: [
-                  { "content:encoded": edge.node.html },
+                  { "content:encoded": `<![CDATA[ ${edge.node.html} ]>` },
                   { author: config.userEmail },
                   {
                     "webfeeds:logo":
