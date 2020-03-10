@@ -12,6 +12,8 @@ tags:
   - sass
 ---
 
+<img src="../images/how-i-use-sass.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 I've previously posted about the three basic ways you can [add CSS to your website](/how-to-add-css). However, in modern web applications it's more common to use a CSS pre-processor such as Less, Stylus, or in my case, Sass.
 
 A CSS pre-processor extends the functionality of CSS by adding variables, operators, interpolations, functions, mixins and many more useful features.

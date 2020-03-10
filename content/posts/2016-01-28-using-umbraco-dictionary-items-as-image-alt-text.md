@@ -11,6 +11,8 @@ tags:
   - dotnet
 ---
 
+<img src="../images/umbraco.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 I was posed with a recent request to allow my content editor to edit the alt text of all the images in Umbraco to help with SEO rankings.
 
 Out of the box, Umbraco has no straight forward way of doing this and some quick searches on Our resulted in suggestions of adding an extra text field to the Image data type. This could be an acceptable solution for single images however there are many instances on my site where i’m using the Multiple Media Picker, in which case this approach wouldn’t work.

@@ -12,6 +12,8 @@ tags:
   - javascript
 ---
 
+<img src="../images/react-and-redux.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 This is a brief overview of the main elements of a React application's data flow with Redux. This article assumes you are familiar with at least the basics of React.
 
 ## Store

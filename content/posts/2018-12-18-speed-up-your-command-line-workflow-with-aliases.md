@@ -11,6 +11,8 @@ tags:
   - macos
 ---
 
+<img src="../images/terminal-aliases.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 Whether your just starting out on your development journey or you're a seasoned pro, chances are you'll be reaching for the Terminal app on a regular basis.
 
 I for one don't particularly enjoy using the Terminal but seeing as it's inevitable, you can make the whole process a little easier by setting up some simple time-saving aliases.

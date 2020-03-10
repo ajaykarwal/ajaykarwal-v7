@@ -70,14 +70,14 @@ export default class Index extends Component {
               <h2>Recent Posts</h2>
               <PostListing simple postEdges={latestPostEdges} />
               <Link to="/blog/" className="button">
-                View all blog posts
+                All recent posts
               </Link>
             </div>
             <div>
               <h2>Popular Posts</h2>
               <PostListing simple postEdges={popularPostEdges} />
               <Link to="/categories/popular/" className="button">
-                View all popular posts
+                All popular posts
               </Link>
             </div>
           </section>

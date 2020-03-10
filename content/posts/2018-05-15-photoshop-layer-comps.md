@@ -12,6 +12,8 @@ tags:
   - javascript
 ---
 
+<img src="../images/photoshop-layer-comps.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 Layer Comps are a great way to quickly show and hide a combination of layers in Photoshop without the need to group all the layers first. This is especially helpful when you need to change the state of layers which are at different positions on the z-axis of the document (the stacking order of layers) meaning the layers cant sit within the same layer group.
 
 ![](../images/posts/switching-layer-comps.gif)

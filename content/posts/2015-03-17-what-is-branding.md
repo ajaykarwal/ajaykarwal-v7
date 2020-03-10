@@ -10,6 +10,8 @@ tags:
   - branding
 ---
 
+<img src="../images/what-is-branding.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 A brand is so much more than a logo; a name; a font; a colour.
 
 This two-minute, thought-provoking manifesto video by [David Brier](http://www.risingabovethenoise.com/) combines a simple narrative and beautiful animation to answer that basic question.

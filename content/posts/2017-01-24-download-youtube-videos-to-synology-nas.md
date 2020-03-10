@@ -12,6 +12,8 @@ tags:
   - youtube
 ---
 
+<img src="../images/synology-youtube.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 Here's a little tip for you. Download YouTube videos and playlists directly to a Synology NAS using the Synology Download Station [Chrome extension](https://www.download-station-extension.com/). The videos and playlist must be public or unlisted for this to work, which makes sense of course.
 
 Videos are downloaded in `.mp4` format and are named based on the video title. If you're downloading a playlist, all the individual videos are placed within a folder which takes the playlists name. How cool is that?!

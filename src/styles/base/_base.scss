@@ -38,23 +38,6 @@ main {
   padding-bottom: $space-lg;
 }
 
-article,
-section {
-  > * {
-    @include center-content;
-  }
-  header {
-    margin: $space-md auto $space-md auto;
-
-    @media (min-width: $break-sm) {
-      margin: $space-lg auto $space-lg auto;
-    }
-    @media (min-width: $break-md) {
-      margin: $space-xl auto $space-lg auto;
-    }
-  }
-}
-
 
 hr {
   margin-top: $space-lg;
@@ -89,7 +72,6 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: auto;
   border-radius: 5px;
 }
 
@@ -161,6 +143,23 @@ pre {
     text-shadow: none;
     box-shadow: none;
     border: 0;
+  }
+}
+
+article,
+section {
+  > * {
+    @include center-content;
+  }
+  header {
+    margin: $space-md auto $space-md auto;
+
+    @media (min-width: $break-sm) {
+      margin: $space-lg auto $space-lg auto;
+    }
+    @media (min-width: $break-md) {
+      margin: $space-xl auto $space-lg auto;
+    }
   }
 }
 

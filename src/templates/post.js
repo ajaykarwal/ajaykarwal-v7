@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import UserInfo from "../components/UserInfo";
+import AuthorInfo from "../components/AuthorInfo";
 import PostMeta from "../components/PostMeta";
 import PostTags from "../components/PostTags";
 import PostCategories from "../components/PostCategories";
@@ -10,7 +10,6 @@ import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Disqus from "../components/Disqus";
-import Img from "gatsby-image";
 
 export default class PostTemplate extends Component {
   constructor(props) {
@@ -38,7 +37,6 @@ export default class PostTemplate extends Component {
       post.category_id = config.postDefaultCategoryID;
     }
 
-
     return (
       <Layout>
         <Helmet>
@@ -55,12 +53,11 @@ export default class PostTemplate extends Component {
                 <PostTags tags={post.tags} />
               </div>
             </header>
-            {cover && <Img fluid={cover} className="post-cover-image webfeedsFeaturedVisual" />}
             <MDXRenderer cover={cover} frontmatter={postNode.frontmatter}>
               {postNode.body}
             </MDXRenderer>
           </article>
-          <UserInfo config={config} />
+          <AuthorInfo config={config} />
           <hr />
           <div className="comments">
             <Disqus postNode={postNode} />
@@ -82,7 +79,7 @@ export const pageQuery = graphql`
         categories
         cover {
           childImageSharp {
-            fluid(maxWidth: 1000, maxHeight: 375, quality: 100) {
+            fluid(maxWidth: 1000, maxHeight: 450, quality: 100) {
               base64
               aspectRatio
               src

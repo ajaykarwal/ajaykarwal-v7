@@ -11,6 +11,8 @@ tags:
   - terminal
 ---
 
+<img src="../images/dock-spaces.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 If you want to take greater control of how apps are organised on your macOS Dock, a great way is to add spaces between groups of apps.
 
 Run this one-liner in your Terminal to create a new blank space in your Dock

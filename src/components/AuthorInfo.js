@@ -13,24 +13,24 @@ class UserInfo extends Component {
         <img className="avatar" src={Avatar} alt="That's me!" width="200" />
         <div className="author__info">
           <p>{userDescription}</p>
-          <div className="author__support">
-            <a
-              className="supporter-button patreon"
-              href="https://www.patreon.com/ajaykarwal"
-              target="_blank"
-              rel="nofollow noopener"
-            >
-              <img src={PatreonButton} alt="Become a Patron" />
-            </a>
-            <a
-              className="supporter-button kofi"
-              href="https://www.ko-fi.com/ajaykarwal"
-              target="_blank"
-              rel="nofollow noopener"
-            >
-              <img src={KofiButton} alt="Buy me a coffee" />
-            </a>
-          </div>
+        </div>
+        <div className="author__support">
+          <a
+            className="supporter-button patreon no-hover"
+            href="https://www.patreon.com/ajaykarwal"
+            target="_blank"
+            rel="nofollow noopener"
+          >
+            <img src={PatreonButton} alt="Become a Patron" />
+          </a>
+          <a
+            className="supporter-button kofi no-hover"
+            href="https://www.ko-fi.com/ajaykarwal"
+            target="_blank"
+            rel="nofollow noopener"
+          >
+            <img src={KofiButton} alt="Buy me a coffee" />
+          </a>
         </div>
       </div>
     );

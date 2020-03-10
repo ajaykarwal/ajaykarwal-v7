@@ -2,6 +2,10 @@
   @include center-content;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas: 
+    "avatar" 
+    "info" 
+    "support";
   grid-gap: $space;
   background-color: $brand-primary;
   border-radius: $border-radius;
@@ -12,11 +16,20 @@
   @media (min-width: $break-sm) {
     grid-gap: $space-md;
     padding: $space-md $space-lg;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 120px 2fr 1fr;
+    grid-template-areas: 
+      "avatar info info" 
+      ". support support";
     margin-top: $space-xl;
+  }
+  @media (min-width: $break-md) {
+    grid-template-areas: 
+      "avatar info support";
   }
 
   .avatar {
+    grid-area: avatar;
+
     border-radius: 100em;
     margin-right: $space;
     width: 100px;
@@ -26,6 +39,8 @@
   }
 
   &__info {
+    grid-area: info;
+
     p {
       @include font-size(16px);
 
@@ -36,12 +51,18 @@
   }
 
   &__support {
+    grid-area: support;
+
     display: grid;
     grid-gap: $space;
-    margin-top: $space;
-
+    grid-template-rows: auto;
+    
     @media (min-width: $break-sm) {
-      grid-template-columns: 200px auto;
+      grid-template-columns: auto 1fr;
+    }
+    @media (min-width: $break-md) {
+      grid-template-columns: auto;
+      grid-template-rows: auto;
     }
     .supporter-button {
       display: block;

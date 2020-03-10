@@ -1,23 +1,14 @@
 // Fonts
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
 
-$system-font: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-  Arial, sans-serif;
-
+$system-font: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 $font-family-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
 $font-family-body: "Open Sans", sans-serif;
 $font-family-heading: $font-family-body;
 
-%font-heading {
-  font-family: $font-family-heading;
-}
-%font-body {
-  font-family: $font-family-body;
-}
-%font-mono {
-  font-family: $font-family-mono;
-}
+%font-heading { font-family: $font-family-heading; }
+%font-body { font-family: $font-family-body; }
+%font-mono { font-family: $font-family-mono; }
 
 $font-weight-thin: 100;
 $font-weight-light: 300;
@@ -43,7 +34,6 @@ $brand-primary-very-light: rgba($brand-primary, 0.1);
 $brand-secondary: #ee1c25;
 $brand-tertiary: #ffb100;
 $inline-code: #ece6da;
-
 $panel-background: #eaedf0;
 
 $white: #ffffff;

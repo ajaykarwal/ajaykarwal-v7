@@ -14,6 +14,8 @@ tags:
   - javascript
 ---
 
+<img src="../images/node-to-nvm.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 When trying to install some npm packages globally, for example `npm i gulp-cli -g` you may run into a permissions error along the lines of:
 
 ```shell

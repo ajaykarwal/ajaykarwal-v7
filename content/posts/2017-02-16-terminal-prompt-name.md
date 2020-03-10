@@ -12,6 +12,8 @@ tags:
   - macos
 ---
 
+<img src="../images/terminal-prompt.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 As a developer you're likely to spend a lot of time in the Terminal and may have already customised the appearance of it to suit you, but what about the prompt name?
 
 The Terminal prompt name is the text that appears before the `$` sign. By default this is set to
@@ -19,6 +21,7 @@ The Terminal prompt name is the text that appears before the `$` sign. By defaul
 ```
 HOST_NAME:USER_NAME CURRENT_DIRECTORY $
 ```
+
 ![](../images/posts/terminal-1.png)
 
 Depending on what you've named your computer, this can take up a lot of valuable real-estate on each line of the Terminal. In order to change this default prompt you will need to make a change to your `.bash_profile` file.

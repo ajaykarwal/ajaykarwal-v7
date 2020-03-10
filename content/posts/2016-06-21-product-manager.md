@@ -10,6 +10,8 @@ tags:
   - book review
 ---
 
+<img src="../images/hard-thing.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 I'm currently in the process of reading <em><a href="http://amzn.to/28QwPL8" target="_blank" title="Get it on Amazon">The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers</a> by Ben Horowitz</em> and came across this interesting passage.
 
 Ben Horowitz is a technology entrepreneur and co-founder of the venture capital firm Andreessen Horowitz.  His book focuses on the challenges faced when leading and scaling a startup. I will be adding a more complete review when I've finished reading it.

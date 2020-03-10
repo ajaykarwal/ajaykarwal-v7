@@ -11,6 +11,8 @@ tags:
   - basics
 ---
 
+<img src="../images/how-to-add-css.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 There are multiple ways to write <abbr title="Cascading Style Sheet">CSS</abbr> for your website and the method you choose may vary depending on your chosen CMS or framework, but essentially it boils down to one of the following methods.
 
 - [Inline Styles](#Inline-Styles)

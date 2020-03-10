@@ -12,6 +12,8 @@ tags:
   - umbraco
 ---
 
+<img src="../images/switching-to-jekyll.jpg" className="post-cover-image webfeedsFeaturedVisual" />
+
 Back in February, I shipped a new version of my website. Only a very slight update to the design but a complete overhaul on how it was built.
 
 <blockquote class="twitter-tweet" data-lang="en-gb">

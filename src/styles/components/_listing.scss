@@ -8,18 +8,16 @@
 
   &__item {
     margin-bottom: $space-lg;
-    
+
     &.cover {
       display: grid;
       grid-template-columns: 1fr;
       grid-gap: $space-md;
       align-items: flex-start;
-      
-      
+
       @media (min-width: $break-sm) {
         grid-template-columns: 200px 1fr;
-    }
-
+      }
     }
 
     .simple & {
