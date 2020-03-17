@@ -155,7 +155,7 @@ module.exports = {
       `,
         setup: ref => {
           const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
+          ret.allMdx = ref.query.allMdx;
           ret.generator = config.userName;
           return {
             ...ret,
@@ -168,7 +168,7 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              return ctx.query.allMdx.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 title: edge.node.frontmatter.title,
@@ -178,35 +178,17 @@ module.exports = {
                 custom_elements: [
                   { "content:encoded": `<![CDATA[ ${edge.node.html} ]>` },
                   { author: config.userEmail },
-                  {
-                    "webfeeds:logo":
-                      rssMetadata.site_url + "/logos/logo-512.png"
-                  },
-                  {
-                    "webfeeds:icon":
-                      rssMetadata.site_url + "/logos/logo-512.png"
-                  },
+                  { "webfeeds:logo": rssMetadata.site_url + "/logos/logo-512.png" },
+                  { "webfeeds:icon": rssMetadata.site_url + "/logos/logo-512.png" },
                   { "webfeeds:accentColor": "1d37c1" },
                   { "webfeeds:analytics": config.googleAnalyticsID },
-                  {
-                    "webfeeds:cover": {
-                      _attr: {
-                        image:
-                          rssMetadata.site_url +
-                          edge.node.frontmatter.cover.childImageSharp.fluid
-                            .originalImg
-                      }
-                    }
-                  }
+                  { "webfeeds:cover": { _attr: { image: rssMetadata.site_url + edge.node.frontmatter.cover.childImageSharp.original.src } } }
                 ]
               }));
             },
             query: `
             {
-              allMarkdownRemark(
-                limit: 1000, 
-                sort: {order: DESC, fields: frontmatter___date}, 
-                filter: {frontmatter: {template: {eq: "post"}}}) {
+              allMdx(limit: 1000, sort: {order: DESC, fields: frontmatter___date}, filter: {frontmatter: {template: {eq: "post"}}}) {
                 edges {
                   node {
                     excerpt(pruneLength: 180)
@@ -215,17 +197,15 @@ module.exports = {
                     frontmatter {
                       title
                       date
-                      categories
+                      tags
+                      slug
                       cover {
                         childImageSharp {
-                          fluid(maxWidth: 1000, maxHeight: 450, quality: 100) {
-                            originalImg
+                          original {
+                            src
                           }
                         }
                       }
-                      slug
-                      tags
-                      template
                     }
                   }
                 }
