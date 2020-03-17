@@ -42,7 +42,7 @@ export default class PostListing extends Component {
                 </p>
               ) : (
                 <>
-                  {cover && <Link className="no-hover" to={post.path}><Img fluid={cover} className="post-list__item-thumb" /></Link>}
+                  {cover && <Link className="post-list__item-thumb no-hover" to={post.path}><Img fluid={cover} /></Link>}
                   <div>
                     <h2 className="post-list__item-heading">
                       <Link to={post.path}>{post.title}</Link>

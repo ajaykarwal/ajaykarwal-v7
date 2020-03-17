@@ -83,7 +83,7 @@ export const pageQuery = graphql`
         categories
         cover {
           childImageSharp {
-            fluid(maxWidth: 1000, maxHeight: 450, quality: 100) {
+            fluid(maxWidth: 1200, maxHeight: 630, quality: 100) {
               base64
               aspectRatio
               src
