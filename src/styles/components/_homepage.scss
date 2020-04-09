@@ -4,16 +4,15 @@
   }
 
   h1 {
-    padding-top: $space-md;
+    padding-top: $space;
 
     @media (min-width: $break-sm) {
-      padding-top: $space-lg;
+      padding-top: $space-md;
       @include font-size(48px);
     }
 
     @media (min-width: $break-md) {
-      padding-top: $space-xl;
-      @include font-size(48px);
+      padding-top: $space-lg;
     }
 
     span {
@@ -30,15 +29,15 @@
     display: block;
     // margin: $space-md auto;
     float: right;
-    margin: $space-md auto $space $space;
+    margin: $space auto $space $space;
 
     @media (min-width: $break-sm) {
       width: 200px;
-      margin: $space-lg auto $space-md $space-md;
+      margin: $space-md auto $space-md $space-md;
     }
 
     @media (min-width: $break-md) {
-      margin-top: $space-xl;
+      margin-top: $space-lg;
     }
   }
 

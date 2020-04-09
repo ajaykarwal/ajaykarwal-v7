@@ -14,12 +14,11 @@
   }
   .project__button {
     position: relative;
-    border-radius: $border-radius-lg;
 
     .has-details {
       position: absolute;
-      bottom: 12px;
-      right: 12px;
+      top: 0;
+      right: 0;
       width: 14px;
     }
 
@@ -29,13 +28,12 @@
       transition: filter 0.2s ease-in-out;
     }
     &:hover {
+      // background: $white;
       img {
         filter: none;
       }
     }
     &:disabled {
-      background: $grey-light !important;
-      box-shadow: $shadow-up !important;
       cursor: default;
     }
     &.on {

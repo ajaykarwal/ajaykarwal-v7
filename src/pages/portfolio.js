@@ -101,7 +101,7 @@ export default class PortfolioPage extends Component {
                   <button
                     disabled={!project.description}
                     key={project.id}
-                    className={`button project__button ${
+                    className={`project__button ${
                       this.state.selectedProject === project.id ? "on" : ""
                     }`}
                     onClick={e => this.handleClick(e, project)}

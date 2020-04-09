@@ -40,46 +40,32 @@ input[type="reset"] {
 
 .button {
   @include font-size(15px);
-  background: $grey-light;
-  border-radius: $space-sm;
-  color: $text-body;
-  font-weight: $font-weight-normal;
+  background: $brand-primary;
+  color: $white;
+  font-weight: $font-weight-bold;
   transition: box-shadow 0.3s ease;
   padding: $space-sm $space;
-  box-shadow: $shadow-up;
+  border: 2px solid $brand-primary;
 
-  &:hover {
-    color: $text-body-dark;
-    background: darken($grey-light, 2%);
-    border: 0;
-  }
+  &:hover,
   &:focus {
     color: $text-body-dark;
-    border: none;
-    background: transparent;
-    box-shadow: $shadow-focus;
-    outline: 0;
+    background: $white;
+    outline: none;
   }
-
-  &:active,
-  &:active:focus {
-    border: none;
-    background: inherit;
-    box-shadow: $shadow-pressed;
-  }
-
+  
   &.on {
     color: $text-body-dark;
-    box-shadow: $shadow-down;
+    background: $brand-secondary;
     
     &:hover {
       color: $text-body-dark;
-      background: darken($grey-light, 2%);
-      border: 0;
+      background: $brand-primary-very-light;
     }
-    
-    &:focus {
-      box-shadow: $shadow-down-focus;
-    }
+  }
+
+  .count {
+    font-weight: 400;
+    margin-left: 0.25rem;
   }
 }
