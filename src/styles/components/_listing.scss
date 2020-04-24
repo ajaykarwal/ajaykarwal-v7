@@ -9,18 +9,17 @@
   &__item {
     margin-bottom: $space-lg;
 
-    &.cover {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: $space-md;
-      align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
 
-      @media (min-width: $break-sm) {
-        grid-template-columns: 200px 1fr;
-      }
+    @media (min-width: $break-sm) {
+      grid-gap: $space-md;
+      grid-template-columns: 160px 1fr;
     }
 
     .simple & {
+      grid-template-columns: 1fr;
       margin-bottom: $space-sm;
     }
 
@@ -34,6 +33,10 @@
     &-date {
       @include font-size(13px);
       color: $text-body;
+
+      @media (min-width: $break-sm) {
+        margin-top: $space-sm;
+      }
     }
     &-thumb {
       display: block;

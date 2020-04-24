@@ -6,7 +6,7 @@ slug: uses
 
 I thought it would be interesting and somewhat useful to share a list of hardware, software, apps and other tools I use on a daily basis both at work and in my personal life.
 
-The list is up to date as of Feb 2020.
+The list is up to date as of April 2020.
 
 ## Hardware
 - **My Desk:** Here is a [picture of my desk](https://www.instagram.com/p/BxS_i7qlkLo/) (it's not always this neat).
@@ -24,13 +24,13 @@ The list is up to date as of Feb 2020.
 - **Editor:** Visual Studio Code
 - **Theme:** Material Theme
 - **Font:** [Fira Code](https://github.com/tonsky/FiraCode)
-- **Browsers:** Google Chrome, although I'm trying to use FireFox more often
-- **Terminal:** [iTerm2](https://www.iterm2.com) with a slighly customised theme. You can find my `profile.json` file [here](https://github.com/ajaykarwal/iterm-profile)
+- **Browsers:** Firefox mainly
+- **Terminal:** I use the default Mac Terminal App with a slighly customised theme which you can find [here](https://github.com/ajaykarwal/dotfiles/blob/master/src/shell/bash_prompt)
 - **Design:** Sketch
 - **Prototyping:** InVision
 - **Audio:** Logic Pro X for editing my [podcast](http://inspect.fm)
 - **Video:** [DaVinci Resolve](https://www.blackmagicdesign.com/uk/products/davinciresolve/)
-- **Notes:** [Evernote](http://www.evernote.com/) / [Typora](https://typora.io/)
+- **Notes:** [Notion](http://www.notion.so/) / [Typora](https://typora.io/)
 - **Cloud Storage:** Dropbox
 
 ## Offline Tools

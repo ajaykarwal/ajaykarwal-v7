@@ -1,4 +1,9 @@
 .post-cover-image,
 .gatsby-resp-image-wrapper {
   margin-bottom: $space-md;
+  @media (min-width: $break-sm) {
+    float: right;
+    width: 400px;
+    margin-left: $space-md;
+  }
 }

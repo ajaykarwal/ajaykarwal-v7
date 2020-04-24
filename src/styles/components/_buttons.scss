@@ -39,13 +39,17 @@ input[type="reset"] {
 }
 
 .button {
-  @include font-size(15px);
   background: $brand-primary;
   color: $white;
   font-weight: $font-weight-bold;
   transition: box-shadow 0.3s ease;
   padding: $space-sm $space;
   border: 2px solid $brand-primary;
+  @include font-size(13px);
+  
+  @media (min-width: $break-sm) {
+    @include font-size(15px);
+  }
 
   &:hover,
   &:focus {

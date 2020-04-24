@@ -152,7 +152,7 @@ section {
     @include center-content;
   }
   header {
-    margin: $space auto $space-md auto;
+    margin: $space-md auto $space-md auto;
 
     @media (min-width: $break-sm) {
       margin: $space-md auto $space-lg auto;
