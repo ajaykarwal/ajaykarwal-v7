@@ -41,24 +41,5 @@
     }
   }
 
-  .recent {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
 
-    @media (min-width: $break-sm) {
-      flex-direction: row;
-    }
-
-    > div {
-      width: 100%;
-      margin-bottom: $space-lg;
-      @media (min-width: $break-sm) {
-        width: 45%;
-      }
-    }
-    h2 {
-      margin-top: 0;
-    }
-  }
 }

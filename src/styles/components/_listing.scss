@@ -19,24 +19,25 @@
     }
 
     .simple & {
-      grid-template-columns: 1fr;
-      margin-bottom: $space-sm;
+      // grid-template-columns: 1fr;
+      margin-bottom: $space-md;
     }
 
-    &-heading {
-      margin-top: 0;
-      margin-bottom: $space-sm;
-      a {
-        color: $text-body-dark;
-      }
-    }
     &-date {
       @include font-size(13px);
       color: $text-body;
+      margin-bottom: $space-sm;
 
       @media (min-width: $break-sm) {
         margin-top: $space-sm;
       }
+    }
+    &-heading {
+      margin-top: 0;
+      margin-bottom: $space-sm;
+      // a {
+      //   color: $text-body-dark;
+      // }
     }
     &-thumb {
       display: block;

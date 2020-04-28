@@ -9,9 +9,9 @@
   @media (min-width: $break-sm) {
     grid-template-columns: repeat(4, 1fr);
   }
-  @media (min-width: $break-md) {
-    grid-template-columns: repeat(5, 1fr);
-  }
+  // @media (min-width: $break-md) {
+  //   grid-template-columns: repeat(5, 1fr);
+  // }
   .project__button {
     position: relative;
 
@@ -28,7 +28,7 @@
       transition: filter 0.2s ease-in-out;
     }
     &:hover {
-      // background: $white;
+      // background: var(--white);
       img {
         filter: none;
       }
@@ -70,10 +70,10 @@
       grid-template-columns: 1fr 200px;
     }
 
-    @media (min-width: $break-md) {
-      grid-column: 1 / 6;
-      grid-template-columns: 1fr 300px;
-    }
+    // @media (min-width: $break-md) {
+    //   grid-column: 1 / 6;
+    //   grid-template-columns: 1fr 300px;
+    // }
 
     h2 {
       margin-top: 0;

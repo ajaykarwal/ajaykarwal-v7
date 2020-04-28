@@ -10,7 +10,7 @@
   code {
     @extend %font-mono;
     display: block;
-    color: $white;
+    color: var(--white);
     background: transparent;
     padding: $space-sm $space;
     overflow: auto;
@@ -24,7 +24,7 @@
   border-radius: $border-radius $border-radius 0 0;
   padding: $space-sm $space;
   border-bottom: 2px solid $grey-dark;
-  color: $white;
+  color: var(--white);
   font-weight: $font-weight-bold;
   @extend %font-mono;
   @include font-size(15px);

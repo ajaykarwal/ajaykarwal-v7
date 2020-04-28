@@ -55,7 +55,7 @@
     &:active,
     &:focus,
     &:hover {
-      background: $brand-primary-very-light;
+      background: var(--primary-very-light);
       color: $true-black;
     }
   }

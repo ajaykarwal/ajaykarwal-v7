@@ -1,9 +1,3 @@
-$shadow-up: 4px 4px 8px 0 rgba($brand-primary-dark, 0.1), -4px -4px 8px 0 rgba($white, 0.9);
-$shadow-pressed: inset 8px 8px 4px 0 rgba($brand-primary-dark, 0.1), inset -8px -8px 4px 0 rgba($white, 0.9);
-$shadow-down: inset 4px 4px 8px 0 rgba($brand-primary-dark, 0.1), inset -4px -4px 8px 0 rgba($white, 0.9);
-$shadow-focus: 2px 2px 8px 0 rgba($brand-primary-dark, 0.4), -2px -2px 8px 0 rgba($white, 0.9);
-$shadow-down-focus: inset 2px 2px 8px 0 rgba($brand-primary-dark, 0.4), inset -2px -2px 8px 0 rgba($white, 0.9);
-
 %button-reset {
   border: none;
   border-radius: 0;
@@ -17,6 +11,7 @@ $shadow-down-focus: inset 2px 2px 8px 0 rgba($brand-primary-dark, 0.4), inset -2
   background: transparent;
   text-align: inherit;
   line-height: normal;
+  text-decoration: none;
 
   -moz-osx-font-smoothing: inherit;
   -webkit-font-smoothing: inherit;
@@ -39,12 +34,12 @@ input[type="reset"] {
 }
 
 .button {
-  background: $brand-primary;
-  color: $white;
+  background: var(--grey-dark);
+  color: var(--white);
   font-weight: $font-weight-bold;
   transition: box-shadow 0.3s ease;
   padding: $space-sm $space;
-  border: 2px solid $brand-primary;
+  border: 2px solid var(--grey-dark);
   @include font-size(13px);
   
   @media (min-width: $break-sm) {
@@ -53,19 +48,21 @@ input[type="reset"] {
 
   &:hover,
   &:focus {
-    color: $text-body-dark;
-    background: $white;
+    color: var(--white);
+    background: var(--primary);
+    border-color: var(--primary);
+    text-decoration: none;
     outline: none;
   }
   
   &.on {
-    color: $text-body-dark;
-    background: $brand-secondary;
-    
-    &:hover {
-      color: $text-body-dark;
-      background: $brand-primary-very-light;
-    }
+    color: var(--black);
+    background: var(--secondary);
+    border-color: var(--primary);
+    // &:hover {
+    //   color: $text-body-dark;
+    //   background: var(--primary-very-light);
+    // }
   }
 
   .count {

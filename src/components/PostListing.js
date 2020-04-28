@@ -30,9 +30,13 @@ export default class PostListing extends Component {
           return (
             <div className={`post-list__item`} key={post.title}>
               {simple ? (
-                <p>
+                <>
+                <p className="post-list__item-date">{date}</p>
+                {/* {popular && <div className="tag popular">Popular</div>} */}
+                <h3 className="post-list__item-heading">
                   <Link to={post.path}>{post.title}</Link>
-                </p>
+                </h3>
+              </>
               ) : (
                 <>
                   <p className="post-list__item-date">{date}</p>

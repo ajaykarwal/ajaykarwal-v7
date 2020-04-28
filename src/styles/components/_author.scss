@@ -7,11 +7,11 @@
     "info" 
     "support";
   grid-gap: $space;
-  background-color: $brand-primary;
+  background-color: var(--primary);
   border-radius: $border-radius;
   padding: $space-md;
   margin-top: $space-md;
-  color: $white;
+  color: var(--white);
 
   @media (min-width: $break-sm) {
     grid-gap: $space-md;

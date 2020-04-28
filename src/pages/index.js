@@ -66,20 +66,21 @@ export default class Index extends Component {
           <hr />
 
           <section className="recent">
-            <div>
-              <h2>Recent Posts</h2>
-              <PostListing simple postEdges={latestPostEdges} />
-              <Link to="/blog/" className="button">
-                All posts
-              </Link>
-            </div>
-            <div>
-              <h2>Popular Posts</h2>
-              <PostListing simple postEdges={popularPostEdges} />
-              <Link to="/categories/popular/" className="button">
-                All popular posts
-              </Link>
-            </div>
+            <h2>Recent Posts</h2>
+            <PostListing simple postEdges={latestPostEdges} />
+            <Link to="/blog/" className="button">
+              All posts
+            </Link>
+          </section>
+
+          <hr />
+
+          <section className="popular">
+            <h2>Popular Posts</h2>
+            <PostListing simple postEdges={popularPostEdges} />
+            <Link to="/categories/popular/" className="button">
+              All popular posts
+            </Link>
           </section>
         </div>
       </Layout>

@@ -69,16 +69,16 @@ small,
 }
 
 a {
-  color: $brand-primary;
+  color: var(--primary);
   font-weight: $font-weight-semibold;
   text-decoration: none;
   position: relative;
 
   &:active,
   &:hover {
-    color: $brand-primary;
-    background-color: rgba($brand-primary, 0.03);
-    border-bottom: 2px solid $brand-primary;
+    color: var(--primary);
+    background-color: rgba(var(--primary), 0.03);
+    border-bottom: 2px solid var(--primary);
   }
   &.no-hover {
     &:hover {

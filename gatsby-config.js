@@ -180,7 +180,7 @@ module.exports = {
                   { author: config.userEmail },
                   { "webfeeds:logo": rssMetadata.site_url + "/logos/logo-512.png" },
                   { "webfeeds:icon": rssMetadata.site_url + "/logos/logo-512.png" },
-                  { "webfeeds:accentColor": "1d37c1" },
+                  { "webfeeds:accentColor": "44e" },
                   { "webfeeds:analytics": config.googleAnalyticsID },
                   { "webfeeds:cover": { _attr: { image: rssMetadata.site_url + edge.node.frontmatter.cover.childImageSharp.original.src } } }
                 ]

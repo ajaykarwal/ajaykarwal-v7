@@ -106,7 +106,7 @@ export default class BlogPage extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <PostListing postEdges={filteredPosts} />
+            <PostListing simple postEdges={filteredPosts} />
           </section>
         </div>
       </Layout>

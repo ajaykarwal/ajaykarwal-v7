@@ -1,14 +1,22 @@
 // Fonts
-$system-font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-$system-font-stack-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+$system-font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+$system-font-stack-mono: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+  monospace !important;
 
 $font-family-heading: $system-font-stack;
 $font-family-body: $system-font-stack;
 $font-family-mono: $system-font-stack-mono;
 
-%font-heading { font-family: $font-family-heading; }
-%font-body { font-family: $font-family-body; }
-%font-mono { font-family: $font-family-mono; }
+%font-heading {
+  font-family: $font-family-heading;
+}
+%font-body {
+  font-family: $font-family-body;
+}
+%font-mono {
+  font-family: $font-family-mono;
+}
 
 $font-weight-thin: 100;
 $font-weight-light: 300;
@@ -26,15 +34,11 @@ $break-md: 992px;
 $break-lg: 1200px;
 
 // Colors
-$brand-primary: #1d37c1;
-$brand-primary-dark: darken($brand-primary, 10%);
-$brand-primary-light: lighten($brand-primary, 40%);
-$brand-primary-very-light: rgba($brand-primary, 0.1);
-
-$brand-secondary: #ffdf31;
-$inline-code: #ece6da;
-$panel-background: #eaedf0;
-
+$primary: #44e;
+$primary-dark: darken($primary, 10%);
+$primary-light: lighten($primary, 40%);
+$primary-very-light: rgba($primary, 0.1);
+$secondary: #ffdf31;
 $white: #ffffff;
 $grey-light: #fafafa;
 $grey-medium: #ebebeb;
@@ -43,9 +47,27 @@ $grey-dark: #404040;
 $black: #262626;
 $true-black: #000000;
 
+$inline-code: #ece6da;
+$panel-background: #eaedf0;
+
+$theme-colors: (
+  "primary": $primary,
+  "primary-dark": $primary-dark,
+  "primary-light": $primary-light,
+  "primary-very-light": $primary-very-light,
+  "secondary": $secondary,
+  "white": $white,
+  "grey-light": $grey-light,
+  "grey-medium": $grey-medium,
+  "grey-semi": $grey-semi,
+  "grey-dark": $grey-dark,
+  "black": $black,
+  "true-black": $true-black,
+) !default;
+
 $text-body: $grey-dark;
 $text-body-dark: $black;
-$text-link: $brand-primary;
+$text-link: $primary;
 
 $brand-twitter: #55acee;
 $brand-facebook: #3b5998;
@@ -64,8 +86,8 @@ $space-md: $space * 2;
 $space-lg: $space * 4;
 $space-xl: $space * 8;
 
-$container-width: 900px;
-$content-width: 860px;
+$container-width: 800px;
+$content-width: 800px;
 
 $border-radius: 8px;
 $border-radius-sm: 4px;

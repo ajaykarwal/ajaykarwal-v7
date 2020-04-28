@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  background-color: $white;
+  background-color: var(--white);
   padding: $space-md 0;
 
   @media (min-width: $break-sm) {
@@ -40,7 +40,7 @@
     display: none;
     position: relative;
     width: $space-md;
-    height: $space - 1px;
+    height: $space-md - $space-sm;
     -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
     cursor: pointer;
@@ -55,9 +55,8 @@
       left: 0;
       display: block;
       width: 100%;
-      height: 1px;
-      border-radius: 1em;
-      background-color: $black;
+      height: 3px;
+      background-color: var(--primary);
       transition: 0.25s ease-in-out;
 
       &:nth-child(1) {
@@ -76,6 +75,7 @@
 
     &.open {
       span {
+        background-color: var(--white);
         &:nth-child(1),
         &:nth-child(4) {
           top: 0.5em;
@@ -102,7 +102,7 @@
       transition: opacity 0.25s ease-in-out;
 
       position: fixed;
-      background: $white;
+      background: var(--primary);
       top: 0;
       left: 0;
       right: 0;
