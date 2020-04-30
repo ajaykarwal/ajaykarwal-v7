@@ -15,7 +15,7 @@ export default [
   },
   {
     label: "Tools",
-    data: ["Git / Github", "Netlify", "Webpack / Gulp / Grunt", "DevTools"]
+    data: ["Git / Github", "Netlify", "Webpack / Gulp", "DevTools"]
   },
   {
     label: "Design",

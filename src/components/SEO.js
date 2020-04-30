@@ -18,6 +18,8 @@ export default class SEO extends Component {
       description = postMeta.description ? postMeta.description : postNode.excerpt
       if (postMeta.cover) {
         image = postMeta.cover.childImageSharp.fluid.src
+      } else {
+        image = config.siteLogo
       }
       postURL = urljoin(config.siteUrl, replacePath(postPath))
     } else {

@@ -14,12 +14,12 @@
   color: var(--white);
 
   @media (min-width: $break-sm) {
-    grid-gap: $space-md;
+    grid-gap: $space $space-md;
     padding: $space-md $space-lg;
-    grid-template-columns: 120px 2fr 1fr;
+    grid-template-columns: 120px auto auto;
     grid-template-areas: 
       "avatar info info" 
-      ". support support";
+      "avatar support support";
     margin-top: $space-xl;
   }
   @media (min-width: $break-md) {
@@ -62,7 +62,7 @@
     }
     @media (min-width: $break-md) {
       grid-template-columns: auto;
-      grid-template-rows: auto;
+      margin: auto;
     }
     .supporter-button {
       display: block;

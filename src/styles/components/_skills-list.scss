@@ -12,7 +12,7 @@
     display: grid;
 
     @media (min-width: $break-md) {
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 160px 1fr;
     }
 
     dt {

@@ -15,59 +15,59 @@ module.exports = {
         config.siteUrl,
         config.pathPrefix
       )}/open-graph-image.png`,
-      copyright: config.copyright
-    }
+      copyright: config.copyright,
+    },
   },
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-lodash",
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-lodash`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: "assets",
-        path: `${__dirname}/static/`
-      }
+        path: `${__dirname}/static/`,
+      },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: "posts",
-        path: `${__dirname}/content/posts/`
-      }
+        path: `${__dirname}/content/posts/`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/content/pages`
-      }
+        path: `${__dirname}/content/pages`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/content/images`
-      }
+        path: `${__dirname}/content/images`,
+      },
     },
     {
-      resolve: "gatsby-plugin-mdx",
+      resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-relative-images`
+            resolve: `gatsby-remark-relative-images`,
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 900
-            }
+              maxWidth: 900,
+            },
           },
           {
-            resolve: "gatsby-remark-responsive-iframe"
+            resolve: `gatsby-remark-responsive-iframe`,
           },
-          "gatsby-remark-copy-linked-files",
+          `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -75,32 +75,32 @@ module.exports = {
               maintainCase: true,
               removeAccents: true,
               icon: `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="12"><path fill="currentColor" d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"></path></svg>`,
-              isIconAfterHeader: true
-            }
+              isIconAfterHeader: true,
+            },
           },
-          "gatsby-remark-prismjs"
-        ]
-      }
+          `gatsby-remark-prismjs`,
+        ],
+      },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: config.googleAnalyticsID
-      }
+        trackingId: config.googleAnalyticsID,
+      },
     },
     {
-      resolve: "gatsby-plugin-nprogress",
+      resolve: `gatsby-plugin-nprogress`,
       options: {
-        color: config.themeColor
-      }
+        color: config.themeColor,
+      },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-catch-links",
-    "gatsby-plugin-twitter",
-    "gatsby-plugin-sitemap",
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-twitter`,
+    `gatsby-plugin-sitemap`,
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
@@ -113,29 +113,29 @@ module.exports = {
           {
             src: "/logos/logo-192.png",
             sizes: "192x192",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "/logos/logo-512.png",
             sizes: "512x512",
-            type: "image/png"
-          }
-        ]
-      }
+            type: "image/png",
+          },
+        ],
+      },
     },
-    "gatsby-plugin-offline",
+    `gatsby-plugin-offline`,
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: path.resolve("src/netlifycms/index.js"), // default: undefined
         enableIdentityWidget: true,
         publicPath: "admin",
         htmlTitle: "Content Manager",
-        includeRobots: false
-      }
+        includeRobots: false,
+      },
     },
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: `gatsby-plugin-feed`,
       options: {
         query: `
         {
@@ -153,22 +153,22 @@ module.exports = {
           }
         }
       `,
-        setup: ref => {
+        setup: (ref) => {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMdx = ref.query.allMdx;
           ret.generator = config.userName;
           return {
             ...ret,
             custom_namespaces: {
-              webfeeds: "http://webfeeds.org/rss/1.0"
-            }
+              webfeeds: "http://webfeeds.org/rss/1.0",
+            },
           };
         },
         feeds: [
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMdx.edges.map(edge => ({
+              return ctx.query.allMdx.edges.map((edge) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 title: edge.node.frontmatter.title,
@@ -178,12 +178,27 @@ module.exports = {
                 custom_elements: [
                   { "content:encoded": `<![CDATA[ ${edge.node.html} ]>` },
                   { author: config.userEmail },
-                  { "webfeeds:logo": rssMetadata.site_url + "/logos/logo-512.png" },
-                  { "webfeeds:icon": rssMetadata.site_url + "/logos/logo-512.png" },
+                  {
+                    "webfeeds:logo":
+                      rssMetadata.site_url + "/logos/logo-512.png",
+                  },
+                  {
+                    "webfeeds:icon":
+                      rssMetadata.site_url + "/logos/logo-512.png",
+                  },
                   { "webfeeds:accentColor": "44e" },
                   { "webfeeds:analytics": config.googleAnalyticsID },
-                  { "webfeeds:cover": { _attr: { image: rssMetadata.site_url + edge.node.frontmatter.cover.childImageSharp.original.src } } }
-                ]
+                  {
+                    "webfeeds:cover": {
+                      _attr: {
+                        image:
+                          rssMetadata.site_url +
+                          edge.node.frontmatter.cover.childImageSharp.original
+                            .src,
+                      },
+                    },
+                  },
+                ],
               }));
             },
             query: `
@@ -213,10 +228,10 @@ module.exports = {
             }
           `,
             output: config.siteRss,
-            title: config.siteRssTitle
-          }
-        ]
-      }
+            title: config.siteRssTitle,
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -225,17 +240,17 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              noInlineHighlight: true
-            }
+              noInlineHighlight: true,
+            },
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 900
-            }
-          }
-        ]
-      }
-    }
-  ]
+              maxWidth: 900,
+            },
+          },
+        ],
+      },
+    },
+  ],
 };
