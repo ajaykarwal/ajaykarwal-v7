@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 // Fonts
-$system-font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+$font-stack-custom: 'Inter', sans-serif;
+$font-stack-system: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-$system-font-stack-mono: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+$font-stack-mono: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
   monospace !important;
 
-$font-family-heading: $system-font-stack;
-$font-family-body: $system-font-stack;
-$font-family-mono: $system-font-stack-mono;
+$font-family-heading: $font-stack-custom;
+$font-family-body: $font-stack-custom;
+$font-family-mono: $font-stack-mono;
 
 %font-heading {
   font-family: $font-family-heading;

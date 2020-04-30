@@ -82,7 +82,7 @@ export default class Header extends Component {
             </Link>
 
             <button
-              class={`nav-toggle ${viewportSize !== "desktop" ? "show" : ""} ${
+              className={`nav-toggle ${viewportSize !== "desktop" ? "show" : ""} ${
                 showNav ? "open" : ""
               }`}
               onClick={this.handleClick}
@@ -95,7 +95,7 @@ export default class Header extends Component {
 
             <nav
               role="navigation"
-              class={`nav-container desktop ${
+              className={`nav-container desktop ${
                 viewportSize === "desktop" ? "show" : ""
               }`}
             >
@@ -111,7 +111,7 @@ export default class Header extends Component {
             </nav>
             <nav
               role="navigation"
-              class={`nav-container mobile ${
+              className={`nav-container mobile ${
                 viewportSize !== "desktop" && showNav ? "show" : ""
               }`}
             >
