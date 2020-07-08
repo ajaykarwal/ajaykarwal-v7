@@ -3,25 +3,27 @@ import { Link } from "gatsby";
 
 export default class Header extends Component {
   state = {
-    scrolled: false,
     showNav: false,
-    viewportWidth: typeof window !== "undefined" ? window.innerWidth : 0,
-    viewportSize: ""
+    viewportWidth: 0,
+    viewportHeight: 0,
+    viewportSize: "",
+  };
+
+  updateDimensions = () => {
+    this.setState({
+      viewportWidth: window.innerWidth,
+      viewportHeight: window.innerHeight,
+    });
+    this.reportWindowSize();
+    this.getViewportSize();
   };
 
   componentDidMount() {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", this.headerOnScroll);
-      window.addEventListener("resize", this.reportWindowSize);
-      this.reportWindowSize();
-      this.getViewportSize();
-    }
+    window.addEventListener("resize", this.updateDimensions);
   }
 
   componentWillUnmount() {
-    if (typeof window !== "undefined") {
-      window.removeEventListener("scroll", this.headerOnScroll);
-    }
+    window.removeEventListener("resize", this.updateDimensions);
   }
 
   getViewportSize = () => {
@@ -34,36 +36,29 @@ export default class Header extends Component {
   reportWindowSize = () => {
     this.setState({
       viewportWidth: typeof window !== "undefined" ? window.innerWidth : 0,
-      viewportSize: this.getViewportSize()
+      viewportSize: this.getViewportSize(),
     });
 
-    if (this.getViewportSize() === "desktop") {
+    if (this.state.viewportSize === "desktop") {
       this.setState({
-        showNav: false
+        showNav: false,
       });
-    }
-  };
-  headerOnScroll = () => {
-    if (window.scrollY > 100) {
-      this.setState({ scrolled: true });
-    } else {
-      this.setState({ scrolled: false });
     }
   };
 
   handleClick = e => {
     e.preventDefault;
     this.setState({
-      showNav: !this.state.showNav
+      showNav: !this.state.showNav,
     });
   };
 
   render() {
-    const { scrolled, viewportSize, showNav } = this.state;
+    const { viewportSize, showNav } = this.state;
     const { menuLinks } = this.props;
 
     return (
-      <header role="banner" className={scrolled ? "header scroll" : "header"}>
+      <header role="banner" className="header">
         <div className="container">
           <div className="header__content">
             <Link to="/" className="header__logo no-hover">
@@ -82,9 +77,9 @@ export default class Header extends Component {
             </Link>
 
             <button
-              className={`nav-toggle ${viewportSize !== "desktop" ? "show" : ""} ${
-                showNav ? "open" : ""
-              }`}
+              className={`nav-toggle ${
+                viewportSize !== "desktop" ? "show" : ""
+              } ${showNav ? "open" : ""}`}
               onClick={this.handleClick}
             >
               <span></span>

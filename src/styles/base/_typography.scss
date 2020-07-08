@@ -81,7 +81,8 @@ a {
     border-bottom: 2px solid var(--primary);
   }
   &.no-hover {
-    &:hover {
+    &:active,
+    &:hover, {
       text-decoration: none;
       border: 0;
       background: none;

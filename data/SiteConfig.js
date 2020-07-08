@@ -68,10 +68,10 @@ const config = {
       name: "About Me",
       link: "/about/"
     },
-    {
-      name: "Contact",
-      link: "/contact/"
-    }
+    // {
+    //   name: "Contact",
+    //   link: "/contact/"
+    // }
   ],
   copyright: "Copyright © Ajay Karwal", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#44e", // Used for setting manifest and progress theme colors.

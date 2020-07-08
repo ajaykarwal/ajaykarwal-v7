@@ -110,7 +110,7 @@
       height: 100vh;
       z-index: 1;
       padding-top: 25%;
-      
+
       &.show {
         visibility: visible;
         opacity: 1;
@@ -126,7 +126,7 @@
           a {
             display: block;
             text-decoration: none;
-            color: $text-body-dark;
+            color: $white;
             border: 0;
             background: none;
           }

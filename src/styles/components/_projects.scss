@@ -96,6 +96,9 @@
 
       &__item {
         margin-bottom: $space-sm;
+        &:before {
+          display: none;
+        }
       }
     }
 
