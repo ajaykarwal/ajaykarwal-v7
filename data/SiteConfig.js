@@ -57,8 +57,12 @@ const config = {
   },
   menuLinks: [
     {
-      name: "Blog",
+      name: "Articles",
       link: "/blog/"
+    },
+    {
+      name: "Tips",
+      link: "/tips/"
     },
     {
       name: "Portfolio",
