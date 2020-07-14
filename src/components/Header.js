@@ -2,20 +2,29 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.updateDimensions = this.updateDimensions.bind(this);
+  }
+
   state = {
     showNav: false,
-    viewportWidth: 0,
-    viewportHeight: 0,
-    viewportSize: "",
+    viewportWidth: window.innerWidth ?? 0,
+    viewportHeight: window.innerHeight ?? 0,
   };
 
   updateDimensions = () => {
     this.setState({
+      showNav: window.innerWidth > 768 ? true : false,
       viewportWidth: window.innerWidth,
       viewportHeight: window.innerHeight,
+      viewportSize:
+        this.state.viewportWidth <= 479
+          ? "mobile"
+          : this.state.viewportWidth >= 480 && this.state.viewportWidth <= 768
+          ? "tablet"
+          : "desktop",
     });
-    this.reportWindowSize();
-    this.getViewportSize();
   };
 
   componentDidMount() {
@@ -26,26 +35,6 @@ export default class Header extends Component {
     window.removeEventListener("resize", this.updateDimensions);
   }
 
-  getViewportSize = () => {
-    return this.state.viewportWidth <= 479
-      ? "mobile"
-      : this.state.viewportWidth >= 480 && this.state.viewportWidth <= 768
-      ? "tablet"
-      : "desktop";
-  };
-  reportWindowSize = () => {
-    this.setState({
-      viewportWidth: typeof window !== "undefined" ? window.innerWidth : 0,
-      viewportSize: this.getViewportSize(),
-    });
-
-    if (this.state.viewportSize === "desktop") {
-      this.setState({
-        showNav: false,
-      });
-    }
-  };
-
   handleClick = e => {
     e.preventDefault;
     this.setState({
@@ -54,8 +43,9 @@ export default class Header extends Component {
   };
 
   render() {
-    const { viewportSize, showNav } = this.state;
+    const { viewportWidth, showNav } = this.state;
     const { menuLinks } = this.props;
+    const isDesktop = viewportWidth > 768;
 
     return (
       <header role="banner" className="header">
@@ -77,9 +67,9 @@ export default class Header extends Component {
             </Link>
 
             <button
-              className={`nav-toggle ${
-                viewportSize !== "desktop" ? "show" : ""
-              } ${showNav ? "open" : ""}`}
+              className={`nav-toggle ${!isDesktop ? "show" : ""} ${
+                showNav ? "open" : ""
+              }`}
               onClick={this.handleClick}
             >
               <span></span>
@@ -90,9 +80,7 @@ export default class Header extends Component {
 
             <nav
               role="navigation"
-              className={`nav-container desktop ${
-                viewportSize === "desktop" ? "show" : ""
-              }`}
+              className={`nav-container desktop ${isDesktop ? "show" : ""}`}
             >
               <ul className="unstyled">
                 {menuLinks.map(link => (
@@ -107,7 +95,7 @@ export default class Header extends Component {
             <nav
               role="navigation"
               className={`nav-container mobile ${
-                viewportSize !== "desktop" && showNav ? "show" : ""
+                !isDesktop && showNav ? "show" : ""
               }`}
             >
               <ul className="unstyled">
