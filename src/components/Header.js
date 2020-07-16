@@ -9,8 +9,8 @@ export default class Header extends Component {
 
   state = {
     showNav: false,
-    viewportWidth: window.innerWidth ?? 0,
-    viewportHeight: window.innerHeight ?? 0,
+    viewportWidth: typeof window !== "undefined" ? window.innerWidth : 0,
+    viewportHeight: typeof window !== "undefined" ? window.innerHeight : 0,
   };
 
   updateDimensions = () => {
