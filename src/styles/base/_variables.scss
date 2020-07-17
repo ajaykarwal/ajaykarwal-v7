@@ -41,6 +41,7 @@ $primary-dark: darken($primary, 10%);
 $primary-light: lighten($primary, 40%);
 $primary-very-light: rgba($primary, 0.1);
 $secondary: #ffdf31;
+$secondary-light: #fdf9e1;
 $white: #ffffff;
 $grey-light: #fafafa;
 $grey-medium: #ebebeb;
@@ -59,6 +60,7 @@ $theme-colors: (
   "primary-light": $primary-light,
   "primary-very-light": $primary-very-light,
   "secondary": $secondary,
+  "secondary-light": $secondary-light,
   "white": $white,
   "grey-light": $grey-light,
   "grey-medium": $grey-medium,

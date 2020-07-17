@@ -23,35 +23,41 @@ export default class PostListing extends Component {
   render() {
     const { simple } = this.props;
     const postList = this.getPostList();
+
     return (
       <div className={`post-list ${simple ? "simple" : ""}`}>
         {postList.map(post => {
           const date = formatDate(post.date);
+          const popular = post.tags && post.tags.includes("popular")
           return (
-            <div className={`post-list__item`} key={post.title}>
+            <div className={`post-list__item ${popular ? "popular": ""}`} key={post.title}>
+              {popular && <div className="tag popular"></div>}
               {simple ? (
                 <div>
                   <p className="post-list__item-date">{date}</p>
-                  {/* {popular && <div className="tag popular">Popular</div>} */}
                   <h3 className="post-list__item-heading">
                     <Link to={post.path}>{post.title}</Link>
                   </h3>
                 </div>
               ) : (
-                <div>
+                  <div>
+                    {popular && <p className="post-list__item-popular">Popular</p>}
                   <p className="post-list__item-date">{date}</p>
-                  {/* {popular && <div className="tag popular">Popular</div>} */}
                   <h2 className="post-list__item-heading">
                     <Link to={post.path}>{post.title}</Link>
                   </h2>
                 </div>
               )}
-              <div className="post-list__item-tags">
-                {post.tags && post.tags.map(tag => (
-                  <span className={tag.toLowerCase()}>
-                    <Link to={`/tags/${_.kebabCase(tag)}/`}>{tag}</Link>
-                  </span>
-                ))}
+              <div className="post-list__item-categories">
+                {post.categories &&
+                  post.categories.map(cat => (
+                    <Link
+                      className={cat.toLowerCase()}
+                      to={`/categories/${_.kebabCase(cat)}/`}
+                    >
+                      {cat}
+                    </Link>
+                  ))}
               </div>
             </div>
           );
