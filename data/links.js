@@ -23,7 +23,7 @@ export default [
   },
   {
     label: `Letterboxd`,
-    description: `Tracking the films I've watched`,
+    description: `Tracking the films I watch`,
     url: `https://letterboxd.com/ajaykarwal`,
   },
   {
