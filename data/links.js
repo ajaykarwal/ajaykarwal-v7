@@ -22,7 +22,22 @@ export default [
     url: `https://instagram.com/ajaykarwal`,
   },
   {
+    label: `Letterboxd`,
+    description: `Tracking the films I've watched`,
+    url: `https://letterboxd.com/ajaykarwal`,
+  },
+  {
+    label: `TV Time`,
+    description: `Tracking TV shows I watch`,
+    url: `https://www.tvtime.com/en/user/38092710/profile`,
+  },
+  
+  {
     label: `Spotify`,
+    description: `Follow my public playlists`,
     url: `https://open.spotify.com/user/keynote?si=ozmvBTcfQcC8iKPYDPsQpA`,
   },
+  
+  
+  
 ];
