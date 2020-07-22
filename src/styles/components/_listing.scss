@@ -26,6 +26,12 @@
       padding: $space-xs $space-sm;
       border-radius: $border-radius-lg;
       @include font-size(10px);
+
+      &:hover {
+        text-decoration: none;
+        border: 0;
+        background-color: var(--secondary-dark);
+      }
     }
 
     &-date {

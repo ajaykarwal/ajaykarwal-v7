@@ -4,7 +4,7 @@ export default [
     url: `https://ajaykarwal.com/about`,
   },
   {
-    label: `Inspect FM`,
+    label: `Inspect`,
     description: `Design + Development Podcast`,
     url: `https://inspect.fm`,
   },
@@ -22,7 +22,18 @@ export default [
     url: `https://instagram.com/ajaykarwal`,
   },
   {
+    label: `Letterboxd`,
+    description: `Tracking the films I watch`,
+    url: `https://letterboxd.com/ajaykarwal`,
+  },
+  {
+    label: `TV Time`,
+    description: `Tracking TV shows I watch`,
+    url: `https://www.tvtime.com/en/user/38092710/profile`,
+  },
+  {
     label: `Spotify`,
+    description: `Follow my public playlists`,
     url: `https://open.spotify.com/user/keynote?si=ozmvBTcfQcC8iKPYDPsQpA`,
   },
 ];

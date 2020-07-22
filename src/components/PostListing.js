@@ -28,10 +28,12 @@ export default class PostListing extends Component {
       <div className={`post-list ${simple ? "simple" : ""}`}>
         {postList.map(post => {
           const date = formatDate(post.date);
-          const popular = post.tags && post.tags.includes("popular")
+          const popular = post.tags && post.tags.includes("popular");
           return (
-            <div className={`post-list__item ${popular ? "popular": ""}`} key={post.title}>
-              {popular && <div className="tag popular"></div>}
+            <div
+              className={`post-list__item ${!simple && popular ? "popular" : ""}`}
+              key={post.title}
+            >
               {simple ? (
                 <div>
                   <p className="post-list__item-date">{date}</p>
@@ -40,8 +42,16 @@ export default class PostListing extends Component {
                   </h3>
                 </div>
               ) : (
-                  <div>
-                    {popular && <p className="post-list__item-popular">Popular</p>}
+                <div>
+                {popular && <div className="tag popular"></div>}
+                  {popular && (
+                    <Link
+                      className="post-list__item-popular"
+                      to={`/tags/popular/`}
+                    >
+                      Popular
+                    </Link>
+                  )}
                   <p className="post-list__item-date">{date}</p>
                   <h2 className="post-list__item-heading">
                     <Link to={post.path}>{post.title}</Link>
