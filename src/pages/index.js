@@ -73,15 +73,15 @@ export default class Index extends Component {
             </Link>
           </section>
 
-          <hr />
+          {/* <hr />
 
           <section className="popular">
             <h2>Popular Posts</h2>
             <PostListing simple postEdges={popularPostEdges} />
-            <Link to="/categories/popular/" className="button">
+            <Link to="/tags/popular/" className="button">
               All popular posts
             </Link>
-          </section>
+          </section> */}
         </div>
       </Layout>
     );
@@ -116,7 +116,7 @@ export const pageQuery = graphql`
     popular: allMdx(
       limit: 5
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { categories: { eq: "Popular" } } }
+      filter: { frontmatter: { tags: { eq: "popular" } } }
     ) {
       edges {
         node {

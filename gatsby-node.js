@@ -101,6 +101,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const postPage = path.resolve("src/templates/post.js");
+    const tipPage = path.resolve("src/templates/tip.js");
     const pagePage = path.resolve("src/templates/page.js");
     const tagPage = path.resolve("src/templates/tag.js");
     const categoryPage = path.resolve("src/templates/category.js");
@@ -151,6 +152,15 @@ exports.createPages = async ({ graphql, actions }) => {
             createPage({
               path: edge.node.fields.slug,
               component: postPage,
+              context: {
+                slug: edge.node.fields.slug
+              }
+            });
+          }
+          if (edge.node.frontmatter.template === "tip") {
+            createPage({
+              path: edge.node.fields.slug,
+              component: tipPage,
               context: {
                 slug: edge.node.fields.slug
               }

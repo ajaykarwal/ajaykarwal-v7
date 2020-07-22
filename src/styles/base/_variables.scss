@@ -41,6 +41,8 @@ $primary-dark: darken($primary, 10%);
 $primary-light: lighten($primary, 40%);
 $primary-very-light: rgba($primary, 0.1);
 $secondary: #ffdf31;
+$secondary-dark: #f7cb1f;
+$secondary-light: #fdf9e1;
 $white: #ffffff;
 $grey-light: #fafafa;
 $grey-medium: #ebebeb;
@@ -59,6 +61,8 @@ $theme-colors: (
   "primary-light": $primary-light,
   "primary-very-light": $primary-very-light,
   "secondary": $secondary,
+  "secondary-dark": $secondary-dark,
+  "secondary-light": $secondary-light,
   "white": $white,
   "grey-light": $grey-light,
   "grey-medium": $grey-medium,
@@ -89,8 +93,8 @@ $space-md: $space * 2;
 $space-lg: $space * 4;
 $space-xl: $space * 8;
 
-$container-width: 800px;
-$content-width: 800px;
+$container-width: 1000px;
+$content-width: 1000px;
 
 $border-radius: 8px;
 $border-radius-sm: 4px;

@@ -81,7 +81,7 @@ const config = {
     limit: 1,
     username: "ajaykarwal",
     selector: "#lastfmStatus",
-    period: "7day" // overall | 7day | 1month | 3month | 6month | 12month
+    period: "1month" // overall | 7day | 1month | 3month | 6month | 12month
   }
 };
 

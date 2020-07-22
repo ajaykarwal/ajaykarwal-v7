@@ -7,44 +7,101 @@
   }
 
   &__item {
-    margin-bottom: $space-lg;
+    position: relative;
+    margin-bottom: $space-md;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: flex-start;
-
-    @media (min-width: $break-sm) {
-      grid-gap: $space-md;
-      grid-template-columns: 160px 1fr;
+    &.popular {
+      background-color: var(--secondary-light);
+      padding: $space;
+      padding-left: $space+4;
     }
 
-    .simple & {
-      // grid-template-columns: 1fr;
-      margin-bottom: $space-md;
+    &-popular {
+      position: absolute;
+      top: $space-sm;
+      right: $space-sm;
+      display: inline-block;
+      background-color: var(--secondary);
+      color: var(--black);
+      padding: $space-xs $space-sm;
+      border-radius: $border-radius-lg;
+      @include font-size(10px);
+
+      &:hover {
+        text-decoration: none;
+        border: 0;
+        background-color: var(--secondary-dark);
+      }
     }
 
     &-date {
-      @include font-size(13px);
+      @include font-size(12px);
       color: $text-body;
-      margin-bottom: $space-sm;
-
-      @media (min-width: $break-sm) {
-        margin-top: $space-sm;
-      }
+      margin-bottom: $space-xs;
     }
+
     &-heading {
       margin-top: 0;
-      margin-bottom: $space-sm;
-      // a {
-      //   color: $text-body-dark;
-      // }
+      margin-bottom: $space;
     }
+
+    &-categories {
+      margin: 0 (-1 * $space-xs);
+
+      a {
+        display: inline-block;
+        margin: $space-xs;
+        background-color: var(--grey-medium);
+        color: var(--black);
+        padding: $space-xs $space;
+        border-radius: $border-radius-lg;
+        @include font-size(11px);
+
+        &:hover {
+          border: 0;
+          color: var(--white);
+          background-color: var(--grey-semi);
+        }
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+
+      }
+    }
+
     &-thumb {
       display: block;
       margin-bottom: 0;
     }
+
     &-excerpt {
       margin-top: $space;
     }
+  }
+}
+
+.tag.popular {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--secondary);
+  height: 100%;
+  width: 10px;
+
+  &::after {
+    content: '';
+    background: var(--secondary-light);
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: calc(100% - 8px);
+    display: block;
+    position: absolute;
   }
 }

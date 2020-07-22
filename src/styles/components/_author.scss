@@ -2,9 +2,9 @@
   @include center-content;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-areas: 
-    "avatar" 
-    "info" 
+  grid-template-areas:
+    "avatar"
+    "info"
     "support";
   grid-gap: $space;
   background-color: var(--primary);
@@ -17,13 +17,13 @@
     grid-gap: $space $space-md;
     padding: $space-md $space-lg;
     grid-template-columns: 120px auto auto;
-    grid-template-areas: 
-      "avatar info info" 
+    grid-template-areas:
+      "avatar info info"
       "avatar support support";
     margin-top: $space-xl;
   }
   @media (min-width: $break-md) {
-    grid-template-areas: 
+    grid-template-areas:
       "avatar info support";
   }
 
@@ -56,7 +56,7 @@
     display: grid;
     grid-gap: $space;
     grid-template-rows: auto;
-    
+
     @media (min-width: $break-sm) {
       grid-template-columns: auto 1fr;
     }

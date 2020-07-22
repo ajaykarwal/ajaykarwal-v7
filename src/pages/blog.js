@@ -76,7 +76,7 @@ export default class BlogPage extends Component {
                 Blog <span>({filterCount})</span>
               </h1>
             </header>
-            <div className="category-container">
+            {/* <div className="category-container">
               {categories.map(category => {
                 const active = currentCategories.includes(category.fieldValue);
 
@@ -94,7 +94,7 @@ export default class BlogPage extends Component {
                   </button>
                 );
               })}
-            </div>
+            </div> */}
 
             <div className="search-container">
               <input
@@ -106,7 +106,7 @@ export default class BlogPage extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <PostListing simple postEdges={filteredPosts} />
+            <PostListing postEdges={filteredPosts} />
           </section>
         </div>
       </Layout>
