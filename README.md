@@ -13,17 +13,17 @@ This site uses a highly customised version of Ruben Harutyunyan's [Gatsby Advanc
 From the project root
 
 ### Install the required dependencies
-```sh
+```shell
 npm install # or yarn install
 ```
 
 ### Run the local development environment
-```sh
+```shell
 npm run develop # or gatsby develop
 ```
 
 ### Create a production ready build
-```sh
+```shell
 npm run build # or gatsby build
 ```
 

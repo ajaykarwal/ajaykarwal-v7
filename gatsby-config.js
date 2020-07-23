@@ -36,13 +36,6 @@ module.exports = {
         path: `${__dirname}/content/posts/`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: "tips",
-    //     path: `${__dirname}/content/tips/`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -160,7 +153,7 @@ module.exports = {
           }
         }
       `,
-        setup: (ref) => {
+        setup: ref => {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMdx = ref.query.allMdx;
           ret.generator = config.userName;
@@ -175,7 +168,7 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMdx.edges.map((edge) => ({
+              return ctx.query.allMdx.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 title: edge.node.frontmatter.title,
@@ -199,9 +192,11 @@ module.exports = {
                     "webfeeds:cover": {
                       _attr: {
                         image:
-                          rssMetadata.site_url +
-                          edge.node.frontmatter.cover.childImageSharp.original
-                            .src,
+                          edge.node.frontmatter.cover !== null
+                            ? rssMetadata.site_url +
+                              edge.node.frontmatter.cover.childImageSharp
+                                .original.src
+                            : rssMetadata.image_url,
                       },
                     },
                   },
