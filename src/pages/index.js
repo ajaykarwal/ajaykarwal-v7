@@ -24,7 +24,8 @@ export default class Index extends Component {
           <section>
             <img className="avatar" src={Avatar} alt="That's me!" width="200" />
             <h1 title="It's pronounced 'Uh-Jay'">
-              <span>Hi, </span>I'm Ajay
+              <span>Hi, </span>
+              I'm Ajay
             </h1>
             <p className="lead">
               I'm a creative front-end developer and user interface designer
@@ -32,10 +33,16 @@ export default class Index extends Component {
               code and pixel-perfection.
             </p>
             <p>
-              I have over {since2004} years experience designing and building
+              I have over 
+              {' '}
+              {since2004}
+              {' '}
+              years experience designing and building
               engaging projects for clients including BP, HSBC, Thames Water,
-              BT, Caterpillar, Ministry of Sound, and{" "}
-              <a href="/portfolio/">many more</a>.
+              BT, Caterpillar, Ministry of Sound, and
+              {" "}
+              <a href="/portfolio/">many more</a>
+              .
             </p>
 
             <p>
@@ -45,13 +52,19 @@ export default class Index extends Component {
             </p>
 
             <p>
-              For more details about my experience{" "}
-              <a href="/about/">check out my bio</a> or find out{" "}
-              <a href="/now/">what I'm up to right now</a>.
+              For more details about my experience
+              {" "}
+              <a href="/about/">check out my bio</a>
+              {' '}
+              or find out
+              {" "}
+              <a href="/now/">what I'm up to right now</a>
+              .
             </p>
 
             <p>
-              I'm currently working as a senior front-end developer at{" "}
+              I'm currently working as a senior front-end developer at
+              {" "}
               <a
                 href="https://www.ecx.io/en/"
                 target="_blank"
@@ -92,7 +105,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     latest: allMdx(
       limit: 5
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
       edges {
@@ -115,7 +128,7 @@ export const pageQuery = graphql`
     }
     popular: allMdx(
       limit: 5
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { eq: "popular" } } }
     ) {
       edges {

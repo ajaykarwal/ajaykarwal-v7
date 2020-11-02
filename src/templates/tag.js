@@ -29,41 +29,41 @@ export default class TagTemplate extends Component {
 }
 
 export const pageQuery = graphql`
-  query TagPage($tag: String) {
-    allMdx(
-      limit: 1000
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            tags
-            categories
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 1200, maxHeight: 630, quality: 100) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                }
-              }
-            }
-            date
-            template
-          }
-        }
-      }
-    }
-  }
-`;
+         query TagPage($tag: String) {
+           allMdx(
+             limit: 1000
+             sort: { fields: [frontmatter___date], order: DESC }
+             filter: { frontmatter: { tags: { in: [$tag] } } }
+           ) {
+             totalCount
+             edges {
+               node {
+                 fields {
+                   slug
+                   date
+                 }
+                 excerpt
+                 timeToRead
+                 frontmatter {
+                   title
+                   tags
+                   categories
+                   cover {
+                     childImageSharp {
+                       fluid(maxWidth: 1200, maxHeight: 630, quality: 100) {
+                         base64
+                         aspectRatio
+                         src
+                         srcSet
+                         sizes
+                       }
+                     }
+                   }
+                   date
+                   template
+                 }
+               }
+             }
+           }
+         }
+       `;

@@ -31,41 +31,41 @@ export default class CategoryTemplate extends Component {
 }
 
 export const pageQuery = graphql`
-  query CategoryPage($category: String) {
-    allMdx(
-      limit: 1000
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { categories: { in: [$category] } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            tags
-            categories
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 1200, maxHeight: 630, quality: 100) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                }
-              }
-            }
-            date
-            template
-          }
-        }
-      }
-    }
-  }
-`;
+         query CategoryPage($category: String) {
+           allMdx(
+             limit: 1000
+             sort: { fields: [frontmatter___date], order: DESC }
+             filter: { frontmatter: { categories: { in: [$category] } } }
+           ) {
+             totalCount
+             edges {
+               node {
+                 fields {
+                   slug
+                   date
+                 }
+                 excerpt
+                 timeToRead
+                 frontmatter {
+                   title
+                   tags
+                   categories
+                   cover {
+                     childImageSharp {
+                       fluid(maxWidth: 1200, maxHeight: 630, quality: 100) {
+                         base64
+                         aspectRatio
+                         src
+                         srcSet
+                         sizes
+                       }
+                     }
+                   }
+                   date
+                   template
+                 }
+               }
+             }
+           }
+         }
+       `;

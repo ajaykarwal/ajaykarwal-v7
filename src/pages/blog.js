@@ -115,48 +115,48 @@ export default class BlogPage extends Component {
 }
 
 export const query = graphql`
-  {
-    posts: allMdx(
-      limit: 2000
-      sort: { order: DESC, fields: [fields___date] }
-      filter: { frontmatter: { template: { eq: "post" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt(pruneLength: 180)
-          timeToRead
-          frontmatter {
-            title
-            tags
-            categories
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 1200, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            date
-            template
-          }
-        }
-      }
-    }
-    categories: allMdx(limit: 2000) {
-      group(field: frontmatter___categories) {
-        fieldValue
-        totalCount
-      }
-    }
-    tags: allMdx(limit: 2000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`;
+         {
+           posts: allMdx(
+             limit: 2000
+             sort: { order: DESC, fields: [frontmatter___date] }
+             filter: { frontmatter: { template: { eq: "post" } } }
+           ) {
+             edges {
+               node {
+                 fields {
+                   slug
+                   date
+                 }
+                 excerpt(pruneLength: 180)
+                 timeToRead
+                 frontmatter {
+                   title
+                   tags
+                   categories
+                   cover {
+                     childImageSharp {
+                       fluid(maxWidth: 1200, quality: 100) {
+                         ...GatsbyImageSharpFluid
+                       }
+                     }
+                   }
+                   date
+                   template
+                 }
+               }
+             }
+           }
+           categories: allMdx(limit: 2000) {
+             group(field: frontmatter___categories) {
+               fieldValue
+               totalCount
+             }
+           }
+           tags: allMdx(limit: 2000) {
+             group(field: frontmatter___tags) {
+               fieldValue
+               totalCount
+             }
+           }
+         }
+       `;
