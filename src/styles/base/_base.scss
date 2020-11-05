@@ -104,8 +104,12 @@ blockquote {
   margin-top: $space;
   margin-bottom: $space;
   padding: $space;
-  border-left: 5px solid var(--primary-light);
+  border-left: 5px solid var(--primary);
   background-color: var(--primary-very-light);
+
+  p {
+    margin: 0;
+  }
 
   &.muted {
     border-left: 5px solid $grey-medium;
