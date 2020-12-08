@@ -38,7 +38,7 @@ $break-lg: 1200px;
 // Colors
 $primary: #44e;
 $primary-dark: darken($primary, 10%);
-$primary-light: lighten($primary, 40%);
+$primary-light: lighten($primary, 20%);
 $primary-very-light: rgba($primary, 0.1);
 $secondary: #ffdf31;
 $secondary-dark: #f7cb1f;
@@ -53,7 +53,7 @@ $true-black: #000000;
 
 $inline-code: #ece6da;
 $panel-background: #eaedf0;
-$text-selection: rgba($primary, 0.15);
+$text-selection: $secondary-dark;
 
 $theme-colors: (
   "primary": $primary,

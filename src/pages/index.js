@@ -63,14 +63,14 @@ export default class Index extends Component {
             </p>
 
             <p>
-              I'm currently working as a senior front-end developer at
+              I'm currently working as a front-end developer at
               {" "}
               <a
-                href="https://www.ecx.io/en/"
+                href="https://www.aiimi.com"
                 target="_blank"
                 rel="nofollow noopener"
               >
-                ecx.io — an IBM company
+                Aiimi
               </a>
               .
             </p>
