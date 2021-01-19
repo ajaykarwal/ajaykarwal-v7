@@ -11,7 +11,7 @@ export default [
   },
   {
     label: "Frameworks",
-    data: ["Angular", "React", "jQuery", "Jekyll", "Gatsby", "Bootstrap"],
+    data: ["Angular 2+", "React", "jQuery", "Jekyll", "Gatsby", "Bootstrap"],
   },
   {
     label: "Tools",

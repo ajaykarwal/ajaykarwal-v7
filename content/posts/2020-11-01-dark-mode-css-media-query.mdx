@@ -1,0 +1,27 @@
+---
+template: post
+title: "Dark Mode CSS Media Query"
+date: "2020-11-01"
+categories:
+  - css
+---
+
+It's super easy to detect whether a user has their device set to Dark or Light mode using a CSS media query.
+
+```css
+@media (prefers-color-scheme: dark) {
+  /* Styles for users who prefer dark mode */
+}
+
+@media (prefers-color-scheme: light) {
+  /* Styles for users who prefer light mode */
+}
+```
+
+You should only need to use one of these queries, as the user will default to the code outside of the media query if the condition isn't met.
+
+[Robin Rendle](https://css-tricks.com/dark-modes-with-css/) provides some further advice on how to adjust your content for Dark Mode. It's not as simple as white text on a black background.
+
+Browser support is pretty much universal.
+
+![](prefers-color-scheme.png)
